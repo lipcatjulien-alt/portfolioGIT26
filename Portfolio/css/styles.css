@@ -1,0 +1,822 @@
+:root {
+    /* --- COULEURS --- */
+    --couleur-fond: #111111;
+    /* Fond principal de la page - noir profond */
+    --couleur-barre-laterale: #111111;
+    /* Fond de la barre latérale - identique au fond */
+    --couleur-texte-principal: #f8f8f8;
+    /* Texte blanc cassé pour réduire la fatigue visuelle */
+    --couleur-texte-muet: #a0a0a0;
+    /* Gris moyen pour les textes secondaires */
+    --couleur-accent: #f8f8f8;
+    /* Blanc pour les éléments importants */
+    --couleur-bordure: #333333;
+    /* Gris foncé pour les séparations subtiles */
+
+    /* --- CARTES (Projets, Compétences) --- */
+    --fond-carte: #1a1a1a;
+    /* Gris très foncé pour faire ressortir les cartes */
+    --bordure-carte: 1px solid #333;
+    /* Ligne fine grise autour des cartes */
+
+    /* --- DIMENSIONS DE LA PAGE --- */
+    --largeur-barre-laterale: 300px;
+    /* Largeur fixe du menu à gauche */
+    --largeur-max-conteneur: 1200px;
+    /* Largeur max du contenu pour une bonne lecture */
+
+    /* --- ANIMATION --- */
+    --transition: ease-out;
+    /* Transition fluide pour les survols */
+}
+
+/* === RÉINITIALISATION GLOBALE === */
+* {
+    margin: 0;
+    /* Pas de marge par défaut */
+    padding: 0;
+    /* Pas d'espacement intérieur par défaut */
+    box-sizing: border-box;
+    /* Inclut les bordures dans le calcul des tailles */
+}
+
+/* === CORPS DE LA PAGE === */
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* Police système (aucune dépendance) */
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte-principal);
+    min-height: 100vh;
+    /* Hauteur minimum de l'écran entier */
+    display: flex;
+    /* Centre le contenu principal */
+    justify-content: center;
+    overflow-x: hidden;
+    /* Cache le défilement horizontal */
+}
+
+/* === STRUCTURE PRINCIPALE (Grille) === */
+.conteneur-app {
+    display: grid;
+    grid-template-columns: var(--largeur-barre-laterale) 1fr;
+    /* Colonne menu + Colonne contenu */
+    width: 100%;
+    max-width: 1800px;
+    /* Limite pour les très grands écrans */
+    min-height: 100vh;
+}
+
+/* === BARRE LATÉRALE DE NAV === */
+.barre-laterale {
+    background: var(--couleur-barre-laterale);
+    display: flex;
+    flex-direction: column;
+    /* Éléments les uns sous les autres */
+    padding: 3rem 2rem;
+    /* Espacement intérieur généreux */
+    position: sticky;
+    /* Reste fixe quand on scrolle */
+    top: 0;
+    height: 100vh;
+    /* Occupe toute la hauteur */
+    border-right: 1px solid var(--couleur-bordure);
+    /* Ligne de séparation à droite */
+    overflow-y: auto;
+    /* Scroll si le menu est trop long */
+}
+
+.entete-barre-laterale {
+    margin-bottom: 4rem;
+    /* Espace sous le logo */
+}
+
+/* Logo "JM" */
+.logo {
+    font-size: 2rem;
+    /* Grand texte */
+    font-weight: 700;
+    /* Gras */
+    color: var(--couleur-texte-principal);
+    letter-spacing: -1px;
+    /* Lettres rapprochées */
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Rôle "BTS SIO..." */
+.role {
+    font-size: 0.9rem;
+    /* Petit texte */
+    color: var(--couleur-texte-muet);
+    text-transform: uppercase;
+    /* Tout en MAJUSCULES */
+    letter-spacing: 2px;
+    /* Lettres espacées */
+}
+
+/* Navigation (Menu) */
+.liens-nav {
+    list-style: none;
+    /* Enlève les puces */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Espace entre les liens */
+    flex: 1;
+    /* Prend toute la place disponible */
+}
+
+.item-nav {
+    display: flex;
+    align-items: center;
+    /* Centre verticalement icône et texte */
+    gap: 1rem;
+    cursor: pointer;
+    /* Main au survol */
+    color: var(--couleur-texte-muet);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    /* Animation douce */
+    padding: 5px 0;
+}
+
+/* Survol d'un lien */
+.item-nav:hover {
+    color: var(--couleur-texte-principal);
+    /* Devient blanc */
+    transform: translateX(5px);
+    /* Décalage vers la droite */
+}
+
+/* Lien actif (page actuelle) */
+.item-nav.active {
+    color: var(--couleur-texte-principal);
+    font-weight: 600;
+}
+
+/* Petit point blanc pour lien actif */
+.item-nav.active::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    /* Rond */
+    background-color: var(--couleur-texte-principal);
+    margin-right: -0.5rem;
+}
+
+.item-nav .icon {
+    font-size: 1.1rem;
+    width: 24px;
+    /* Largeur fixe pour alignement */
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Bas de menu (Téléchargements) */
+.pied-barre-laterale {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--couleur-bordure);
+}
+
+.telechargements {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Boutons (CV, Lettre) */
+.btn-telecharger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--couleur-bordure);
+    color: var(--couleur-texte-muet);
+    text-decoration: none;
+    border-radius: 4px;
+    /* Coins légèrement arrondis */
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-telecharger:hover {
+    border-color: var(--couleur-texte-principal);
+    color: var(--couleur-texte-principal);
+    background: rgba(255, 255, 255, 0.05);
+    /* Fond blanc transparent */
+}
+
+/* Liens en bas (Référentiel, etc.) */
+.liens-externes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.liens-externes a {
+    color: var(--couleur-texte-muet);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s;
+}
+
+.liens-externes a:hover {
+    color: var(--couleur-texte-principal);
+    text-decoration: underline;
+}
+
+/* === CONTENU PRINCIPAL À DROITE === */
+.vue-principale {
+    padding: 4rem 5rem;
+    /* Marges intérieures confortables */
+    width: 100%;
+}
+
+/* Transitions entre les sections */
+.vue {
+    display: none;
+    /* Caché par défaut */
+    max-width: var(--largeur-max-conteneur);
+    margin: 0 auto;
+    animation: apparition 0.8s ease;
+    /* Animation à l'arrivée */
+}
+
+.vue-active {
+    display: block;
+    /* Visible quand actif */
+}
+
+/* Animation qui fait remonter le contenu en fondu */
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titre-vue {
+    font-size: 3rem;
+    /* Grand titre de section */
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--couleur-texte-principal);
+    letter-spacing: -1px;
+    border-bottom: 1px solid var(--couleur-bordure);
+    padding-bottom: 1rem;
+    display: inline-block;
+    width: 100%;
+}
+
+/* === PAGE ACCUEIL === */
+#accueil.vue-active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centre verticalement */
+    height: 80vh;
+    /* 80% de la hauteur écran */
+}
+
+.contenu-hero {
+    text-align: left;
+    max-width: 900px;
+}
+
+.titre-hero {
+    font-size: 5rem;
+    /* Titre géant */
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--couleur-texte-principal);
+    font-weight: 800;
+}
+
+.sous-titre-hero {
+    font-size: 1.5rem;
+    color: var(--couleur-texte-muet);
+    margin-bottom: 2rem;
+    font-weight: 400;
+    max-width: 700px;
+}
+
+.desc-hero {
+    font-size: 1.1rem;
+    color: var(--couleur-texte-muet);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+.boutons-hero {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Boutons principaux */
+.btn-primaire,
+.btn-secondaire {
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primaire {
+    background: var(--couleur-texte-principal);
+    color: var(--couleur-fond);
+    /* Texte noir sur fond blanc */
+    border: 2px solid var(--couleur-texte-principal);
+}
+
+.btn-primaire:hover {
+    background: transparent;
+    color: var(--couleur-texte-principal);
+    /* Devient contour blanc */
+}
+
+.btn-secondaire {
+    background: transparent;
+    color: var(--couleur-texte-principal);
+    border: 2px solid var(--couleur-bordure);
+}
+
+.btn-secondaire:hover {
+    border-color: var(--couleur-texte-principal);
+}
+
+/* === PAGE À PROPOS === */
+.hero-a-propos {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    background: rgba(255, 255, 255, 0.02);
+    /* Fond très léger */
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.avatar-profil {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    /* Remplissage propre */
+    border-radius: 50%;
+    /* Rond */
+    border: 4px solid var(--couleur-fond);
+    box-shadow: 0 0 0 4px var(--couleur-texte-muet), 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.avatar-profil:hover {
+    transform: scale(1.05) rotate(2deg);
+    /* Effet de zoom et rotation */
+    box-shadow: 0 0 0 4px var(--couleur-texte-principal), 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.intro-a-propos {
+    flex: 1;
+}
+
+.nom-a-propos {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    /* Dégradé de texte */
+    background: linear-gradient(120deg, #fff, #888);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.role-a-propos {
+    font-size: 1.4rem;
+    color: var(--couleur-texte-principal);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.role-a-propos::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--couleur-texte-principal);
+    /* Petite ligne blanche */
+}
+
+.bio-a-propos {
+    font-size: 1.1rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.badges-a-propos {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.item-badge {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--couleur-texte-principal);
+    border-radius: 50px;
+    /* Pilule ronde */
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-badge::before {
+    content: '•';
+    /* Puce verte */
+    color: #00ff88;
+    font-size: 1.2em;
+}
+
+/* === PAGE COMPÉTENCES === */
+.grille-competences {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Grille auto-adaptative */
+    gap: 2rem;
+}
+
+.carte-competence {
+    background: #1a1a1a;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ligne lumineuse en haut */
+.carte-competence::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    /* Invisible au début */
+    height: 3px;
+    background: var(--couleur-texte-principal);
+    transition: width 0.4s;
+}
+
+.carte-competence:hover {
+    transform: translateY(-5px);
+    /* Remonte légèrement */
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.carte-competence:hover::before {
+    width: 100%;
+    /* Ligne s'étend au survol */
+}
+
+.carte-competence h3 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: var(--couleur-texte-principal);
+    font-weight: 700;
+    text-align: center;
+}
+
+.tags-competence {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Pilules de techno (HTML, CSS...) */
+.pilule-tech {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--couleur-texte-muet);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.pilule-tech:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: scale(1.05);
+    /* Grossit un peu */
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* === PAGE PROJETS === */
+.conteneur-projets {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.carte-projet {
+    display: flex;
+    flex-direction: column;
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.carte-projet:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.conteneur-img-projet {
+    height: 220px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ombre sur l'image */
+.conteneur-img-projet::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    opacity: 0.6;
+}
+
+.conteneur-img-projet img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.carte-projet:hover .conteneur-img-projet img {
+    transform: scale(1.1);
+    /* Zoom de l'image */
+}
+
+.contenu-projet {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Badge type de projet */
+.type-projet {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--couleur-texte-principal);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contenu-projet h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--couleur-texte-principal);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.desc-projet {
+    color: #cecece;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+/* Zone de détails (objectifs) */
+.details-projet {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.details-projet strong {
+    color: var(--couleur-texte-principal);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.tags span {
+    display: inline-block;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--couleur-texte-muet);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.carte-projet:hover .tags span {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--couleur-texte-principal);
+}
+
+/* === PAGE PARCOURS (Chronologie) === */
+.resume-bts {
+    background: var(--fond-carte);
+    padding: 2rem;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 4px;
+    margin-bottom: 3rem;
+}
+
+.conteneur-chronologie {
+    border-left: 1px solid var(--couleur-bordure);
+    /* Ligne verticale */
+    padding-left: 2rem;
+    display: grid;
+    gap: 3rem;
+}
+
+.item-chronologie {
+    position: relative;
+}
+
+/* Point sur la ligne de temps */
+.item-chronologie::before {
+    content: '';
+    position: absolute;
+    left: -2.35rem;
+    /* Centré sur la ligne */
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--couleur-fond);
+    border: 2px solid var(--couleur-texte-muet);
+    border-radius: 50%;
+}
+
+.date-chronologie {
+    font-size: 0.9rem;
+    color: var(--couleur-texte-muet);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contenu-chronologie h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.lieu {
+    font-style: italic;
+    color: var(--couleur-texte-muet);
+    margin-bottom: 0.5rem;
+}
+
+/* === PAGE PROCÉDURES & CONTACT === */
+.grille-procedures {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.carte-procedure {
+    background: var(--fond-carte);
+    border: 1px solid var(--couleur-bordure);
+    padding: 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.carte-procedure:hover {
+    border-color: var(--couleur-texte-principal);
+}
+
+.rangee-contenu-proc {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.icone-proc {
+    font-size: 1.5rem;
+    width: 40px;
+}
+
+.info-proc h3 {
+    color: var(--couleur-texte-principal);
+    font-size: 1.1rem;
+}
+
+.info-proc p {
+    color: var(--couleur-texte-muet);
+    font-size: 0.9rem;
+}
+
+.tag-bts {
+    align-self: flex-start;
+    padding: 3px 8px;
+    border: 1px solid var(--couleur-bordure);
+    font-size: 0.7rem;
+    color: var(--couleur-texte-muet);
+    border-radius: 4px;
+}
+
+/* === CONTACT === */
+.mise-en-page-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cartes-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.boite-contact {
+    background: var(--fond-carte);
+    border: 1px solid var(--couleur-bordure);
+    padding: 2rem;
+    text-align: left;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.boite-contact:hover {
+    border-color: var(--couleur-texte-principal);
+    transform: translateX(5px);
+}
+
+.boite-contact h3 {
+    color: var(--couleur-texte-principal);
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+}
+
+.boite-contact p {
+    color: var(--couleur-texte-muet);
+    font-size: 0.9rem;
+}

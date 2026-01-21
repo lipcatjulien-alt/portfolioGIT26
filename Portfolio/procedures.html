@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- PAGE PROCÉDURES -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procédures | Julien Martiniere</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="conteneur-app">
+
+        <nav class="barre-laterale">
+            <div class="entete-barre-laterale">
+                <div class="logo">JM</div>
+                <div class="role">BTS SIO • SISR</div>
+            </div>
+
+            <div class="liens-nav">
+                <a href="index.html" class="item-nav" style="text-decoration: none;">
+                    Accueil
+                </a>
+                <a href="a-propos.html" class="item-nav" style="text-decoration: none;">
+                    À Propos
+                </a>
+                <a href="competences.html" class="item-nav" style="text-decoration: none;">
+                    Compétences
+                </a>
+                <a href="projets.html" class="item-nav" style="text-decoration: none;">
+                    Projets
+                </a>
+                <a href="parcours.html" class="item-nav" style="text-decoration: none;">
+                    Parcours
+                </a>
+                <!-- Lien actif -->
+                <a href="procedures.html" class="item-nav active" style="text-decoration: none;">
+                    Procédures
+                </a>
+                <a href="contact.html" class="item-nav" style="text-decoration: none;">
+                    Contact
+                </a>
+            </div>
+
+            <div class="pied-barre-laterale">
+                <div class="telechargements">
+                    <a href="docs/CV_Martiniere_Julien.pdf" class="btn-telecharger" download>Mon CV</a>
+                    <a href="docs/Lettre_de_motivation.pdf" class="btn-telecharger" download>Lettre</a>
+                </div>
+                <div class="liens-externes">
+                    <a href="docs/REFERENTIEL_BTS_SIO-_RENOVATION_SESSION_2022-SIGNETS.pdf" target="_blank">Référentiel
+                        BTS SIO</a>
+                    <a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/"
+                        target="_blank">Campus St-Aspais</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- === CONTENU : PROCÉDURES === -->
+        <main class="vue-principale">
+            <section id="procedures" class="vue vue-active">
+                <h2 class="titre-vue">Procédures Techniques</h2>
+                <p style="margin-bottom: 2rem; color: var(--couleur-texte-muet);">Guide technique - BTS SIO SISR</p>
+                <p style="margin-bottom: 1.5rem; color: var(--couleur-accent); font-weight: 500;">
+                    Cliquez sur une carte pour télécharger le document
+                </p>
+
+                <div class="grille-procedures">
+
+                    <a href="docs/procedures/Exolab_Cisco_Routage.pdf" download class="carte-procedure">
+                        <div class="rangee-contenu-proc">
+                            <div class="info-proc">
+                                <h3>Configuration IP</h3>
+                                <p>Exolab Cisco - Routage Statique</p>
+                            </div>
+                        </div>
+                        <span class="tag-bts">Réseau</span>
+                    </a>
+
+                    <a href="docs/procedures/Dossier_partager.pdf" download class="carte-procedure">
+                        <div class="rangee-contenu-proc">
+                            <div class="info-proc">
+                                <h3>Dossiers Partagés</h3>
+                                <p>Gestion des partages et droits NTFS</p>
+                            </div>
+                        </div>
+                        <span class="tag-bts">Système</span>
+                    </a>
+
+                    <a href="docs/procedures/Reseaux_NAT.pdf" download class="carte-procedure">
+                        <div class="rangee-contenu-proc">
+                            <div class="info-proc">
+                                <h3>Redirection NAT</h3>
+                                <p>Redirection de ports & Ouverture de flux</p>
+                            </div>
+                        </div>
+                        <span class="tag-bts">Réseau & Sécurité</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>
