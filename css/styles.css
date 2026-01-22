@@ -482,10 +482,12 @@ body {
 /* === PAGE COMPÉTENCES === */
 .grille-competences {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* Cellules un peu plus petites */
-    gap: 1rem;
-    /* Gap réduit */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Cellules un peu plus larges */
+    gap: 2rem;
+    /* Espace plus aéré */
+    justify-content: center;
+    /* Centre la grille horizontalement */
 }
 
 .carte-competence {
@@ -814,10 +816,11 @@ body {
     transition: all 0.3s;
 }
 
-.boite-contact:hover {
+/* Hover effect removed for static layout */
+/* .boite-contact:hover {
     border-color: var(--couleur-texte-principal);
     transform: translateX(5px);
-}
+} */
 
 .boite-contact h3 {
     color: var(--couleur-texte-principal);
