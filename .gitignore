@@ -1,0 +1,16 @@
+# Fichiers de test / scripts de correction (ne pas publier)
+fix*.ps1
+fix*.cs
+fix*.js
+fix*.py
+fix*.exe
+fix.html
+check_*.ps1
+check_*.cs
+verify.ps1
+index_clean_test.html
+index_fixed_double.html
+
+# Documents privés ou obsolètes
+docs/Lettre_de_motivation.pdf
+docs/CV_Martiniere_Julien_ancien.pdf
