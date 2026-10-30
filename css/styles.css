@@ -1766,3 +1766,70 @@ p { color: var(--texte-2); }
 .point-orange { width: 8px; height: 8px; border-radius: 50%; background: var(--fibre-orange); }
 .veille-terrain { margin-top: 1.2rem; max-width: 760px; }
 .veille-terrain h3 { font-size: 1.15rem; margin-bottom: .5rem; }
+
+/* =====================================================================
+   VERSION APAISÉE — une seule couleur d'accent, sobre, menu clair
+   ===================================================================== */
+:root {
+  --encre: #1B2A41;
+  --texte-2: #3F4B5B;
+  --papier: #F6F7F9;
+  --ligne: #E1E5EB;
+  --fibre-bleu: #2F5A8F;
+  --fibre-bleu-fonce: #24476F;
+  --couleur-accent: #2F5A8F;
+  --couleur-accent-alt: #4A73A6;
+  --couleur-texte-muet: #667180;
+}
+
+/* Menu clair */
+.barre-laterale { background: #FFFFFF; border-right: 1px solid var(--ligne); }
+.barre-laterale .logo { color: var(--encre); }
+.barre-laterale .role { color: #667180; }
+.mini-ruban { opacity: .55; }
+.mini-ruban span { box-shadow: none; }
+.mini-ruban span[style*="#FFFFFF"] { box-shadow: inset 0 0 0 1px #C9D0DA; }
+.item-nav { color: #4A5566; }
+.item-nav .icon { color: #8A94A3; }
+.item-nav:hover { color: var(--encre); background: #F1F3F6; }
+.item-nav.active { color: var(--encre); background: #EEF2F7; box-shadow: inset 3px 0 0 var(--fibre-bleu); }
+.item-nav.active .icon { color: var(--fibre-bleu); }
+.pied-barre-laterale { border-top-color: var(--ligne) !important; }
+.btn-telecharger { color: var(--encre); border-color: #CBD2DC; background: #fff; }
+.btn-telecharger:hover { background: var(--encre); color: #fff; border-color: var(--encre); }
+.liens-externes a { color: #667180; }
+.liens-externes a:hover { color: var(--encre); }
+
+/* Accueil plus calme */
+.ruban-fibres svg { height: 34px; opacity: .5; }
+.ruban-fibres .brin { stroke-width: 1.6; }
+.chiffres-accueil a:nth-child(n) { box-shadow: 0 1px 2px rgba(27,42,65,.04) !important; }
+.chiffres-accueil strong { color: var(--encre); }
+.carte-flottante { background: #fff; border: 1px solid var(--ligne); box-shadow: 0 8px 20px rgba(27,42,65,.10); }
+.carte-flottante strong { color: var(--encre); } .carte-flottante span { color: #667180; } .carte-flottante i { color: var(--fibre-bleu); }
+.photo-hero { box-shadow: 0 12px 30px rgba(27,42,65,.12); }
+.pastille-dispo { background: #F1F6F2; border-color: #D3E3D7; color: #2E5E3E; }
+.point-vert { background: #3E8A57; box-shadow: none; animation: none; }
+.visuel-phare.banniere-m2l, .banniere-m2l { background: #E9EEF4 !important; }
+.banniere-m2l span, .banniere-m2l > div { color: var(--encre) !important; }
+.banniere-m2l i { color: var(--fibre-bleu) !important; }
+.banniere-m2l small { color: #667180 !important; }
+.badge-phare { background: var(--encre); }
+
+/* Teintes douces partout */
+.entete-domaine i, .carte-savoirfaire > i, .entete-veille > i, .entete-document > i, .carte-contexte > i { background: #EEF2F7 !important; color: var(--fibre-bleu) !important; }
+.puces-tech .f { color: #2F5A8F; border-color: #D5DEEA; background: #F3F6FA; }
+.puces-tech .s { color: #7A5631; border-color: #E6DBCD; background: #FAF6F1; }
+.pastille.formation { background: #2F5A8F; } .pastille.stage { background: #A87B4F; }
+.encart-recherche, .encart-star, .competences-bts, .question-veille { background: #F3F6FA !important; border-left-color: var(--fibre-bleu) !important; }
+.comp-mobilisees span, .tag-bts, .carte-procedure[data-categorie] .tag-bts { background: #F1F4F8 !important; color: #2F5A8F !important; }
+.item-chronologie:first-child .date-chronologie { color: var(--fibre-bleu) !important; }
+.btn-filtre.actif, .btn-filtre:hover { background: var(--fibre-bleu); border-color: var(--fibre-bleu); }
+.tableau-synthese td.coche { color: var(--fibre-bleu); }
+.sar .resultat { border-left-color: #3E8A57; } .sar .resultat h5 { color: #3E8A57; }
+.carte-domaine:hover, .carte-projet:hover, .carte-mission-stage:hover, .carte-savoirfaire:hover, .carte-phare:hover, .chiffres-accueil a:hover, .carte-procedure:hover {
+  border-color: #B9C6D8 !important; box-shadow: 0 6px 16px rgba(27,42,65,.07) !important; transform: none;
+}
+.veille-attente { border-top-color: #C58A4A !important; }
+.statut-attente { background: #FAF3EA; color: #8A5A24; } .point-orange { background: #C58A4A; }
+.bouton-menu-mobile { background: #fff; color: var(--encre); border: 1px solid var(--ligne); }
