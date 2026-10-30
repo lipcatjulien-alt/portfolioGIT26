@@ -198,13 +198,6 @@
                     </a>
                 </div>
 
-                <!-- Veille -->
-                <a href="#veille" class="bandeau-veille">
-                    <i class="fa-solid fa-satellite"></i>
-                    <div><span class="type-mission">Ma veille technologique</span><strong>Starlink : les réseaux en orbite basse peuvent-ils concurrencer la fibre ?</strong></div>
-                    <i class="fa-solid fa-arrow-right fleche"></i>
-                </a>
-
                 <footer class="pied-page">
                     <span>© 2026 Julien Martinière · Portfolio BTS SIO SISR</span>
                     <span><a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener">Campus Saint-Aspais</a> · <a href="https://linkedin.com/in/julien-martiniere" target="_blank" rel="noopener">LinkedIn</a> · <a href="#referentiel">Référentiel BTS</a></span>
@@ -707,51 +700,15 @@
             <!-- VEILLE -->
             <section id="veille" class="vue">
                 <h2 class="titre-vue">Veille technologique</h2>
-                <p class="intro-section">La veille technologique permet de rester à jour, d'anticiper les menaces et d'innover. En 2<sup>e</sup> année, j'ai présenté à la classe une technologie récente en répondant à la question : <em>pourquoi mérite-t-elle notre attention aujourd'hui ?</em></p>
-
-                <article class="carte-veille">
-                    <div class="entete-veille">
-                        <i class="fa-solid fa-satellite"></i>
-                        <div>
-                            <span class="type-mission">Partage de technologie, septembre 2026</span>
-                            <h3>Starlink : le réseau mondial en orbite basse (LEO)</h3>
-                        </div>
-                    </div>
-                    <div class="grille-veille">
-                        <div class="bloc-veille">
-                            <h4><i class="fa-solid fa-gears"></i> Fonctionnement</h4>
-                            <ul>
-                                <li>Constellation de satellites en orbite basse, à environ 550 km (contre 36 000 km pour les satellites géostationnaires)</li>
-                                <li>Débit de 100 à 250 Mbit/s et latence de 25 à 40 ms</li>
-                                <li>Interconnexion laser : les satellites routent les données entre eux, sans repasser par le sol</li>
-                            </ul>
-                        </div>
-                        <div class="bloc-veille">
-                            <h4><i class="fa-solid fa-lightbulb"></i> Pourquoi s'y intéresser</h4>
-                            <ul>
-                                <li><strong>Résilience d'urgence</strong> : rétablir un réseau critique en quelques minutes après une catastrophe</li>
-                                <li><strong>Continuité d'activité</strong> : un lien de secours indépendant des câbles</li>
-                                <li><strong>Disruption du marché</strong> : lanceurs réutilisables, coûts de lancement en forte baisse</li>
-                            </ul>
-                        </div>
-                        <div class="bloc-veille">
-                            <h4><i class="fa-solid fa-triangle-exclamation"></i> Dangers et limites</h4>
-                            <ul>
-                                <li><strong>Dépendance stratégique</strong> envers une seule entreprise privée</li>
-                                <li><strong>Cybersécurité</strong> : brouillage (jamming) et usurpation de signal (spoofing)</li>
-                                <li><strong>Pollution spatiale</strong> : risque de collisions en chaîne (syndrome de Kessler)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="question-veille"><i class="fa-solid fa-comments"></i> <strong>Question posée à la classe :</strong> une constellation privée comme Starlink peut-elle devenir une alternative crédible à la fibre pour les entreprises, ou doit-elle rester un réseau de secours ?</p>
-                    <p class="preuves"><strong>Sources :</strong> documentation technique SpaceX / Starlink, <a href="https://www.arcep.fr" target="_blank" rel="noopener">ARCEP</a>, <a href="https://cyber.gouv.fr" target="_blank" rel="noopener">ANSSI</a>, IEEE Spectrum, ZDNet.</p>
-                    <div class="actions-veille">
-                        <a href="docs/veille/Veille_Starlink_Julien_Martiniere.pdf" target="_blank" class="btn-primaire btn-inline"><i class="fa-solid fa-eye"></i> Voir la présentation</a>
-                        <a href="docs/veille/Veille_Starlink_Julien_Martiniere.pdf" download="Veille_Starlink_Julien_Martiniere.pdf" class="btn-secondaire btn-inline"><i class="fa-solid fa-download"></i> Télécharger (PDF)</a>
-                    </div>
+                <article class="carte-veille veille-attente">
+                    <span class="statut-attente"><span class="point-orange"></span> En préparation</span>
+                    <h3>Ma veille technologique sera publiée ici prochainement</h3>
+                    <p>Je finalise actuellement ma veille technologique. Cette page présentera le sujet choisi, les sources que je suis et une synthèse de ce que j'en retiens pour mon métier de technicien systèmes et réseaux.</p>
                 </article>
-
-                <p class="intro-section" style="margin-top: 2rem;">Veille sur le terrain pendant mon stage : Assises du Très Haut Débit à Paris, salon Allnet et démonstration anti-drone (voir <a href="#stage">Mon stage</a>).</p>
+                <div class="carte-veille veille-terrain">
+                    <h3>En attendant : ma veille sur le terrain</h3>
+                    <p>Pendant mon stage chez 2CER Technologies, j'ai participé aux Assises du Très Haut Débit à Paris, visité le salon Allnet et assisté à une démonstration de solutions anti-drone. Le détail est dans la page <a href="#stage">Mon stage</a>.</p>
+                </div>
             </section>
 
             <!-- SYNTHESE E4 -->
@@ -765,7 +722,6 @@
                         <thead><tr><th scope="col">Réalisation</th><th scope="col">Gérer le patrimoine informatique</th><th scope="col">Répondre aux incidents et aux demandes d'assistance</th><th scope="col">Développer la présence en ligne</th><th scope="col">Travailler en mode projet</th><th scope="col">Mettre à disposition un service informatique</th><th scope="col">Organiser son développement professionnel</th></tr></thead>
                         <tbody>
                             <tr><th scope="row">Projet M2L — pfSense, réplication MariaDB, GLPI, Asterisk, Nextcloud<span class="type-reali">AP 2<sup>e</sup> année (en cours)</span></th><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
-                            <tr><th scope="row">Veille technologique — Starlink et les réseaux en orbite basse<span class="type-reali">Veille 2<sup>e</sup> année</span></th><td></td><td></td><td></td><td></td><td></td><td class="coche">✓</td></tr>
                             <tr><th scope="row">Configuration d'un switch Cisco SF500 (VLAN, accès distant SSH)<span class="type-reali">TP 2<sup>e</sup> année</span></th><td class="coche">✓</td><td></td><td></td><td></td><td class="coche">✓</td><td></td></tr>
                             <tr><th scope="row">Infrastructure réseau sécurisée multisite (Proxmox, pfSense, VLAN, DMZ)<span class="type-reali">Projet formation</span></th><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
                             <tr><th scope="row">Koo2Fourchette — site web dynamique PHP/MySQL<span class="type-reali">Projet formation</span></th><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>

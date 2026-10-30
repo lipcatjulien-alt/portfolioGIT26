@@ -1759,3 +1759,10 @@ p { color: var(--texte-2); }
 .sar h5 { text-transform: none; letter-spacing: 0; font-size: 1.02rem; }
 .fiche-stage dt { text-transform: none; letter-spacing: 0; font-size: .85rem; color: #5D6979; }
 .role { text-transform: none; }
+.veille-attente { border-top: 3px solid var(--fibre-orange) !important; max-width: 760px; }
+.veille-attente h3 { font-size: 1.5rem; margin: .9rem 0 .7rem; }
+.veille-attente p, .veille-terrain p { line-height: 1.7; max-width: 66ch; }
+.statut-attente { display: inline-flex; align-items: center; gap: .5rem; padding: .3rem .8rem; border-radius: 999px; background: #FDF1E5; color: #96470A; font-weight: 600; font-size: .88rem; }
+.point-orange { width: 8px; height: 8px; border-radius: 50%; background: var(--fibre-orange); }
+.veille-terrain { margin-top: 1.2rem; max-width: 760px; }
+.veille-terrain h3 { font-size: 1.15rem; margin-bottom: .5rem; }
