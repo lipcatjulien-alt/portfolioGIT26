@@ -4,11 +4,14 @@ Portfolio personnel d'étudiant en **BTS SIO option SISR** (Solutions d'Infrastr
 
 ## Contenu
 
-- **Compétences** : réseaux, systèmes, virtualisation, cybersécurité, infrastructure physique
+- **À propos** : présentation et recherche de stage (4 janvier – 6 février 2027)
+- **Compétences** : réseaux, systèmes, virtualisation, cybersécurité, infrastructure physique, langues (CECRL)
 - **Stage** : 5 semaines chez 2CER Technologies (fibre optique, certification réseau, câblage, Wi-Fi)
-- **Projets** : infrastructure réseau sécurisée multisite (Proxmox, pfSense, VLAN, DMZ), site web Koo2Fourchette
-- **Synthèse E5** : tableau de correspondance avec les compétences du bloc 1
-- **Procédures techniques** : guides PDF (routage Cisco, pfSense, Proxmox, NAT, SSH, TFTP…)
+- **Projets** : projet M2L (en cours), infrastructure réseau sécurisée multisite, site web Koo2Fourchette
+- **Veille technologique** : Starlink et les réseaux en orbite basse
+- **Procédures techniques** : guides PDF (switch Cisco SF500, TFTP, routage Cisco, pfSense, Proxmox, SSH, NAT…)
+- **Synthèse E4** : tableau des réalisations et des compétences du bloc 1
+- **Parcours**, **Référentiel BTS SIO** (résumé + PDF), **CV & lettre de motivation** téléchargeables
 
 ## Technologies
 

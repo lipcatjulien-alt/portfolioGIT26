@@ -1431,3 +1431,70 @@ body.fenetre-ouverte { overflow: hidden; }
   .nom-a-propos { font-size: 2.6rem !important; }
   .grille-domaines { grid-template-columns: 1fr; }
 }
+
+/* ===== Ajouts (grille d'évaluation) : menu, bio, langues, veille, référentiel, CV ===== */
+.barre-laterale { overflow-y: auto; scrollbar-width: none; }
+.liens-nav { gap: .45rem; justify-content: flex-start; margin-top: 1.5rem; }
+.item-nav { padding-top: .45rem; padding-bottom: .45rem; font-size: .95rem; }
+.liens-externes a { display: inline-flex; gap: .4rem; align-items: center; }
+.vue-principale p a:not(.btn-primaire):not(.btn-secondaire), .intro-section a, .preuves a, .contenu-chronologie a, .lieu a, .tableau-synthese a {
+  color: var(--couleur-accent-alt); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
+.vue-principale p a:hover { color: #fff; }
+.titre-bio { font-size: 1.3rem; margin: .5rem 0 .8rem; color: var(--couleur-texte-principal); }
+.bio-a-propos p { margin-bottom: 1rem; }
+.encart-recherche { background: rgba(226,114,91,.1); border-left: 3px solid var(--couleur-accent); padding: .9rem 1.1rem; border-radius: 8px; color: var(--couleur-texte-principal) !important; }
+.encart-recherche i { color: var(--couleur-accent); margin-right: .3rem; }
+
+/* Langues CECRL */
+.langues { display: flex; flex-direction: column; gap: .9rem; margin: 0; }
+.langues dt { font-weight: 600; color: var(--couleur-texte-principal); margin-bottom: .2rem; }
+.langues dd { margin: 0; color: var(--couleur-texte-muet); font-size: .92rem; line-height: 1.5; }
+.niveau-cecrl { display: inline-block; background: var(--couleur-accent); color: #000; font-weight: 700; border-radius: 6px; padding: .05rem .5rem; margin-right: .4rem; }
+
+/* Projet M2L */
+.banniere-m2l { display: grid; place-items: center; background: linear-gradient(135deg, rgba(226,114,91,.25), rgba(59,130,246,.18)); }
+.banniere-m2l > div { display: flex; flex-direction: column; align-items: center; gap: .5rem; text-align: center; color: #fff; }
+.banniere-m2l i { font-size: 2.6rem; color: var(--couleur-accent-alt); }
+.banniere-m2l span { font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 700; }
+.banniere-m2l small { color: var(--couleur-texte-muet); }
+.liste-m2l { margin: .6rem 0 0 1.2rem; color: var(--couleur-texte-muet); line-height: 1.7; }
+
+/* Veille */
+.carte-veille, .carte-ref-dl, .carte-document { background: var(--fond-carte); border: var(--bordure-carte); border-radius: 16px; padding: 2rem; }
+.entete-veille { display: flex; gap: 1.2rem; align-items: center; margin-bottom: 1.5rem; }
+.entete-veille > i { font-size: 1.8rem; color: var(--couleur-accent); background: rgba(226,114,91,.12); width: 64px; height: 64px; border-radius: 14px; display: grid; place-items: center; flex-shrink: 0; }
+.entete-veille h3 { font-size: 1.5rem; margin-top: .3rem; }
+.grille-veille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.bloc-veille { background: rgba(255,255,255,.03); border: 1px solid var(--couleur-bordure); border-radius: 12px; padding: 1.2rem; }
+.bloc-veille h4 { color: var(--couleur-accent); font-size: 1rem; margin-bottom: .7rem; display: flex; gap: .5rem; align-items: center; }
+.bloc-veille ul { padding-left: 1.1rem; color: #d4d6da; line-height: 1.6; font-size: .93rem; display: flex; flex-direction: column; gap: .4rem; }
+.question-veille { margin: 1.5rem 0 1rem; padding: 1rem 1.2rem; border-radius: 10px; background: rgba(59,130,246,.08); border-left: 3px solid #3b82f6; color: var(--couleur-texte-principal); line-height: 1.6; }
+.question-veille i { color: #93b8fb; margin-right: .3rem; }
+.actions-veille { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.2rem; }
+
+/* Référentiel */
+.carte-ref-dl { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.carte-ref-dl h3 { font-size: 1.3rem; margin-bottom: .4rem; }
+.carte-ref-dl p { color: var(--couleur-texte-muet); }
+.carte-ref-dl .actions-veille { margin-top: 0; }
+.tableau-epreuves { min-width: 700px; }
+.tableau-epreuves thead th, .tableau-epreuves td { text-align: left; }
+.tableau-epreuves td { color: var(--couleur-texte-muet); line-height: 1.55; }
+.tableau-epreuves td:nth-child(3) { text-align: center; color: var(--couleur-accent); font-weight: 700; }
+
+/* CV & lettre */
+.grille-documents { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.carte-document { padding: 1.5rem; display: flex; flex-direction: column; }
+.entete-document { display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; }
+.entete-document > i { font-size: 1.4rem; color: var(--couleur-accent); background: rgba(226,114,91,.12); width: 50px; height: 50px; border-radius: 12px; display: grid; place-items: center; }
+.entete-document h3 { font-size: 1.2rem; }
+.entete-document span { color: var(--couleur-texte-muet); font-size: .85rem; }
+.carte-document iframe { width: 100%; height: 560px; border: 1px solid var(--couleur-bordure); border-radius: 10px; background: #fff; }
+
+@media (max-width: 1100px) { .grille-veille { grid-template-columns: 1fr; } .grille-documents { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .carte-document iframe { height: 420px; } .carte-veille, .carte-ref-dl { padding: 1.25rem; } }
+.apercu-doc { display: block; height: 560px; overflow: hidden; border-radius: 10px; border: 1px solid var(--couleur-bordure); background: #fff; }
+.apercu-doc img { width: 100%; display: block; transition: transform .3s; }
+.apercu-doc:hover img { transform: scale(1.02); }
+@media (max-width: 700px) { .apercu-doc { height: 420px; } }
