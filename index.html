@@ -92,42 +92,121 @@
             
             <!-- ACCUEIL -->
             <section id="accueil" class="vue vue-active">
-                <div class="hero-a-propos" style="margin-top: 0; margin-bottom: 0;">
-                    <img src="img/IMG_3991.jpeg" alt="Photo de Julien Martinière" class="avatar-profil">
-                    <div class="intro-a-propos">
-                        <div class="logo-ecole-hero" style="margin-bottom: 1rem; justify-content: flex-start;">
-                            <a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener" title="Site du Campus Saint-Aspais"><img src="img/mix-logo.png" alt="Logo du Campus Saint-Aspais (lien vers le site de l'école)" style="max-height: 50px;"></a>
-                        </div>
-                        <h1 class="nom-a-propos" style="font-size: 4rem;">Julien <span class="texte-accent">Martinière</span></h1>
-                        <div class="role-a-propos"><span>Étudiant en 2<sup>e</sup> année de BTS SIO option SISR</span></div>
 
-                        <div class="bio-a-propos">
-                            <h2 class="titre-bio">À propos de moi</h2>
-                            <p>Je suis étudiant en BTS SIO option SISR au <a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener">Campus Saint-Aspais de Melun</a>. Je suis passionné par la mise en place d'infrastructures solides : de l'administration des serveurs jusqu'au déploiement et à la configuration des équipements réseau sur le terrain.</p>
-                            <p>Lors de mon <a href="#stage">stage de première année chez 2CER Technologies</a>, j'ai participé à des chantiers réels : tirage et soudure de fibre optique, certification de liens réseau, câblage et étude Wi-Fi. Cette année, je travaille sur le <a href="#projets">projet M2L</a> (pfSense, MariaDB, Asterisk, Nextcloud) et je prépare la certification Cisco CCNA. Mes <a href="#competences">compétences</a> et mes <a href="#procedures">procédures techniques</a> sont détaillées sur ce site.</p>
-                            <p class="encart-recherche"><i class="fa-solid fa-magnifying-glass"></i> <strong>Je recherche un stage de 5 semaines en systèmes et réseaux, du 4 janvier au 6 février 2027.</strong> <a href="#cv">Voir mon CV et ma lettre de motivation</a>.</p>
-                        </div>
-
-                        <div class="badges-a-propos">
-                            <span class="item-badge">Vaux-le-Pénil / Melun (77)</span>
-                            <span class="item-badge">BTS SIO SISR — 2ᵉ année</span>
-                            <span class="item-badge">Anglais B1 (CECRL)</span>
-                            <span class="item-badge">CCNA en préparation</span>
-                        </div>
-
-                        <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="#projets" class="btn-primaire" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                                <i class="fa-solid fa-folder-open"></i> Voir mes projets
-                            </a>
-                            <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" download="CV_Julien_Martiniere_BTS_SIO_SISR.pdf" class="btn-secondaire" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                                <i class="fa-solid fa-download"></i> Télécharger mon CV
-                            </a>
-                            <a href="#contact" class="btn-secondaire" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                                <i class="fa-solid fa-paper-plane"></i> Me contacter
-                            </a>
+                <!-- Hero -->
+                <div class="hero-accueil">
+                    <div class="hero-texte">
+                        <a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener" class="lien-ecole" title="Site du Campus Saint-Aspais">
+                            <img src="img/mix-logo.png" alt="Logo du Campus Saint-Aspais (lien vers le site de l'école)">
+                            <span>BTS SIO option SISR · Campus Saint-Aspais, Melun</span>
+                        </a>
+                        <h1 class="nom-hero">Julien <span>Martinière</span></h1>
+                        <p class="accroche">Futur technicien <strong>systèmes &amp; réseaux</strong>. Je conçois, déploie et sécurise des infrastructures, du serveur virtualisé jusqu'à la fibre posée sur le terrain.</p>
+                        <a href="#cv" class="pastille-dispo"><span class="point-vert"></span><span>Disponible pour un stage du <strong>4 janvier au 6 février 2027</strong></span></a>
+                        <div class="actions-hero">
+                            <a href="#projets" class="btn-primaire btn-inline"><i class="fa-solid fa-folder-open"></i> Voir mes réalisations</a>
+                            <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" download="CV_Julien_Martiniere_BTS_SIO_SISR.pdf" class="btn-secondaire btn-inline"><i class="fa-solid fa-download"></i> Télécharger mon CV</a>
+                            <a href="#contact" class="btn-secondaire btn-inline"><i class="fa-solid fa-paper-plane"></i> Me contacter</a>
                         </div>
                     </div>
+                    <div class="hero-photo">
+                        <img src="img/IMG_3991.jpeg" alt="Photo de Julien Martinière" class="photo-hero">
+                        <div class="carte-flottante"><i class="fa-solid fa-network-wired"></i><div><strong>CCNA</strong><span>en préparation</span></div></div>
+                    </div>
                 </div>
+
+                <!-- Chiffres clés -->
+                <div class="chiffres-accueil">
+                    <a href="#stage"><strong>5</strong><span>semaines de stage en entreprise</span></a>
+                    <a href="#stage"><strong>7</strong><span>missions réalisées chez 2CER</span></a>
+                    <a href="#projets"><strong>3</strong><span>projets d'infrastructure et web</span></a>
+                    <a href="#procedures"><strong>9</strong><span>procédures techniques rédigées</span></a>
+                </div>
+
+                <!-- Bio -->
+                <div class="bloc-accueil bio-accueil">
+                    <h2 class="titre-accueil">À propos de moi</h2>
+                    <p>Je suis étudiant en 2<sup>e</sup> année de BTS SIO option SISR au <a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener">Campus Saint-Aspais de Melun</a>. Ce qui me plaît, c'est de mettre en place des infrastructures solides et de voir le résultat concret : un service qui fonctionne, un réseau stable, des utilisateurs qui travaillent sans y penser.</p>
+                    <p>Pendant mon <a href="#stage">stage de première année chez 2CER Technologies</a>, j'ai tiré et soudé de la fibre optique, certifié des liens réseau et câblé des locaux entiers. Cette année, je travaille sur le <a href="#projets">projet M2L</a> (pfSense, MariaDB, Asterisk, Nextcloud) et je prépare la certification Cisco CCNA. Je suis rigoureux, curieux et à l'aise en équipe.</p>
+                    <div class="badges-a-propos">
+                        <span class="item-badge">Vaux-le-Pénil / Melun (77)</span>
+                        <span class="item-badge">Permis B – véhiculé</span>
+                        <span class="item-badge">Anglais B1 (CECRL)</span>
+                    </div>
+                </div>
+
+                <!-- Ce que je sais faire -->
+                <h2 class="titre-accueil">Ce que je sais faire</h2>
+                <div class="grille-savoirfaire">
+                    <a href="#competences" class="carte-savoirfaire">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h3>Réseaux</h3>
+                        <p>Configurer des équipements Cisco, segmenter en VLAN, router et filtrer le trafic.</p>
+                        <span class="lien-detail">Cisco IOS · VLAN · ACL · routage</span>
+                    </a>
+                    <a href="#competences" class="carte-savoirfaire">
+                        <i class="fa-solid fa-server"></i>
+                        <h3>Systèmes &amp; services</h3>
+                        <p>Installer et administrer des serveurs Linux et Windows et les services qu'ils hébergent.</p>
+                        <span class="lien-detail">Debian · Windows Server · DNS · MariaDB</span>
+                    </a>
+                    <a href="#competences" class="carte-savoirfaire">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Cybersécurité</h3>
+                        <p>Protéger une infrastructure : pare-feu, DMZ, accès distants chiffrés, supervision.</p>
+                        <span class="lien-detail">pfSense · NAT · SSH · Wazuh</span>
+                    </a>
+                    <a href="#stage" class="carte-savoirfaire">
+                        <i class="fa-solid fa-plug"></i>
+                        <h3>Terrain</h3>
+                        <p>Intervenir sur site : tirage et soudure de fibre, câblage RJ45, couverture Wi-Fi.</p>
+                        <span class="lien-detail">Fibre optique · RJ45 · Wi-Fi</span>
+                    </a>
+                </div>
+
+                <!-- Réalisations phares -->
+                <div class="entete-ligne">
+                    <h2 class="titre-accueil">Réalisations phares</h2>
+                    <a href="#projets" class="lien-tout">Tous les projets <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="grille-phares">
+                    <a href="#projets" class="carte-phare">
+                        <div class="visuel-phare banniere-m2l"><div><i class="fa-solid fa-sitemap"></i><span>M2L</span></div></div>
+                        <div class="corps-phare">
+                            <span class="type-mission">Projet · en cours</span>
+                            <h3>Infrastructure de la Maison des Ligues</h3>
+                            <p>Pare-feu pfSense, réplication MariaDB, VoIP Asterisk, GLPI et Nextcloud, documentés de A à Z.</p>
+                        </div>
+                    </a>
+                    <a href="#stage" class="carte-phare">
+                        <div class="visuel-phare"><img src="img/rapport_page9_img1.jpeg" alt="Tirage de câble fibre au Médiapôle de Grigny" loading="lazy"></div>
+                        <div class="corps-phare">
+                            <span class="type-mission">Stage · 2CER Technologies</span>
+                            <h3>Fibre optique au Médiapôle de Grigny</h3>
+                            <p>Deux câbles de 80 m tirés, un blocage diagnostiqué, des soudures par fusion : un bâtiment raccordé.</p>
+                        </div>
+                    </a>
+                    <a href="#projets" class="carte-phare">
+                        <div class="visuel-phare"><img src="img/cisco-packet-tracer.png" alt="Maquette réseau Cisco" loading="lazy"></div>
+                        <div class="corps-phare">
+                            <span class="type-mission">Projet · 1re année</span>
+                            <h3>Infrastructure réseau sécurisée multisite</h3>
+                            <p>Proxmox, pfSense, VLAN et DMZ : une organisation complète simulée puis virtualisée.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Veille -->
+                <a href="#veille" class="bandeau-veille">
+                    <i class="fa-solid fa-satellite"></i>
+                    <div><span class="type-mission">Ma veille technologique</span><strong>Starlink : les réseaux en orbite basse peuvent-ils concurrencer la fibre ?</strong></div>
+                    <i class="fa-solid fa-arrow-right fleche"></i>
+                </a>
+
+                <footer class="pied-page">
+                    <span>© 2026 Julien Martinière · Portfolio BTS SIO SISR</span>
+                    <span><a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener">Campus Saint-Aspais</a> · <a href="https://linkedin.com/in/julien-martiniere" target="_blank" rel="noopener">LinkedIn</a> · <a href="#referentiel">Référentiel BTS</a></span>
+                </footer>
             </section>
 
             <!-- COMPETENCES -->
