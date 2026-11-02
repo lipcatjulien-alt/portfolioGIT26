@@ -1833,3 +1833,7 @@ p { color: var(--texte-2); }
 .veille-attente { border-top-color: #C58A4A !important; }
 .statut-attente { background: #FAF3EA; color: #8A5A24; } .point-orange { background: #C58A4A; }
 .bouton-menu-mobile { background: #fff; color: var(--encre); border: 1px solid var(--ligne); }
+/* Petits titres de cartes : police normale (le condensé reste réservé aux grands titres) */
+.carte-document h3, .carte-domaine h3, .carte-contexte h4, .carte-savoirfaire h3, .corps-phare h3, .corps-mission h4, .info-proc h3, .carte-ref-dl h3, .veille-terrain h3, .boite-contact-mini h4, .contenu-chronologie h3, .bloc-veille h4 {
+  font-family: var(--police); font-weight: 600; letter-spacing: -.1px;
+}
