@@ -122,7 +122,7 @@
                     <a href="#stage"><strong>5</strong><span>semaines de stage en entreprise</span></a>
                     <a href="#stage"><strong>7</strong><span>missions réalisées chez 2CER</span></a>
                     <a href="#projets"><strong>4</strong><span>projets et ateliers réalisés ou en cours</span></a>
-                    <a href="#procedures"><strong>9</strong><span>procédures techniques rédigées</span></a>
+                    <a href="#procedures"><strong>12</strong><span>procédures techniques rédigées</span></a>
                 </div>
 
                 <!-- Bio -->
@@ -598,6 +598,8 @@
                                 <p>Installation de GLPI 11 sur une VM Debian dédiée avec Apache et PHP, connexion au serveur MariaDB maître et déclaration du réplica. La base de données est hébergée sur des VM séparées du serveur web.</p>
                                 <p><strong>Validation :</strong> page d'authentification accessible (HTTP 200), connexion à l'interface, schéma de base vérifié et contrôles de la base principale et du réplica réussis.</p>
                                 <p><strong>Incidents traités :</strong> accès distant MariaDB bloqué par une écoute locale, erreur HTTP 500 liée à la clé applicative et décalage horaire entre les serveurs.</p>
+                                <h4>Mes documentations techniques</h4>
+                                <ul class="liste-m2l"><li><a href="docs/procedures/Documentation_GLPI_M2L.pdf" target="_blank" rel="noopener">GLPI — M2L — consulter la procédure PDF</a></li><li><a href="docs/procedures/Documentation_Replication_MariaDB.pdf" target="_blank" rel="noopener">Réplication MariaDB — M2L — consulter la procédure PDF</a></li><li><a href="docs/procedures/Documentation_Asterisk_M2L.pdf" target="_blank" rel="noopener">Asterisk VoIP — M2L — consulter la procédure PDF</a></li></ul>
                                 <h4>Travaux complémentaires et prochaines étapes</h4>
                                 <ul class="liste-m2l">
                                     <li><strong>Nextcloud :</strong> brique dont j'ai la charge sur M2L-NEXTCLOUD : dossiers par ligue, dossier Commun en lecture seule et agent Wazuh. Validation finale à documenter.</li>
@@ -899,7 +901,7 @@
             <section id="procedures" class="vue">
                 <h2 class="titre-vue">Procédures techniques</h2>
                 <p style="margin-bottom: 3rem; color: var(--couleur-texte-muet); font-size: 1.1rem;">
-                    Consultez ou téléchargez les procédures techniques que j'ai rédigées pendant le BTS SIO SISR, de la plus récente à la plus ancienne.
+                    Consultez ou téléchargez les procédures techniques que j'ai rédigées pendant le BTS SIO SISR. Les documentations du projet M2L sont présentées en premier.
                 </p>
 
                 <div class="filtres-procedures">
@@ -911,6 +913,52 @@
                 </div>
 
                 <div class="grille-procedures">
+
+                    <article class="carte-procedure" data-categorie="systeme">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-ticket icone-procedure" aria-hidden="true"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Système · M2L</span>
+                                <h3>GLPI — M2L</h3>
+                                <p>Installation avec base déportée, tests et résolution des incidents</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Documentation_GLPI_M2L.pdf" target="_blank" rel="noopener" class="btn-vue-proc" aria-label="Visionner la documentation GLPI — M2L (PDF, nouvel onglet)"><i class="fa-solid fa-eye" aria-hidden="true"></i> Visionner</a>
+                            <a href="docs/procedures/Documentation_GLPI_M2L.pdf" download="Documentation_GLPI_M2L.pdf" class="btn-dl-proc" aria-label="Télécharger la documentation GLPI — M2L"><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger</a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="systeme">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-database icone-procedure" aria-hidden="true"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Système · M2L</span>
+                                <h3>Réplication MariaDB — M2L</h3>
+                                <p>Configuration du réplica, contrôle des 442 tables et reprise après redémarrage</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Documentation_Replication_MariaDB.pdf" target="_blank" rel="noopener" class="btn-vue-proc" aria-label="Visionner la documentation Réplication MariaDB — M2L (PDF, nouvel onglet)"><i class="fa-solid fa-eye" aria-hidden="true"></i> Visionner</a>
+                            <a href="docs/procedures/Documentation_Replication_MariaDB.pdf" download="Documentation_Replication_MariaDB.pdf" class="btn-dl-proc" aria-label="Télécharger la documentation Réplication MariaDB — M2L"><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger</a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="systeme reseau">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-phone icone-procedure" aria-hidden="true"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Système &amp; Réseau · M2L</span>
+                                <h3>Asterisk VoIP — M2L</h3>
+                                <p>Installation, configuration PJSIP et plan de numérotation</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Documentation_Asterisk_M2L.pdf" target="_blank" rel="noopener" class="btn-vue-proc" aria-label="Visionner la documentation Asterisk VoIP — M2L (PDF, nouvel onglet)"><i class="fa-solid fa-eye" aria-hidden="true"></i> Visionner</a>
+                            <a href="docs/procedures/Documentation_Asterisk_M2L.pdf" download="Documentation_Asterisk_M2L.pdf" class="btn-dl-proc" aria-label="Télécharger la documentation Asterisk VoIP — M2L"><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger</a>
+                        </div>
+                    </article>
+
 
                     <article class="carte-procedure" data-categorie="reseau">
                         <div class="rangee-contenu-proc">
