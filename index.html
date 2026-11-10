@@ -121,7 +121,7 @@
                 <div class="chiffres-accueil">
                     <a href="#stage"><strong>5</strong><span>semaines de stage en entreprise</span></a>
                     <a href="#stage"><strong>7</strong><span>missions réalisées chez 2CER</span></a>
-                    <a href="#projets"><strong>3</strong><span>projets d'infrastructure et web</span></a>
+                    <a href="#projets"><strong>4</strong><span>projets et ateliers réalisés ou en cours</span></a>
                     <a href="#procedures"><strong>9</strong><span>procédures techniques rédigées</span></a>
                 </div>
 
@@ -177,7 +177,7 @@
                         <div class="corps-phare">
                             <span class="type-mission">Projet, en cours</span>
                             <h3>Infrastructure de la Maison des Ligues</h3>
-                            <p>Pare-feu pfSense, réplication MariaDB, VoIP Asterisk, GLPI et Nextcloud, documentés de A à Z.</p>
+                            <p>GLPI et réplication MariaDB validés, serveur Asterisk installé ; intégration et tests en cours.</p>
                         </div>
                     </a>
                     <a href="#stage" class="carte-phare">
@@ -579,28 +579,36 @@
                     <!-- Projet M2L (en cours) -->
                     <article class="carte-projet projet-majeur">
                         <div class="conteneur-img-projet banniere-m2l">
-                            <div><i class="fa-solid fa-network-wired"></i><span>M2L — Maison des Ligues</span><small>Atelier de professionnalisation · 2<sup>e</sup> année</small></div>
+                            <div><i class="fa-solid fa-network-wired" aria-hidden="true"></i><span>M2L — Maison des Ligues</span><small>Atelier de professionnalisation · 2<sup>e</sup> année</small></div>
                         </div>
                         <div class="contenu-projet" style="padding: 2.5rem;">
                             <span class="type-projet">Infrastructure &amp; services · En cours (2026 – 2027)</span>
-                            <h3>Projet M2L : infrastructure et services de la Maison des Ligues</h3>
+                            <h3>Projet M2L : déployer et documenter les services de la Maison des Ligues</h3>
                             <div class="desc-projet">
-                                <p><strong>Contexte :</strong> la Maison des Ligues héberge plusieurs ligues sportives et a besoin d'une infrastructure fiable et sécurisée. En équipe, nous déployons les services décrits dans le cahier des charges.</p>
-                                <p><strong>Ma participation :</strong> mise en place et documentation technique des briques suivantes.</p>
+                                <p><strong>Objectif :</strong> mettre à disposition des ligues sportives des services de gestion de parc, de téléphonie et de partage de fichiers sur une infrastructure virtualisée. Ce projet de deuxième année est distinct de mon projet d'infrastructure réseau multisite.</p>
+                                <p><strong>Ma contribution :</strong> installation, configuration, tests et rédaction des procédures Asterisk, GLPI et réplication MariaDB décrites ci-dessous. Pour MariaDB, mon travail porte principalement sur le serveur esclave et quelques corrections sur le maître, déjà préparé en amont.</p>
+                                <h4>Asterisk — serveur installé, appels à valider</h4>
+                                <p>Installation d'Asterisk 22 depuis les sources sur Debian, configuration PJSIP des postes 1001 et 1002, plan de numérotation interne et numéro de test d'écho 600. Le service systemd fonctionne avec un compte dédié et démarre automatiquement.</p>
+                                <p><strong>Validation :</strong> service actif, écoute SIP et plan de numérotation contrôlés. Aucun téléphone n'était encore enregistré lors des tests documentés ; les appels et les flux entre le VLAN serveurs et le VLAN voix restent à valider.</p>
+                                <p><strong>Difficulté résolue :</strong> correction d'un échec du script de compilation et ajout d'un verrou pour empêcher deux installations simultanées.</p>
+                                <h4>MariaDB — réplication de la base GLPI validée</h4>
+                                <p>Installation et configuration de l'esclave, import initial de la base et démarrage de la réplication depuis le journal binaire du maître. Création d'un compte applicatif limité à la lecture sur le réplica.</p>
+                                <p><strong>Résultat documenté :</strong> threads de réception et d'application actifs, aucune erreur et aucun retard au moment du contrôle. Les 442 tables de GLPI sont présentes sur les deux serveurs ; la réplication reprend après redémarrage du service.</p>
+                                <h4>GLPI — application accessible avec base déportée</h4>
+                                <p>Installation de GLPI 11 sur une VM Debian dédiée avec Apache et PHP, connexion au serveur MariaDB maître et déclaration du réplica. La base de données est hébergée sur des VM séparées du serveur web.</p>
+                                <p><strong>Validation :</strong> page d'authentification accessible (HTTP 200), connexion à l'interface, schéma de base vérifié et contrôles de la base principale et du réplica réussis.</p>
+                                <p><strong>Incidents traités :</strong> accès distant MariaDB bloqué par une écoute locale, erreur HTTP 500 liée à la clé applicative et décalage horaire entre les serveurs.</p>
+                                <h4>Travaux complémentaires et prochaines étapes</h4>
                                 <ul class="liste-m2l">
-                                    <li><strong>Pare-feu pfSense</strong> : filtrage, NAT et DMZ</li>
-                                    <li><strong>Réplication MariaDB</strong> maître → esclave entre les deux serveurs de bases de données</li>
-                                    <li><strong>GLPI</strong> avec base de données déportée sur le serveur SGBD</li>
-                                    <li><strong>Serveur VoIP Asterisk</strong></li>
-                                    <li><strong>Serveur Nextcloud</strong> : un dossier par ligue, un dossier commun en lecture seule, agent Wazuh</li>
+                                    <li><strong>Nextcloud :</strong> brique dont j'ai la charge sur M2L-NEXTCLOUD : dossiers par ligue, dossier Commun en lecture seule et agent Wazuh. Validation finale à documenter.</li>
+                                    <li><strong>pfSense :</strong> rédaction de la documentation technique.</li>
+                                    <li><strong>GLPI :</strong> suivi des problèmes dans les tickets à compléter ; HTTPS, actions automatiques et sécurisation des comptes à finaliser selon la procédure.</li>
+                                    <li><strong>Réplica :</strong> état final de l'option read_only à confirmer, car les documentations GLPI et MariaDB décrivent des états différents.</li>
                                 </ul>
-                            </div>
-                            <div class="competences-bts" style="background: var(--papier); padding: 1.25rem 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 3px solid var(--couleur-accent);">
-                                <strong style="color: var(--couleur-accent);">Compétences BTS mobilisées :</strong>
-                                <span style="color: var(--couleur-texte-muet);">gérer le patrimoine informatique · travailler en mode projet · mettre à disposition des utilisateurs un service informatique</span>
+                                <p><strong>Compétences travaillées :</strong> déployer des services Linux, configurer une base déportée et sa réplication, diagnostiquer des incidents, effectuer des tests et rédiger des procédures techniques.</p>
                             </div>
                             <div class="tags" style="margin-top: 1.5rem;">
-                                <span>pfSense</span><span>MariaDB</span><span>GLPI</span><span>Asterisk</span><span>Nextcloud</span><span>Wazuh</span>
+                                <span>Debian</span><span>Proxmox VE</span><span>MariaDB</span><span>GLPI</span><span>Asterisk / PJSIP</span><span>Nextcloud</span>
                             </div>
                         </div>
                     </article>
