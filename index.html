@@ -15,6 +15,19 @@
     <script src="js/app.js" defer></script>
 
 
+    <style>
+        .documents-m2l { display:flex; flex-wrap:wrap; gap:.75rem; margin:1rem 0 1.5rem; }
+        .vue-principale .documents-m2l .bouton-doc-m2l { display:inline-flex; align-items:center; gap:.65rem; padding:.8rem 1rem; border:1px solid #CBD5E1; border-radius:8px; background:#F1F4F8; color:#2F5A8F; text-decoration:none; font-weight:600; }
+        .vue-principale .documents-m2l .bouton-doc-m2l:hover { background:#E5ECF5; border-color:#2F5A8F; }
+        .bouton-doc-m2l span { font-size:.75rem; font-weight:400; }
+        .details-m2l { border:1px solid #E1E5EB; border-radius:8px; margin-top:1.25rem; }
+        .details-m2l summary { padding:1rem; cursor:pointer; font-weight:600; color:#2F5A8F; }
+        .details-m2l[open] summary { border-bottom:1px solid #E1E5EB; }
+        .corps-details-m2l { padding:1.25rem; }
+        .corps-details-m2l h4:not(:first-child) { margin-top:1.5rem; }
+        .details-m2l summary:focus-visible, .bouton-doc-m2l:focus-visible { outline:3px solid #2F5A8F; outline-offset:3px; }
+        .aide-contact { color:var(--couleur-texte-muet); line-height:1.6; margin-bottom:1.25rem; }
+    </style>
 </head>
 
 <body>
@@ -129,7 +142,7 @@
                 <div class="bloc-accueil bio-accueil">
                     <h2 class="titre-accueil">À propos de moi</h2>
                     <p>Je suis étudiant en 2<sup>e</sup> année de BTS SIO option SISR au <a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener">Campus Saint-Aspais de Melun</a>. Ce qui me plaît, c'est de mettre en place des infrastructures solides et de voir le résultat concret : un service qui fonctionne, un réseau stable, des utilisateurs qui travaillent sans y penser.</p>
-                    <p>Pendant mon <a href="#stage">stage de première année chez 2CER Technologies</a>, j'ai tiré et soudé de la fibre optique, certifié des liens réseau et câblé des locaux entiers. Cette année, je travaille sur le <a href="#projets">projet M2L</a> (pfSense, MariaDB, Asterisk, Nextcloud) et je prépare la certification Cisco CCNA. Je suis rigoureux, curieux et à l'aise en équipe.</p>
+                    <p>Pendant mon <a href="#stage">stage de première année chez 2CER Technologies</a>, j'ai tiré et soudé de la fibre optique, testé le débit de liens réseau et câblé des locaux entiers. Cette année, je travaille sur le <a href="#projets">projet M2L</a> (pfSense, MariaDB, Asterisk, Nextcloud) et je prépare la certification Cisco CCNA. Je suis rigoureux, curieux et à l'aise en équipe.</p>
                     <div class="badges-a-propos">
                         <span class="item-badge">Vaux-le-Pénil / Melun (77)</span>
                         <span class="item-badge">Permis B – véhiculé</span>
@@ -237,7 +250,7 @@
                         <div class="puces-tech">
                             <span class="f">Proxmox VE</span><span class="f">Linux bridges</span><span class="f">Provisionnement de VM</span><span class="s">VM Debian de test iperf3</span>
                         </div>
-                        <p class="preuves"><strong>Mis en œuvre :</strong> <a href="#projets">Infrastructure multisite</a> · <a href="#procedures">Procédure Proxmox</a> · <a href="#stage">Certification Medis</a></p>
+                        <p class="preuves"><strong>Mis en œuvre :</strong> <a href="#projets">Infrastructure multisite</a> · <a href="#procedures">Procédure Proxmox</a> · <a href="#stage">Tests de débit Medis</a></p>
                     </article>
 
                     <article class="carte-domaine">
@@ -317,7 +330,7 @@
                     <div class="stage-resume">
                         <span class="type-mission">Technicien systèmes &amp; réseaux, 5 semaines</span>
                         <h3>2CER Technologies</h3>
-                        <p>Micro-entreprise d'infrastructures réseau et de sécurité dirigée par un ancien DSI. J'ai été son premier stagiaire et j'ai travaillé à ses côtés sur des chantiers réels : fibre optique, certification de liens, câblage, Wi-Fi et audits clients.</p>
+                        <p>Micro-entreprise d'infrastructures réseau et de sécurité dirigée par un ancien DSI. J'ai été son premier stagiaire et j'ai travaillé à ses côtés sur des chantiers réels : fibre optique, tests de débit, câblage, Wi-Fi et audits clients.</p>
                         <div class="chiffres-stage">
                             <div><strong>5</strong><span>semaines</span></div>
                             <div><strong>7</strong><span>missions</span></div>
@@ -374,7 +387,7 @@
                         <div class="vignette-mission"><img src="img/rapport_page16_img2.jpeg" alt="" loading="lazy"></div>
                         <div class="corps-mission">
                             <span class="type-mission">Chantier client, Centre de santé Medis</span>
-                            <h4>Certification des performances réseau</h4>
+                            <h4>Tests de débit et validation des performances réseau</h4>
                             <p>Mesure et validation du débit d'un lien réseau avec iperf3 depuis une VM Proxmox.</p>
                             <div class="tags-mission"><span>Proxmox</span><span>Debian</span><span>iperf3</span><span>OpenSpeedTest</span></div>
                             <span class="lien-detail">Voir le détail</span>
@@ -440,7 +453,7 @@
                             <li>Câblage complet et étude Wi-Fi des nouveaux locaux</li>
                             <li>Participation au chantier fibre du Médiapôle de Grigny</li>
                             <li>Audits et études pour les clients (Selfstock, Grigny)</li>
-                            <li>Certification de lien pour le centre Medis</li>
+                            <li>Tests de débit pour le centre Medis</li>
                         </ul>
                     </div>
                     <div class="carte-contexte">
@@ -465,14 +478,14 @@
                 <dialog class="fenetre-mission" id="mission-medis" aria-labelledby="titre-medis">
                     <button class="fermer-fenetre" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
                     <span class="type-mission">Chantier client, Centre de santé Medis</span>
-                    <h3 id="titre-medis">Certification des performances réseau</h3>
+                    <h3 id="titre-medis">Tests de débit et validation des performances réseau</h3>
                     <div class="sar">
                         <div><h5><i class="fa-solid fa-circle-question"></i> Contexte</h5><p>Le centre de santé avait besoin de garanties sur les performances de sa liaison réseau après intervention.</p></div>
                         <div><h5><i class="fa-solid fa-screwdriver-wrench"></i> Ce que j'ai fait</h5><ol><li>Déploiement d'une VM Debian sous Proxmox dédiée aux tests.</li><li>Génération de flux intensifs avec iperf3 pour saturer le lien.</li><li>Mesures complémentaires depuis les postes utilisateurs avec OpenSpeedTest.</li></ol></div>
                         <div class="resultat"><h5><i class="fa-solid fa-circle-check"></i> Résultat</h5><p>Les performances du lien sont mesurées et documentées pour le client.</p></div>
                     </div>
                     <div class="comp-mobilisees"><strong>Compétences BTS mobilisées :</strong> <span>Mettre à disposition un service informatique</span><span>Répondre aux incidents et aux demandes d'assistance</span></div>
-                    <div class="galerie-mission"><figure><img src="img/rapport_page16_img2.jpeg" alt="Résultats de la certification iperf3" loading="lazy" class="zoomable"><figcaption>Résultats de la certification iperf3</figcaption></figure></div>
+                    <div class="galerie-mission"><figure><img src="img/rapport_page16_img2.jpeg" alt="Résultats des tests de débit iperf3" loading="lazy" class="zoomable"><figcaption>Résultats des tests de débit iperf3</figcaption></figure></div>
                 </dialog>
                 <dialog class="fenetre-mission" id="mission-bidi" aria-labelledby="titre-bidi">
                     <button class="fermer-fenetre" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
@@ -589,6 +602,16 @@
                             <div class="desc-projet">
                                 <p><strong>Objectif :</strong> mettre à disposition des ligues sportives des services de gestion de parc, de téléphonie et de partage de fichiers sur une infrastructure virtualisée. Ce projet de deuxième année est distinct de mon projet d'infrastructure réseau multisite.</p>
                                 <p><strong>Ma contribution :</strong> installation, configuration, tests et rédaction des procédures Asterisk, GLPI et réplication MariaDB décrites ci-dessous. Pour MariaDB, mon travail porte principalement sur le serveur esclave et quelques corrections sur le maître, déjà préparé en amont.</p>
+                                <ul class="liste-m2l resume-m2l">
+                                    <li><strong>GLPI :</strong> application accessible et contrôles des bases réussis.</li>
+                                    <li><strong>MariaDB :</strong> 442 tables répliquées ; reprise après redémarrage validée.</li>
+                                    <li><strong>Asterisk :</strong> serveur installé ; appels et flux inter-VLAN à tester.</li>
+                                </ul>
+                                <h4>Mes documentations techniques</h4>
+                                <div class="documents-m2l"><a class="bouton-doc-m2l" href="docs/procedures/Documentation_GLPI_M2L.pdf" target="_blank" rel="noopener" aria-label="Consulter la procédure GLPI (PDF, nouvel onglet)"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> GLPI <span>PDF ↗</span></a><a class="bouton-doc-m2l" href="docs/procedures/Documentation_Replication_MariaDB.pdf" target="_blank" rel="noopener" aria-label="Consulter la procédure MariaDB (PDF, nouvel onglet)"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> MariaDB <span>PDF ↗</span></a><a class="bouton-doc-m2l" href="docs/procedures/Documentation_Asterisk_M2L.pdf" target="_blank" rel="noopener" aria-label="Consulter la procédure Asterisk (PDF, nouvel onglet)"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Asterisk <span>PDF ↗</span></a></div>
+                                <details class="details-m2l">
+                                    <summary>Voir les détails techniques et les prochaines étapes</summary>
+                                    <div class="corps-details-m2l">
                                 <h4>Asterisk — serveur installé, appels à valider</h4>
                                 <p>Installation d'Asterisk 22 depuis les sources sur Debian, configuration PJSIP des postes 1001 et 1002, plan de numérotation interne et numéro de test d'écho 600. Le service systemd fonctionne avec un compte dédié et démarre automatiquement.</p>
                                 <p><strong>Validation :</strong> service actif, écoute SIP et plan de numérotation contrôlés. Aucun téléphone n'était encore enregistré lors des tests documentés ; les appels et les flux entre le VLAN serveurs et le VLAN voix restent à valider.</p>
@@ -600,8 +623,6 @@
                                 <p>Installation de GLPI 11 sur une VM Debian dédiée avec Apache et PHP, connexion au serveur MariaDB maître et déclaration du réplica. La base de données est hébergée sur des VM séparées du serveur web.</p>
                                 <p><strong>Validation :</strong> page d'authentification accessible (HTTP 200), connexion à l'interface, schéma de base vérifié et contrôles de la base principale et du réplica réussis.</p>
                                 <p><strong>Incidents traités :</strong> accès distant MariaDB bloqué par une écoute locale, erreur HTTP 500 liée à la clé applicative et décalage horaire entre les serveurs.</p>
-                                <h4>Mes documentations techniques</h4>
-                                <ul class="liste-m2l"><li><a href="docs/procedures/Documentation_GLPI_M2L.pdf" target="_blank" rel="noopener">GLPI — M2L — consulter la procédure PDF</a></li><li><a href="docs/procedures/Documentation_Replication_MariaDB.pdf" target="_blank" rel="noopener">Réplication MariaDB — M2L — consulter la procédure PDF</a></li><li><a href="docs/procedures/Documentation_Asterisk_M2L.pdf" target="_blank" rel="noopener">Asterisk VoIP — M2L — consulter la procédure PDF</a></li></ul>
                                 <h4>Travaux complémentaires et prochaines étapes</h4>
                                 <ul class="liste-m2l">
                                     <li><strong>Nextcloud :</strong> brique dont j'ai la charge sur M2L-NEXTCLOUD : dossiers par ligue, dossier Commun en lecture seule et agent Wazuh. Validation finale à documenter.</li>
@@ -610,6 +631,8 @@
                                     <li><strong>Réplica :</strong> état final de l'option read_only à confirmer, car les documentations GLPI et MariaDB décrivent des états différents.</li>
                                 </ul>
                                 <p><strong>Compétences travaillées :</strong> déployer des services Linux, configurer une base déportée et sa réplication, diagnostiquer des incidents, effectuer des tests et rédiger des procédures techniques.</p>
+                                    </div>
+                                </details>
                             </div>
                             <div class="tags" style="margin-top: 1.5rem;">
                                 <span>Debian</span><span>Proxmox VE</span><span>MariaDB</span><span>GLPI</span><span>Asterisk / PJSIP</span><span>Nextcloud</span>
@@ -761,6 +784,7 @@
                     <table class="tableau-synthese">
                         <thead><tr><th scope="col">Réalisation</th><th scope="col">Gérer le patrimoine informatique</th><th scope="col">Répondre aux incidents et aux demandes d'assistance</th><th scope="col">Développer la présence en ligne</th><th scope="col">Travailler en mode projet</th><th scope="col">Mettre à disposition un service informatique</th><th scope="col">Organiser son développement professionnel</th></tr></thead>
                         <tbody>
+                            <tr><th scope="row">Immersion BAC PRO CIEL — encadrement de quatre élèves et aide à la configuration du switch<span class="type-reali">Atelier du 9 novembre 2026</span></th><td></td><td class="coche">✓</td><td></td><td class="coche">✓</td><td></td><td></td></tr>
                             <tr><th scope="row">Projet M2L — pfSense, réplication MariaDB, GLPI, Asterisk, Nextcloud<span class="type-reali">AP 2<sup>e</sup> année (en cours)</span></th><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
                             <tr><th scope="row">Configuration d'un switch Cisco SF500 (VLAN, accès distant SSH)<span class="type-reali">TP 2<sup>e</sup> année</span></th><td class="coche">✓</td><td></td><td></td><td></td><td class="coche">✓</td><td></td></tr>
                             <tr><th scope="row">Infrastructure réseau sécurisée multisite (Proxmox, pfSense, VLAN, DMZ)<span class="type-reali">Projet formation</span></th><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
@@ -768,7 +792,7 @@
                             <tr><th scope="row">Gestion de parc GLPI — Melun Design (inventaire, tickets)<span class="type-reali">TP 2<sup>e</sup> année</span></th><td class="coche">✓</td><td class="coche">✓</td><td></td><td></td><td></td><td></td></tr>
                             <tr><th scope="row">Réplication MariaDB maître/esclave<span class="type-reali">TP 2<sup>e</sup> année</span></th><td></td><td></td><td></td><td></td><td class="coche">✓</td><td></td></tr>
                             <tr><th scope="row">Raccordement fibre inter-bâtiments — Médiapôle de Grigny<span class="type-reali">Stage</span></th><td></td><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
-                            <tr><th scope="row">Certification de lien iperf3 — Centre de santé Medis<span class="type-reali">Stage</span></th><td></td><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td></td></tr>
+                            <tr><th scope="row">Tests de débit iperf3 — Centre de santé Medis<span class="type-reali">Stage</span></th><td></td><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td></td></tr>
                             <tr><th scope="row">Audit vidéosurveillance — Selfstock<span class="type-reali">Stage</span></th><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td></td><td></td></tr>
                             <tr><th scope="row">Câblage RJ45 et étude Wi-Fi — locaux 2CER<span class="type-reali">Stage</span></th><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
                             <tr><th scope="row">Assises du THD, salon Allnet, MOOC cybersécurité, préparation CCNA<span class="type-reali">Veille / certif.</span></th><td></td><td></td><td></td><td></td><td></td><td class="coche">✓</td></tr>
@@ -806,7 +830,7 @@
                         <div class="contenu-chronologie">
                             <h3>Stage technicien systèmes et réseaux</h3>
                             <div class="lieu"><a href="#stage">2CER Technologies</a>, Brie-Comte-Robert</div>
-                            <p>Tirage et soudure de fibre optique, certification de liens (iperf3), câblage RJ45, étude de couverture Wi-Fi et audit de vidéosurveillance.</p>
+                            <p>Tirage et soudure de fibre optique, tests de débit (iperf3), câblage RJ45, étude de couverture Wi-Fi et audit de vidéosurveillance.</p>
                         </div>
                     </div>
                     <div class="item-chronologie">
@@ -1142,7 +1166,8 @@
                 <div class="mise-en-page-contact-grid">
                     <div class="formulaire-contact-bloc">
                         <h3 style="margin-bottom: 1.5rem; color: var(--couleur-texte-principal);">M'envoyer un message</h3>
-                        <form class="form-contact" id="form-contact">
+                        <p id="aide-contact" class="aide-contact">Ce formulaire prépare un email dans votre application de messagerie. Vous pourrez le vérifier puis l’envoyer depuis celle-ci.</p>
+                        <form class="form-contact" id="form-contact" aria-describedby="aide-contact">
                             <div class="groupe-form">
                                 <label for="nom">Nom / Entreprise</label>
                                 <input type="text" id="nom" name="nom" required placeholder="Votre nom">
@@ -1156,7 +1181,7 @@
                                 <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
                             </div>
                             <button type="submit" class="btn-primaire" style="width: 100%;">
-                                <i class="fa-solid fa-paper-plane"></i> Envoyer
+                                <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i> Ouvrir ma messagerie
                             </button>
                         </form>
                     </div>
