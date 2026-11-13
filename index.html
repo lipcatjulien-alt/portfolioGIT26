@@ -39,6 +39,15 @@
         @media (max-width:1000px) { #accueil .hero-photo { max-width:280px; } }
         @media (max-width:600px) { #accueil .hero-photo { max-width:240px; border-radius:20px; } }
     </style>
+    <style>
+        #accueil .preuves-hero { display:flex; flex-wrap:wrap; gap:.55rem 1rem; padding:0; margin:0 0 1.5rem; list-style:none; color:#42536A; font-size:.85rem; }
+        #accueil .preuves-hero li { display:flex; align-items:center; gap:.45rem; }
+        #accueil .preuves-hero i { color:#2F5A8F; }
+        #accueil .accroche { margin-bottom:1rem; }
+        #accueil .ruban-fibres { margin-bottom:.8rem; }
+        #accueil .ruban-fibres figcaption { font-size:.75rem; }
+        @media (max-width:600px) { #accueil .preuves-hero { flex-direction:column; gap:.65rem; } }
+    </style>
 </head>
 
 <body>
@@ -125,9 +134,14 @@
                         <h1 class="nom-hero">Julien <span>Martinière</span></h1>
                         <figure class="ruban-fibres">
                             <svg viewBox="0 0 1000 58" preserveAspectRatio="none" aria-hidden="true"><path class="brin" d="M0 24.0 H260 C340 24.0, 360 4.0, 440 4.0 H1000" stroke="#1F64C8" style="--i:0"/><path class="brin" d="M0 25.2 H260 C340 25.2, 360 8.4, 440 8.4 H1000" stroke="#F28C1E" style="--i:1"/><path class="brin" d="M0 26.4 H260 C340 26.4, 360 12.8, 440 12.8 H1000" stroke="#2E9A4B" style="--i:2"/><path class="brin" d="M0 27.6 H260 C340 27.6, 360 17.2, 440 17.2 H1000" stroke="#8B5A2B" style="--i:3"/><path class="brin" d="M0 28.8 H260 C340 28.8, 360 21.6, 440 21.6 H1000" stroke="#7A8794" style="--i:4"/><path class="brin brin-blanc" d="M0 30.0 H260 C340 30.0, 360 26.0, 440 26.0 H1000" stroke="#FFFFFF" style="--i:5"/><path class="brin" d="M0 31.2 H260 C340 31.2, 360 30.4, 440 30.4 H1000" stroke="#D7322F" style="--i:6"/><path class="brin" d="M0 32.4 H260 C340 32.4, 360 34.8, 440 34.8 H1000" stroke="#1A1A1A" style="--i:7"/><path class="brin" d="M0 33.6 H260 C340 33.6, 360 39.2, 440 39.2 H1000" stroke="#F2C230" style="--i:8"/><path class="brin" d="M0 34.8 H260 C340 34.8, 360 43.6, 440 43.6 H1000" stroke="#7B4BB7" style="--i:9"/><path class="brin" d="M0 36.0 H260 C340 36.0, 360 48.0, 440 48.0 H1000" stroke="#E87AA6" style="--i:10"/><path class="brin" d="M0 37.2 H260 C340 37.2, 360 52.4, 440 52.4 H1000" stroke="#26B8C9" style="--i:11"/></svg>
-                            <figcaption>Les 12 couleurs du code fibre optique (norme TIA-598), celles que j'ai soudées en stage.</figcaption>
+                            <figcaption>Un clin d'œil à mon expérience en fibre optique.</figcaption>
                         </figure>
-                        <p class="accroche">Futur technicien <strong>systèmes &amp; réseaux</strong>. Je conçois, déploie et sécurise des infrastructures, du serveur virtualisé jusqu'à la fibre posée sur le terrain.</p>
+                        <p class="accroche"><strong>Des infrastructures réseau au terrain.</strong><br>Étudiant en 2<sup>e</sup> année de BTS SIO SISR, je développe mes compétences en administration Linux et réseaux Cisco, avec une expérience en entreprise en fibre optique et câblage.</p>
+                        <ul class="preuves-hero" aria-label="Mes expériences concrètes">
+                            <li><i class="fa-solid fa-network-wired" aria-hidden="true"></i> Fibre et réseau chez 2CER</li>
+                            <li><i class="fa-solid fa-server" aria-hidden="true"></i> GLPI et réplication MariaDB</li>
+                            <li><i class="fa-solid fa-users" aria-hidden="true"></i> 4 élèves accompagnés en TP</li>
+                        </ul>
                         <a href="#cv" class="pastille-dispo"><span class="point-vert"></span><span>Disponible pour un stage du <strong>4 janvier au 6 février 2027</strong></span></a>
                         <div class="actions-hero">
                             <a href="#projets" class="btn-primaire btn-inline"><i class="fa-solid fa-folder-open"></i> Voir mes réalisations</a>
@@ -153,7 +167,7 @@
                 <div class="bloc-accueil bio-accueil">
                     <h2 class="titre-accueil">À propos de moi</h2>
                     <p>Je suis étudiant en 2<sup>e</sup> année de BTS SIO option SISR au <a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener">Campus Saint-Aspais de Melun</a>. Ce qui me plaît, c'est de mettre en place des infrastructures solides et de voir le résultat concret : un service qui fonctionne, un réseau stable, des utilisateurs qui travaillent sans y penser.</p>
-                    <p>Pendant mon <a href="#stage">stage de première année chez 2CER Technologies</a>, j'ai tiré et soudé de la fibre optique, testé le débit de liens réseau et câblé des locaux entiers. Cette année, je travaille sur le <a href="#projets">projet M2L</a> (pfSense, MariaDB, Asterisk, Nextcloud) et je prépare la certification Cisco CCNA. Je suis rigoureux, curieux et à l'aise en équipe.</p>
+                    <p>Pendant mon <a href="#stage">stage de première année chez 2CER Technologies</a>, j'ai tiré et soudé de la fibre optique, testé le débit de liens réseau et câblé des locaux entiers. Cette année, je travaille sur le <a href="#projets">projet M2L</a> (pfSense, MariaDB, Asterisk, Nextcloud) et je prépare la certification Cisco CCNA. J'ai également encadré quatre élèves de BAC PRO CIEL lors d'un atelier réseau : coordination du travail et aide à la configuration du switch. J'aime comprendre un problème, tester une solution et expliquer les manipulations.</p>
                     <div class="badges-a-propos">
                         <span class="item-badge">Vaux-le-Pénil / Melun (77)</span>
                         <span class="item-badge">Permis B – véhiculé</span>
