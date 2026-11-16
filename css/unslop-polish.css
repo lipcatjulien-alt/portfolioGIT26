@@ -1,0 +1,90 @@
+/*
+ * Unslop — passe de finition "Infrastructure & Réseaux"
+ * Direction validée : préserver les contenus, la navigation, IBM Plex et le ruban fibre.
+ * Méthode inspirée d'Unslop, © Damir Sokolovsky (CC BY 4.0)
+ * https://github.com/heydamir/unslop
+ * Styles isolés pour faciliter la comparaison et le retrait avant fusion.
+ */
+:root {
+  --polish-ink: #1B2A41;
+  --polish-blue: #2F5A8F;
+  --polish-blue-dark: #24476F;
+  --polish-muted: #526175;
+  --polish-rule: #DCE3EC;
+  --polish-focus: #1F64C8;
+}
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; }
+.vue-principale { padding: 32px clamp(20px, 3.2vw, 48px); }
+.vue-principale p { line-height: 1.7; }
+.vue-principale h1, .vue-principale h2, .vue-principale h3 { text-wrap: balance; }
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--polish-focus) !important;
+  outline-offset: 3px;
+}
+:where(a, button, summary) { -webkit-tap-highlight-color: rgba(47,90,143,.12); }
+
+/* Navigation : alignement net et états sans glow. */
+.barre-laterale { padding: 28px 20px 24px; }
+.entete-barre-laterale { margin-bottom: 20px; }
+.liens-nav { gap: 4px; justify-content: flex-start; min-height: 0; overflow-y: auto; padding: 4px 2px 12px; scrollbar-width: thin; }
+.item-nav { min-height: 36px; padding: 8px 12px; gap: 12px; border-radius: 8px; font-size: .9rem; line-height: 1.2; transition: background-color .18s ease, color .18s ease; }
+.item-nav:hover { transform: none; }
+.item-nav.active::before { display: none; }
+.item-nav .icon { width: 20px; flex: 0 0 20px; font-size: 1rem; }
+.pied-barre-laterale { flex: 0 0 auto; }
+.btn-telecharger { min-height: 40px; border-radius: 8px; }
+
+/* Accueil : rythme cohérent, une vraie priorité visuelle. */
+#accueil .hero-accueil { gap: clamp(28px, 4vw, 56px); padding: 32px 0 40px; }
+#accueil .nom-hero { font-size: clamp(2.8rem, 5vw, 4.8rem); line-height: 1.02; letter-spacing: -.035em; }
+#accueil .lien-ecole { margin-bottom: 20px; }
+#accueil .ruban-fibres { margin: 16px 0 12px; }
+#accueil .ruban-fibres svg { opacity: .8; }
+#accueil .ruban-fibres figcaption { color: var(--polish-muted); }
+#accueil .accroche { max-width: 64ch; font-size: clamp(1.03rem, 1.4vw, 1.15rem); line-height: 1.7; }
+#accueil .preuves-hero { margin-bottom: 20px; }
+#accueil .actions-hero { gap: 10px; }
+#accueil .actions-hero .btn-primaire { background: var(--polish-blue-dark); }
+#accueil .actions-hero a { min-height: 44px; border-radius: 8px; }
+#accueil .hero-photo { box-shadow: none; border-color: var(--polish-rule); }
+#accueil .carte-flottante { box-shadow: none; }
+#accueil .chiffres-accueil { gap: 12px; margin-bottom: 40px; }
+#accueil .chiffres-accueil a { border-radius: 10px; padding: 20px; }
+#accueil .chiffres-accueil strong { font-size: clamp(1.8rem, 3vw, 2.3rem); font-variant-numeric: tabular-nums; }
+#accueil .chiffres-accueil span { line-height: 1.5; }
+#accueil .titre-accueil { margin-bottom: 20px; line-height: 1.2; }
+#accueil .bloc-accueil { margin-bottom: 40px; border-radius: 12px; padding: 28px; }
+#accueil .grille-savoirfaire, #accueil .grille-phares { gap: 16px; }
+#accueil .carte-savoirfaire, #accueil .carte-phare { border-radius: 12px; overflow: hidden; }
+#accueil .carte-savoirfaire { padding: 24px; gap: 12px; }
+#accueil .carte-savoirfaire p { line-height: 1.6; }
+#accueil .carte-savoirfaire .lien-detail { line-height: 1.5; }
+#accueil .carte-phare .corps-phare { padding: 20px 22px 24px; gap: 8px; }
+#accueil .carte-phare .corps-phare p { line-height: 1.6; }
+#accueil .carte-phare:hover .visuel-phare img { transform: none; }
+
+/* Tous les écrans : liens lisibles, animations respectueuses. */
+.vue-principale :where(a, button) { transition-duration: .18s; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+@media (max-width: 1000px) {
+  .vue-principale { padding: 64px 24px 32px; }
+  #accueil .hero-accueil { padding-top: 12px; }
+  .barre-laterale { padding: 24px 20px; }
+  .liens-nav { overflow-y: auto; }
+}
+@media (max-width: 600px) {
+  .vue-principale { padding: 64px 16px 28px; }
+  #accueil .hero-accueil { gap: 24px; padding-bottom: 28px; }
+  #accueil .nom-hero { font-size: clamp(2.6rem, 12vw, 3.7rem); overflow-wrap: anywhere; }
+  #accueil .bloc-accueil { padding: 20px; margin-bottom: 32px; }
+  #accueil .chiffres-accueil { gap: 8px; margin-bottom: 32px; }
+  #accueil .chiffres-accueil a { padding: 16px 12px; }
+  #accueil .chiffres-accueil strong { font-size: 1.75rem; }
+  #accueil .chiffres-accueil span { font-size: .8rem; }
+  #accueil .carte-savoirfaire { padding: 20px; }
+  #accueil .actions-hero a { width: 100%; }
+}
