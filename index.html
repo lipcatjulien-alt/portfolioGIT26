@@ -12,7 +12,7 @@
     
     <link rel="stylesheet" href="css/styles.css">
     <!-- Concept V3 de prévisualisation : branche isolée, non déployée -->
-    <link rel="stylesheet" href="css/portfolio-v3-portrait-fix.css">
+    <!-- Audit V3: feuille chargée après les styles locaux pour éviter les conflits -->
     <script src="js/menu.js" defer></script>
     <script src="js/app.js" defer></script>
 
@@ -50,6 +50,7 @@
         #accueil .ruban-fibres figcaption { font-size:.75rem; }
         @media (max-width:600px) { #accueil .preuves-hero { flex-direction:column; gap:.65rem; } }
     </style>
+    <link rel="stylesheet" href="css/portfolio-v3-alignement-final.css">
 </head>
 
 <body>
@@ -328,7 +329,7 @@
                             <p style="color: var(--couleur-texte-muet); margin-bottom: 0; font-size: 0.95rem;">Initiation à la cybersécurité et sensibilisation aux risques informatiques.</p>
                         </div>
                     </div>
-                    <a href="img/ATTESTATION%20DE%20FIN%20DE%20PARCOURS.pdf" target="_blank" class="btn-primaire" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                    <a href="img/ATTESTATION%20DE%20FIN%20DE%20PARCOURS.pdf" target="_blank" rel="noopener noreferrer" class="btn-primaire" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
                         <i class="fa-solid fa-file-pdf"></i> Consulter l'attestation
                     </a>
                 </div>
@@ -364,7 +365,7 @@
                             <div><strong>2 × 80 m</strong><span>de fibre tirée</span></div>
                             <div><strong>4</strong><span>clients</span></div>
                         </div>
-                        <a href="docs/Rapport_de_Stage.pdf" target="_blank" class="btn-primaire btn-inline"><i class="fa-solid fa-file-pdf"></i> Rapport de stage complet</a>
+                        <a href="docs/Rapport_de_Stage.pdf" target="_blank" rel="noopener noreferrer" class="btn-primaire btn-inline"><i class="fa-solid fa-file-pdf"></i> Rapport de stage complet</a>
                     </div>
                     <aside class="fiche-stage">
                         <dl>
@@ -888,7 +889,7 @@
                         <p>Document de 115 pages qui définit les activités, les compétences et les épreuves du diplôme.</p>
                     </div>
                     <div class="actions-veille">
-                        <a href="docs/REFERENTIEL_BTS_SIO-_RENOVATION_SESSION_2022-SIGNETS.pdf" target="_blank" class="btn-secondaire btn-inline"><i class="fa-solid fa-eye"></i> Consulter</a>
+                        <a href="docs/REFERENTIEL_BTS_SIO-_RENOVATION_SESSION_2022-SIGNETS.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondaire btn-inline"><i class="fa-solid fa-eye"></i> Consulter</a>
                         <a href="docs/REFERENTIEL_BTS_SIO-_RENOVATION_SESSION_2022-SIGNETS.pdf" download="Referentiel_BTS_SIO_session_2022.pdf" class="btn-primaire btn-inline"><i class="fa-solid fa-download"></i> Télécharger (PDF)</a>
                     </div>
                 </div>
@@ -933,18 +934,18 @@
                 <div class="grille-documents">
                     <article class="carte-document">
                         <div class="entete-document"><i class="fa-solid fa-id-card"></i><div><h3>CV</h3><span>PDF d'une page, mis à jour en octobre 2026</span></div></div>
-                        <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" target="_blank" class="apercu-doc" title="Ouvrir le CV en PDF"><img src="img/apercu_cv.png" alt="Aperçu du CV de Julien Martinière" loading="lazy"></a>
+                        <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" target="_blank" rel="noopener noreferrer" class="apercu-doc" title="Ouvrir le CV en PDF"><img src="img/apercu_cv.png" alt="Aperçu du CV de Julien Martinière" loading="lazy"></a>
                         <div class="actions-veille">
                             <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" download="CV_Julien_Martiniere_BTS_SIO_SISR.pdf" class="btn-primaire btn-inline"><i class="fa-solid fa-download"></i> Télécharger le CV</a>
-                            <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" target="_blank" class="btn-secondaire btn-inline"><i class="fa-solid fa-up-right-from-square"></i> Ouvrir</a>
+                            <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondaire btn-inline"><i class="fa-solid fa-up-right-from-square"></i> Ouvrir</a>
                         </div>
                     </article>
                     <article class="carte-document">
                         <div class="entete-document"><i class="fa-solid fa-envelope-open-text"></i><div><h3>Lettre de motivation</h3><span>Pour un stage du 4 janvier au 6 février 2027</span></div></div>
-                        <a href="docs/Lettre_motivation_stage_2027_Julien_Martiniere.pdf" target="_blank" class="apercu-doc" title="Ouvrir la lettre en PDF"><img src="img/apercu_lettre.png" alt="Aperçu de la lettre de motivation pour un stage du 4 janvier au 6 février 2027" loading="lazy"></a>
+                        <a href="docs/Lettre_motivation_stage_2027_Julien_Martiniere.pdf" target="_blank" rel="noopener noreferrer" class="apercu-doc" title="Ouvrir la lettre en PDF"><img src="img/apercu_lettre.png" alt="Aperçu de la lettre de motivation pour un stage du 4 janvier au 6 février 2027" loading="lazy"></a>
                         <div class="actions-veille">
                             <a href="docs/Lettre_motivation_stage_2027_Julien_Martiniere.pdf" download="Lettre_motivation_stage_2027_Julien_Martiniere.pdf" class="btn-primaire btn-inline"><i class="fa-solid fa-download"></i> Télécharger la lettre</a>
-                            <a href="docs/Lettre_motivation_stage_2027_Julien_Martiniere.pdf" target="_blank" class="btn-secondaire btn-inline"><i class="fa-solid fa-up-right-from-square"></i> Ouvrir</a>
+                            <a href="docs/Lettre_motivation_stage_2027_Julien_Martiniere.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondaire btn-inline"><i class="fa-solid fa-up-right-from-square"></i> Ouvrir</a>
                         </div>
                     </article>
                 </div>
@@ -1023,7 +1024,7 @@
                             </div>
                         </div>
                         <div class="actions-procedure">
-                            <a href="docs/procedures/Configuration_Switch_Cisco_SF500.pdf" target="_blank" class="btn-vue-proc">
+                            <a href="docs/procedures/Configuration_Switch_Cisco_SF500.pdf" target="_blank" rel="noopener noreferrer" class="btn-vue-proc">
                                 <i class="fa-solid fa-eye"></i> Visionner
                             </a>
                             <a href="docs/procedures/Configuration_Switch_Cisco_SF500.pdf" download="Configuration_Switch_Cisco_SF500.pdf" class="btn-dl-proc">
@@ -1042,10 +1043,10 @@
                             </div>
                         </div>
                         <div class="actions-procedure">
-                            <a href="docs/procedures/Déploiement%20d'un%20Serveur%20TFTP%20et%20Gestion%20des%20Configurations%20Réseau.pdf" target="_blank" class="btn-vue-proc">
+                            <a href="docs/procedures/Déploiement%20d'un%20Serveur%20TFTP%20et%20Gestion%20des%20Configurations%20Réseau.pdf" target="_blank" rel="noopener noreferrer" class="btn-vue-proc">
                                 <i class="fa-solid fa-eye"></i> Visionner
                             </a>
-                            <a href="docs/procedures/Déploiement%20d'un%20Serveur%20TFTP%20et%20Gestion%20des%20Configurations%20Réseau.pdf" download="Déploiement d'un Serveur TFTP et Gestion des Configurations Réseau.pdf" target="_blank" class="btn-dl-proc">
+                            <a href="docs/procedures/Déploiement%20d'un%20Serveur%20TFTP%20et%20Gestion%20des%20Configurations%20Réseau.pdf" download="Déploiement d'un Serveur TFTP et Gestion des Configurations Réseau.pdf" target="_blank" rel="noopener noreferrer" class="btn-dl-proc">
                                 <i class="fa-solid fa-download"></i> Télécharger
                             </a>
                         </div>
@@ -1061,10 +1062,10 @@
                             </div>
                         </div>
                         <div class="actions-procedure">
-                            <a href="docs/procedures/Routage%20et%20Résolution%20DNS%20sous%20Cisco%20Packet%20Tracer.pdf" target="_blank" class="btn-vue-proc">
+                            <a href="docs/procedures/Routage%20et%20Résolution%20DNS%20sous%20Cisco%20Packet%20Tracer.pdf" target="_blank" rel="noopener noreferrer" class="btn-vue-proc">
                                 <i class="fa-solid fa-eye"></i> Visionner
                             </a>
-                            <a href="docs/procedures/Routage%20et%20Résolution%20DNS%20sous%20Cisco%20Packet%20Tracer.pdf" download="Routage et Résolution DNS sous Cisco Packet Tracer.pdf" target="_blank" class="btn-dl-proc">
+                            <a href="docs/procedures/Routage%20et%20Résolution%20DNS%20sous%20Cisco%20Packet%20Tracer.pdf" download="Routage et Résolution DNS sous Cisco Packet Tracer.pdf" target="_blank" rel="noopener noreferrer" class="btn-dl-proc">
                                 <i class="fa-solid fa-download"></i> Télécharger
                             </a>
                         </div>
@@ -1080,10 +1081,10 @@
                             </div>
                         </div>
                         <div class="actions-procedure">
-                            <a href="docs/procedures/Documentation%20Pfsense.pdf" target="_blank" class="btn-vue-proc">
+                            <a href="docs/procedures/Documentation%20Pfsense.pdf" target="_blank" rel="noopener noreferrer" class="btn-vue-proc">
                                 <i class="fa-solid fa-eye"></i> Visionner
                             </a>
-                            <a href="docs/procedures/Documentation%20Pfsense.pdf" download="Documentation Pfsense.pdf" target="_blank" class="btn-dl-proc">
+                            <a href="docs/procedures/Documentation%20Pfsense.pdf" download="Documentation Pfsense.pdf" target="_blank" rel="noopener noreferrer" class="btn-dl-proc">
                                 <i class="fa-solid fa-download"></i> Télécharger
                             </a>
                         </div>
@@ -1099,10 +1100,10 @@
                             </div>
                         </div>
                         <div class="actions-procedure">
-                            <a href="docs/procedures/PROXMOX.pdf" target="_blank" class="btn-vue-proc">
+                            <a href="docs/procedures/PROXMOX.pdf" target="_blank" rel="noopener noreferrer" class="btn-vue-proc">
                                 <i class="fa-solid fa-eye"></i> Visionner
                             </a>
-                            <a href="docs/procedures/PROXMOX.pdf" download="PROXMOX.pdf" target="_blank" class="btn-dl-proc">
+                            <a href="docs/procedures/PROXMOX.pdf" download="PROXMOX.pdf" target="_blank" rel="noopener noreferrer" class="btn-dl-proc">
                                 <i class="fa-solid fa-download"></i> Télécharger
                             </a>
                         </div>
@@ -1118,10 +1119,10 @@
                             </div>
                         </div>
                         <div class="actions-procedure">
-                            <a href="docs/procedures/Tunnel%20SSH.pdf" target="_blank" class="btn-vue-proc">
+                            <a href="docs/procedures/Tunnel%20SSH.pdf" target="_blank" rel="noopener noreferrer" class="btn-vue-proc">
                                 <i class="fa-solid fa-eye"></i> Visionner
                             </a>
-                            <a href="docs/procedures/Tunnel%20SSH.pdf" download="Tunnel SSH.pdf" target="_blank" class="btn-dl-proc">
+                            <a href="docs/procedures/Tunnel%20SSH.pdf" download="Tunnel SSH.pdf" target="_blank" rel="noopener noreferrer" class="btn-dl-proc">
                                 <i class="fa-solid fa-download"></i> Télécharger
                             </a>
                         </div>
@@ -1137,10 +1138,10 @@
                             </div>
                         </div>
                         <div class="actions-procedure">
-                            <a href="docs/procedures/Reseaux_NAT.pdf" target="_blank" class="btn-vue-proc">
+                            <a href="docs/procedures/Reseaux_NAT.pdf" target="_blank" rel="noopener noreferrer" class="btn-vue-proc">
                                 <i class="fa-solid fa-eye"></i> Visionner
                             </a>
-                            <a href="docs/procedures/Reseaux_NAT.pdf" download="Reseaux_NAT.pdf" target="_blank" class="btn-dl-proc">
+                            <a href="docs/procedures/Reseaux_NAT.pdf" download="Reseaux_NAT.pdf" target="_blank" rel="noopener noreferrer" class="btn-dl-proc">
                                 <i class="fa-solid fa-download"></i> Télécharger
                             </a>
                         </div>
@@ -1156,10 +1157,10 @@
                             </div>
                         </div>
                         <div class="actions-procedure">
-                            <a href="docs/procedures/Dossier_partager.pdf" target="_blank" class="btn-vue-proc">
+                            <a href="docs/procedures/Dossier_partager.pdf" target="_blank" rel="noopener noreferrer" class="btn-vue-proc">
                                 <i class="fa-solid fa-eye"></i> Visionner
                             </a>
-                            <a href="docs/procedures/Dossier_partager.pdf" download="Dossier_partager.pdf" target="_blank" class="btn-dl-proc">
+                            <a href="docs/procedures/Dossier_partager.pdf" download="Dossier_partager.pdf" target="_blank" rel="noopener noreferrer" class="btn-dl-proc">
                                 <i class="fa-solid fa-download"></i> Télécharger
                             </a>
                         </div>
@@ -1175,10 +1176,10 @@
                             </div>
                         </div>
                         <div class="actions-procedure">
-                            <a href="docs/procedures/Exolab_Cisco_Routage.pdf" target="_blank" class="btn-vue-proc">
+                            <a href="docs/procedures/Exolab_Cisco_Routage.pdf" target="_blank" rel="noopener noreferrer" class="btn-vue-proc">
                                 <i class="fa-solid fa-eye"></i> Visionner
                             </a>
-                            <a href="docs/procedures/Exolab_Cisco_Routage.pdf" download="Exolab_Cisco_Routage.pdf" target="_blank" class="btn-dl-proc">
+                            <a href="docs/procedures/Exolab_Cisco_Routage.pdf" download="Exolab_Cisco_Routage.pdf" target="_blank" rel="noopener noreferrer" class="btn-dl-proc">
                                 <i class="fa-solid fa-download"></i> Télécharger
                             </a>
                         </div>
@@ -1223,7 +1224,7 @@
                                     <span>lipcat.julien@gmail.com</span>
                                 </div>
                             </a>
-                            <a href="https://linkedin.com/in/julien-martiniere" target="_blank" class="boite-contact-mini">
+                            <a href="https://linkedin.com/in/julien-martiniere" target="_blank" rel="noopener noreferrer" class="boite-contact-mini">
                                 <i class="fa-brands fa-linkedin"></i>
                                 <div>
                                     <h4>LinkedIn</h4>
