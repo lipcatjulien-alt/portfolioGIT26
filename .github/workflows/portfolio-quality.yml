@@ -53,3 +53,19 @@ jobs:
             screenshot-*.png
             browser-results.json
           if-no-files-found: ignore
+
+  live-http:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check public GitHub Pages response and security headers
+        run: |
+          python3 - <<'PY'
+          import urllib.request, json
+          url = "https://lipcatjulien-alt.github.io/portfolioGIT26/"
+          with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent":"Portfolio-Audit/1.0"}), timeout=25) as resp:
+              h = resp.headers
+              keys = ["content-type","strict-transport-security","content-security-policy","x-frame-options","x-content-type-options","referrer-policy","permissions-policy","cache-control"]
+              result = {"http_status":resp.status,"url":resp.url,"headers":{k:h.get(k) for k in keys}}
+              print(json.dumps(result,ensure_ascii=False,indent=2))
+              if resp.status != 200: raise SystemExit("unexpected HTTP status")
+          PY
