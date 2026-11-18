@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSP de defense en profondeur compatible avec le site statique.
+         GitHub Pages ne permet pas de définir frame-ancestors ou d'autres en-têtes serveur ici. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com data:; img-src 'self' data:; connect-src 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="canonical" href="https://lipcatjulien-alt.github.io/portfolioGIT26/">
     <title>Julien Martinière | Portfolio BTS SIO SISR</title>
     <meta name="description" content="Portfolio de Julien Martinière, étudiant en BTS SIO SISR : projets Cisco, Linux, cybersécurité, stage chez 2CER Technologies et documentations techniques.">
