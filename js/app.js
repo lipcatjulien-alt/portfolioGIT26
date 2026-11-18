@@ -16,17 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Afficher la bonne vue
-        const vueCible = document.querySelector(idCible);
+        const vueCible = [...vues].find(v => '#' + v.id === idCible);
         if (vueCible) {
             vueCible.classList.add('vue-active');
             // Optionnel : petite animation d'apparition
             vueCible.style.animation = 'none';
             vueCible.offsetHeight; /* trigger reflow */
-            vueCible.style.animation = 'apparition 0.5s var(--transition)';
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) vueCible.style.animation = 'apparition 0.5s var(--transition)';
         }
 
         // Mettre à jour le lien actif
-        const lienActif = document.querySelector(`.item-nav[href="${idCible}"]`);
+        const lienActif = [...liensNav].find(l => l.getAttribute('href') === idCible);
         if (lienActif) {
             lienActif.classList.add('active');
             lienActif.setAttribute('aria-current', 'page');
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         carte.style.display = 'flex';
                     } else {
                         const categories = carte.getAttribute('data-categorie') || '';
-                        if (categories.includes(filtre)) {
+                        if (categories.split(/\s+/).includes(filtre)) {
                             carte.style.display = 'flex';
                         } else {
                             carte.style.display = 'none';
@@ -158,9 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const nom = form.nom.value.trim();
-            const email = form.email.value.trim();
-            const message = form.message.value.trim();
+            const nom = form.elements.namedItem('nom').value.trim();
+            const email = form.elements.namedItem('email').value.trim();
+            const message = form.elements.namedItem('message').value.trim();
+            if (!nom || !email || !message || !form.checkValidity()) { form.reportValidity(); return; }
             const sujet = encodeURIComponent('Contact portfolio — ' + nom);
             const corps = encodeURIComponent(message + '\n\n' + nom + ' (' + email + ')');
             window.location.href = 'mailto:lipcat.julien@gmail.com?subject=' + sujet + '&body=' + corps;
