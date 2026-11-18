@@ -13,6 +13,10 @@ async function check(label,fn){try{await fn();console.log("PASS",label);}catch(e
    page.on("pageerror",e=>errs.push(width+": "+e.message));
    await page.goto(BASE+"index.html",{waitUntil:"domcontentloaded"});
    await check(width+" initial home",async()=>assert.equal(await page.locator("#accueil").evaluate(el=>el.classList.contains("vue-active")),true));
+   await check(width+" Font Awesome loaded",async()=>{
+    const content=await page.locator(".barre-laterale .fa-house").first().evaluate(el=>getComputedStyle(el,"::before").content);
+    assert.ok(content && content!=="none" && content!=="normal" && content!=='""',"icons CSS unavailable: "+content);
+   });
    await check(width+" home overflow",async()=>{
     const dims=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,client:document.documentElement.clientWidth}));
     assert.ok(dims.scroll<=dims.client+3,JSON.stringify(dims));
