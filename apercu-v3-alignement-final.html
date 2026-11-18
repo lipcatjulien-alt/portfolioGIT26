@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julien Martinière | Portfolio BTS SIO SISR</title>
+    <meta name="description" content="Portfolio de Julien Martinière, étudiant en BTS SIO option SISR : projets, stage, procédures techniques et compétences.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Concept V3 de prévisualisation : branche isolée, non déployée -->
+    <!-- Les styles V3 sont chargés après les styles locaux pour éviter les conflits de cascade. -->
+    <script src="js/menu.js" defer></script>
+    <script src="js/app.js" defer></script>
+
+
+    <style>
+        .documents-m2l { display:flex; flex-wrap:wrap; gap:.75rem; margin:1rem 0 1.5rem; }
+        .vue-principale .documents-m2l .bouton-doc-m2l { display:inline-flex; align-items:center; gap:.65rem; padding:.8rem 1rem; border:1px solid #CBD5E1; border-radius:8px; background:#F1F4F8; color:#2F5A8F; text-decoration:none; font-weight:600; }
+        .vue-principale .documents-m2l .bouton-doc-m2l:hover { background:#E5ECF5; border-color:#2F5A8F; }
+        .bouton-doc-m2l span { font-size:.75rem; font-weight:400; }
+        .details-m2l { border:1px solid #E1E5EB; border-radius:8px; margin-top:1.25rem; }
+        .details-m2l summary { padding:1rem; cursor:pointer; font-weight:600; color:#2F5A8F; }
+        .details-m2l[open] summary { border-bottom:1px solid #E1E5EB; }
+        .corps-details-m2l { padding:1.25rem; }
+        .corps-details-m2l h4:not(:first-child) { margin-top:1.5rem; }
+        .details-m2l summary:focus-visible, .bouton-doc-m2l:focus-visible { outline:3px solid #2F5A8F; outline-offset:3px; }
+        .aide-contact { color:var(--couleur-texte-muet); line-height:1.6; margin-bottom:1.25rem; }
+    </style>
+    <style>
+        /* Portrait : cadrage visage et épaules, badge hors de la photo. */
+        #accueil .hero-photo { width:100%; max-width:340px; justify-self:center; padding:10px; background:#fff; border:1px solid #E1E5EB; border-radius:24px; box-shadow:0 16px 40px rgba(27,42,65,.10); }
+        #accueil .cadre-portrait { aspect-ratio:4/5; overflow:hidden; border-radius:16px; background:#d9d7d1; }
+        #accueil .photo-hero { display:block; width:100%; height:100%; aspect-ratio:auto; object-fit:cover; object-position:50% 50%; transform:scale(1.16); transform-origin:50% 55%; border:0; border-radius:0; box-shadow:none; }
+        #accueil .carte-flottante { position:static; margin:10px 0 0; padding:.8rem 1rem; border:0; border-radius:12px; box-shadow:none; background:#F3F6FA; justify-content:center; gap:.8rem; }
+        #accueil .carte-flottante strong { font-size:.95rem; }
+        #accueil .carte-flottante span { font-size:.8rem; }
+        @media (max-width:1000px) { #accueil .hero-photo { max-width:280px; } }
+        @media (max-width:600px) { #accueil .hero-photo { max-width:240px; border-radius:20px; } }
+    </style>
+    <style>
+        #accueil .preuves-hero { display:flex; flex-wrap:wrap; gap:.55rem 1rem; padding:0; margin:0 0 1.5rem; list-style:none; color:#42536A; font-size:.85rem; }
+        #accueil .preuves-hero li { display:flex; align-items:center; gap:.45rem; }
+        #accueil .preuves-hero i { color:#2F5A8F; }
+        #accueil .accroche { margin-bottom:1rem; }
+        #accueil .ruban-fibres { margin-bottom:.8rem; }
+        #accueil .ruban-fibres figcaption { font-size:.75rem; }
+        @media (max-width:600px) { #accueil .preuves-hero { flex-direction:column; gap:.65rem; } }
+    </style>
+    <link rel="stylesheet" href="css/portfolio-v3-alignement-final.css">
+</head>
+
+<body>
+
+    <div class="conteneur-app">
+
+        <!-- Bouton Menu Mobile -->
+        <button class="bouton-menu-mobile" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation-principale">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- === BARRE LATÉRALE (MENU) === -->
+        <nav class="barre-laterale" id="navigation-principale">
+            <div class="entete-barre-laterale">
+                <div class="logo">JM</div>
+                <div class="mini-ruban" aria-hidden="true"><span style="background:#1F64C8"></span><span style="background:#F28C1E"></span><span style="background:#2E9A4B"></span><span style="background:#8B5A2B"></span><span style="background:#7A8794"></span><span style="background:#FFFFFF"></span><span style="background:#D7322F"></span><span style="background:#1A1A1A"></span><span style="background:#F2C230"></span><span style="background:#7B4BB7"></span><span style="background:#E87AA6"></span><span style="background:#26B8C9"></span></div>
+                <div class="role">BTS SIO SISR</div>
+            </div>
+        
+            <div class="liens-nav">
+                <a href="#accueil" class="item-nav active" aria-current="page" style="text-decoration: none;">
+                    <i class="fa-solid fa-house icon"></i> Accueil
+                </a>
+                <a href="#competences" class="item-nav" style="text-decoration: none;">
+                    <i class="fa-solid fa-code icon"></i> Compétences
+                </a>
+                <a href="#stage" class="item-nav" style="text-decoration: none;">
+                    <i class="fa-solid fa-briefcase icon"></i> Mon stage
+                </a>
+                <a href="#projets" class="item-nav" style="text-decoration: none;">
+                    <i class="fa-solid fa-folder-open icon"></i> Projets
+                </a>
+                <a href="#veille" class="item-nav" style="text-decoration: none;">
+                    <i class="fa-solid fa-satellite icon"></i> Veille technologique
+                </a>
+                <a href="#procedures" class="item-nav" style="text-decoration: none;">
+                    <i class="fa-solid fa-book icon"></i> Procédures
+                </a>
+                <a href="#synthese" class="item-nav" style="text-decoration: none;">
+                    <i class="fa-solid fa-table-cells icon"></i> Synthèse E4
+                </a>
+                <a href="#parcours" class="item-nav" style="text-decoration: none;">
+                    <i class="fa-solid fa-graduation-cap icon"></i> Parcours
+                </a>
+                <a href="#referentiel" class="item-nav" style="text-decoration: none;">
+                    <i class="fa-solid fa-scale-balanced icon"></i> Référentiel BTS
+                </a>
+                <a href="#cv" class="item-nav" style="text-decoration: none;">
+                    <i class="fa-solid fa-file-lines icon"></i> CV & lettre
+                </a>
+                <a href="#contact" class="item-nav" style="text-decoration: none;">
+                    <i class="fa-solid fa-envelope icon"></i> Contact
+                </a>
+            </div>
+
+            <!-- Bas du menu -->
+            <div class="pied-barre-laterale">
+                <div class="telechargements">
+                    <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" class="btn-telecharger" download="CV_Julien_Martiniere_BTS_SIO_SISR.pdf">
+                        <i class="fa-solid fa-download"></i> Télécharger mon CV
+                    </a>
+                </div>
+
+                <div class="liens-externes">
+                    <a href="docs/REFERENTIEL_BTS_SIO-_RENOVATION_SESSION_2022-SIGNETS.pdf" download="Referentiel_BTS_SIO_session_2022.pdf"><i class="fa-solid fa-download"></i> Référentiel BTS SIO</a>
+                    <a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Campus Saint-Aspais</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- === CONTENU === -->
+        <main class="vue-principale">
+            
+            <!-- ACCUEIL -->
+            <section id="accueil" class="vue vue-active">
+
+                <!-- Hero -->
+                <div class="hero-accueil">
+                    <div class="hero-texte">
+                        <a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener" class="lien-ecole" title="Site du Campus Saint-Aspais">
+                            <img src="img/mix-logo.png" alt="Logo du Campus Saint-Aspais (lien vers le site de l'école)">
+                            <span>BTS SIO option SISR · Campus Saint-Aspais, Melun</span>
+                        </a>
+                        <h1 class="nom-hero">Julien <span>Martinière</span></h1>
+                        <figure class="ruban-fibres">
+                            <svg viewBox="0 0 1000 58" preserveAspectRatio="none" aria-hidden="true"><path class="brin" d="M0 24.0 H260 C340 24.0, 360 4.0, 440 4.0 H1000" stroke="#1F64C8" style="--i:0"/><path class="brin" d="M0 25.2 H260 C340 25.2, 360 8.4, 440 8.4 H1000" stroke="#F28C1E" style="--i:1"/><path class="brin" d="M0 26.4 H260 C340 26.4, 360 12.8, 440 12.8 H1000" stroke="#2E9A4B" style="--i:2"/><path class="brin" d="M0 27.6 H260 C340 27.6, 360 17.2, 440 17.2 H1000" stroke="#8B5A2B" style="--i:3"/><path class="brin" d="M0 28.8 H260 C340 28.8, 360 21.6, 440 21.6 H1000" stroke="#7A8794" style="--i:4"/><path class="brin brin-blanc" d="M0 30.0 H260 C340 30.0, 360 26.0, 440 26.0 H1000" stroke="#FFFFFF" style="--i:5"/><path class="brin" d="M0 31.2 H260 C340 31.2, 360 30.4, 440 30.4 H1000" stroke="#D7322F" style="--i:6"/><path class="brin" d="M0 32.4 H260 C340 32.4, 360 34.8, 440 34.8 H1000" stroke="#1A1A1A" style="--i:7"/><path class="brin" d="M0 33.6 H260 C340 33.6, 360 39.2, 440 39.2 H1000" stroke="#F2C230" style="--i:8"/><path class="brin" d="M0 34.8 H260 C340 34.8, 360 43.6, 440 43.6 H1000" stroke="#7B4BB7" style="--i:9"/><path class="brin" d="M0 36.0 H260 C340 36.0, 360 48.0, 440 48.0 H1000" stroke="#E87AA6" style="--i:10"/><path class="brin" d="M0 37.2 H260 C340 37.2, 360 52.4, 440 52.4 H1000" stroke="#26B8C9" style="--i:11"/></svg>
+                            <figcaption>Un clin d'œil à mon expérience en fibre optique.</figcaption>
+                        </figure>
+                        <p class="accroche"><strong>Des infrastructures réseau au terrain.</strong><br>Étudiant en 2<sup>e</sup> année de BTS SIO SISR, je développe mes compétences en administration Linux et réseaux Cisco, avec une expérience en entreprise en fibre optique et câblage.</p>
+                        <ul class="preuves-hero" aria-label="Mes expériences concrètes">
+                            <li><i class="fa-solid fa-network-wired" aria-hidden="true"></i> Fibre et réseau chez 2CER</li>
+                            <li><i class="fa-solid fa-server" aria-hidden="true"></i> GLPI et réplication MariaDB</li>
+                            <li><i class="fa-solid fa-users" aria-hidden="true"></i> 4 élèves accompagnés en TP</li>
+                        </ul>
+                        <a href="#cv" class="pastille-dispo"><span class="point-vert"></span><span>Disponible pour un stage du <strong>4 janvier au 6 février 2027</strong></span></a>
+                        <div class="actions-hero">
+                            <a href="#projets" class="btn-primaire btn-inline"><i class="fa-solid fa-folder-open"></i> Voir mes réalisations</a>
+                            <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" download="CV_Julien_Martiniere_BTS_SIO_SISR.pdf" class="btn-secondaire btn-inline"><i class="fa-solid fa-download"></i> Télécharger mon CV</a>
+                            <a href="#contact" class="btn-secondaire btn-inline"><i class="fa-solid fa-paper-plane"></i> Me contacter</a>
+                        </div>
+                    </div>
+                    <div class="hero-photo">
+                        <div class="cadre-portrait"><img src="img/IMG_3991.jpeg" alt="Julien Martinière, étudiant en BTS SIO SISR" class="photo-hero" fetchpriority="high"></div>
+                        <div class="carte-flottante"><i class="fa-solid fa-network-wired"></i><div><strong>CCNA</strong><span>en préparation</span></div></div>
+                    </div>
+                </div>
+
+                <!-- Chiffres clés -->
+                <div class="chiffres-accueil">
+                    <a href="#stage"><strong>5</strong><span>semaines de stage en entreprise</span></a>
+                    <a href="#stage"><strong>7</strong><span>missions réalisées chez 2CER</span></a>
+                    <a href="#projets"><strong>4</strong><span>projets et ateliers réalisés ou en cours</span></a>
+                    <a href="#procedures"><strong>12</strong><span>procédures techniques rédigées</span></a>
+                </div>
+
+                <!-- Bio -->
+                <div class="bloc-accueil bio-accueil">
+                    <h2 class="titre-accueil">À propos de moi</h2>
+                    <p>Je suis étudiant en 2<sup>e</sup> année de BTS SIO option SISR au <a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener">Campus Saint-Aspais de Melun</a>. Ce qui me plaît, c'est de mettre en place des infrastructures solides et de voir le résultat concret : un service qui fonctionne, un réseau stable, des utilisateurs qui travaillent sans y penser.</p>
+                    <p>Pendant mon <a href="#stage">stage de première année chez 2CER Technologies</a>, j'ai tiré et soudé de la fibre optique, testé le débit de liens réseau et câblé des locaux entiers. Cette année, je travaille sur le <a href="#projets">projet M2L</a> (pfSense, MariaDB, Asterisk, Nextcloud) et je prépare la certification Cisco CCNA. J'ai également encadré quatre élèves de BAC PRO CIEL lors d'un atelier réseau : coordination du travail et aide à la configuration du switch. J'aime comprendre un problème, tester une solution et expliquer les manipulations.</p>
+                    <div class="badges-a-propos">
+                        <span class="item-badge">Vaux-le-Pénil / Melun (77)</span>
+                        <span class="item-badge">Permis B – véhiculé</span>
+                        <span class="item-badge">Anglais B1 (CECRL)</span>
+                    </div>
+                </div>
+
+                <!-- Ce que je sais faire -->
+                <h2 class="titre-accueil">Ce que je sais faire</h2>
+                <div class="grille-savoirfaire">
+                    <a href="#competences" class="carte-savoirfaire">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h3>Réseaux</h3>
+                        <p>Configurer des équipements Cisco, segmenter en VLAN, router et filtrer le trafic.</p>
+                        <span class="lien-detail">Cisco IOS · VLAN · ACL · routage</span>
+                    </a>
+                    <a href="#competences" class="carte-savoirfaire">
+                        <i class="fa-solid fa-server"></i>
+                        <h3>Systèmes &amp; services</h3>
+                        <p>Installer et administrer des serveurs Linux et Windows et les services qu'ils hébergent.</p>
+                        <span class="lien-detail">Debian · Windows Server · DNS · MariaDB</span>
+                    </a>
+                    <a href="#competences" class="carte-savoirfaire">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Cybersécurité</h3>
+                        <p>Protéger une infrastructure : pare-feu, DMZ, accès distants chiffrés, supervision.</p>
+                        <span class="lien-detail">pfSense · NAT · SSH · Wazuh</span>
+                    </a>
+                    <a href="#stage" class="carte-savoirfaire">
+                        <i class="fa-solid fa-plug"></i>
+                        <h3>Terrain</h3>
+                        <p>Intervenir sur site : tirage et soudure de fibre, câblage RJ45, couverture Wi-Fi.</p>
+                        <span class="lien-detail">Fibre optique · RJ45 · Wi-Fi</span>
+                    </a>
+                </div>
+
+                <!-- Réalisations phares -->
+                <div class="entete-ligne">
+                    <h2 class="titre-accueil">Réalisations phares</h2>
+                    <a href="#projets" class="lien-tout">Tous les projets <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="grille-phares">
+                    <a href="#projets" class="carte-phare">
+                        <div class="visuel-phare banniere-m2l"><div><i class="fa-solid fa-sitemap"></i><span>M2L</span></div></div>
+                        <div class="corps-phare">
+                            <span class="type-mission">Projet, en cours</span>
+                            <h3>Infrastructure de la Maison des Ligues</h3>
+                            <p>GLPI et réplication MariaDB validés, serveur Asterisk installé ; intégration et tests en cours.</p>
+                        </div>
+                    </a>
+                    <a href="#stage" class="carte-phare">
+                        <div class="visuel-phare"><img src="img/rapport_page9_img1.jpeg" alt="Tirage de câble fibre au Médiapôle de Grigny" loading="lazy"></div>
+                        <div class="corps-phare">
+                            <span class="type-mission">Stage, 2CER Technologies</span>
+                            <h3>Fibre optique au Médiapôle de Grigny</h3>
+                            <p>Deux câbles de 80 m tirés, un blocage diagnostiqué, des soudures par fusion : un bâtiment raccordé.</p>
+                        </div>
+                    </a>
+                    <a href="#projets" class="carte-phare">
+                        <div class="visuel-phare"><img src="img/cisco-packet-tracer.png" alt="Maquette réseau Cisco" loading="lazy"></div>
+                        <div class="corps-phare">
+                            <span class="type-mission">Projet, 1re année</span>
+                            <h3>Infrastructure réseau sécurisée multisite</h3>
+                            <p>Proxmox, pfSense, VLAN et DMZ : une organisation complète simulée puis virtualisée.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <footer class="pied-page">
+                    <span>© 2026 Julien Martinière · Portfolio BTS SIO SISR</span>
+                    <span><a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener">Campus Saint-Aspais</a> · <a href="https://linkedin.com/in/julien-martiniere" target="_blank" rel="noopener">LinkedIn</a> · <a href="#referentiel">Référentiel BTS</a></span>
+                </footer>
+            </section>
+
+            <!-- COMPETENCES -->
+            <section id="competences" class="vue">
+                <h2 class="titre-vue">Compétences techniques</h2>
+                <p class="intro-section">Chaque domaine renvoie, par des liens, aux réalisations où je l'ai mis en pratique : <a href="#projets">projets</a>, <a href="#stage">stage</a> ou <a href="#procedures">procédures</a>. La correspondance avec le référentiel est dans la <a href="#synthese">synthèse E4</a>.</p>
+
+                <div class="legende-comp">
+                    <span><i class="pastille formation"></i> Acquis en formation</span>
+                    <span><i class="pastille stage"></i> Pratiqué en stage</span>
+                </div>
+
+                <div class="grille-domaines">
+
+                    <article class="carte-domaine">
+                        <div class="entete-domaine"><i class="fa-solid fa-network-wired"></i><h3>Réseaux</h3></div>
+                        <div class="puces-tech">
+                            <span class="f">Cisco IOS</span><span class="f">VLAN</span><span class="f">Routage statique</span><span class="f">Routage inter-VLAN</span><span class="f">ACL</span><span class="f">Adressage VLSM / CIDR</span><span class="f">Switch Cisco SF500</span>
+                        </div>
+                        <p class="preuves"><strong>Mis en œuvre :</strong> <a href="#projets">Infrastructure multisite</a> · <a href="#procedures">Routage &amp; DNS Cisco</a> · <a href="#procedures">Exolab routage</a></p>
+                    </article>
+
+                    <article class="carte-domaine">
+                        <div class="entete-domaine"><i class="fa-solid fa-server"></i><h3>Systèmes &amp; services</h3></div>
+                        <div class="puces-tech">
+                            <span class="f">Debian 13</span><span class="f">Windows Server</span><span class="f">Apache2</span><span class="f">DNS Bind9 / DNSSEC</span><span class="f">DHCP failover</span><span class="f">FTP / SFTP / TFTP</span><span class="f">Réplication MariaDB</span><span class="f">Partages &amp; droits NTFS</span>
+                        </div>
+                        <p class="preuves"><strong>Mis en œuvre :</strong> <a href="#projets">Infrastructure multisite</a> · <a href="#procedures">Serveur TFTP</a> · <a href="#procedures">Dossiers partagés</a></p>
+                    </article>
+
+                    <article class="carte-domaine">
+                        <div class="entete-domaine"><i class="fa-solid fa-layer-group"></i><h3>Virtualisation</h3></div>
+                        <div class="puces-tech">
+                            <span class="f">Proxmox VE</span><span class="f">Linux bridges</span><span class="f">Provisionnement de VM</span><span class="s">VM Debian de test iperf3</span>
+                        </div>
+                        <p class="preuves"><strong>Mis en œuvre :</strong> <a href="#projets">Infrastructure multisite</a> · <a href="#procedures">Procédure Proxmox</a> · <a href="#stage">Tests de débit Medis</a></p>
+                    </article>
+
+                    <article class="carte-domaine">
+                        <div class="entete-domaine"><i class="fa-solid fa-shield-halved"></i><h3>Cybersécurité</h3></div>
+                        <div class="puces-tech">
+                            <span class="f">pfSense</span><span class="f">DMZ</span><span class="f">NAT / redirection de ports</span><span class="f">Tunnel SSH</span><span class="f">Filtrage LAN/DMZ</span><span class="s">Vidéosurveillance IP</span>
+                        </div>
+                        <p class="preuves"><strong>Mis en œuvre :</strong> <a href="#procedures">pfSense</a> · <a href="#procedures">Redirection NAT</a> · <a href="#procedures">Tunnel SSH</a> · <a href="#stage">Audit Selfstock</a></p>
+                    </article>
+
+                    <article class="carte-domaine">
+                        <div class="entete-domaine"><i class="fa-solid fa-plug"></i><h3>Infrastructure physique</h3></div>
+                        <div class="puces-tech">
+                            <span class="s">Tirage fibre optique</span><span class="s">Soudure par fusion</span><span class="s">Modules SFP BiDi</span><span class="s">Câblage RJ45 T568A/B</span><span class="s">Étude Wi-Fi 2,4 / 5 GHz</span><span class="s">Brassage en baie</span>
+                        </div>
+                        <p class="preuves"><strong>Mis en œuvre :</strong> <a href="#stage">Fibre Grigny</a> · <a href="#stage">Modules BiDi</a> · <a href="#stage">Locaux 2CER</a></p>
+                    </article>
+
+                    <article class="carte-domaine">
+                        <div class="entete-domaine"><i class="fa-solid fa-toolbox"></i><h3>Outils &amp; web</h3></div>
+                        <div class="puces-tech">
+                            <span class="f">GLPI</span><span class="f">Wireshark</span><span class="f">Packet Tracer</span><span class="f">HTML / CSS</span><span class="f">PHP / MySQL</span><span class="s">iperf3</span><span class="s">NetBox</span><span class="s">QGIS</span><span class="s">Splice.me</span><span class="s">Greenshot</span>
+                        </div>
+                        <p class="preuves"><strong>Mis en œuvre :</strong> <a href="#projets">Koo2Fourchette</a> · <a href="#stage">Cartographie QGIS</a> · <a href="#synthese">TP GLPI</a></p>
+                    </article>
+
+                    <article class="carte-domaine">
+                        <div class="entete-domaine"><i class="fa-solid fa-language"></i><h3>Langues (niveaux CECRL)</h3></div>
+                        <dl class="langues">
+                            <div><dt>Français</dt><dd>Langue maternelle</dd></div>
+                            <div><dt>Anglais</dt><dd><span class="niveau-cecrl">B1</span> Utilisateur indépendant : lecture de documentation technique, échanges simples à l'oral</dd></div>
+                        </dl>
+                        <p class="preuves"><strong>CECRL :</strong> Cadre européen commun de référence pour les langues (A1 → C2).</p>
+                    </article>
+
+                </div>
+
+                <!-- Section Certifications -->
+                <h3 style="margin-top: 4rem; margin-bottom: 2rem; font-size: 1.5rem; color: var(--couleur-texte-principal); border-bottom: 2px solid var(--couleur-accent); display: inline-block; padding-bottom: 0.5rem;">Certifications & MOOC</h3>
+                
+                <div class="carte-certification" style="background: var(--fond-carte); border: var(--bordure-carte); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+                    <div style="display: flex; align-items: center; gap: 1.5rem;">
+                        <div style="font-size: 2.5rem; color: var(--couleur-accent); background: rgba(29, 95, 194, 0.08); min-width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--couleur-texte-principal); font-size: 1.2rem; margin-bottom: 0.5rem;">Attestation de fin de parcours (MOOC)</h4>
+                            <p style="color: var(--couleur-texte-muet); margin-bottom: 0; font-size: 0.95rem;">Initiation à la cybersécurité et sensibilisation aux risques informatiques.</p>
+                        </div>
+                    </div>
+                    <a href="img/ATTESTATION%20DE%20FIN%20DE%20PARCOURS.pdf" target="_blank" class="btn-primaire" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        <i class="fa-solid fa-file-pdf"></i> Consulter l'attestation
+                    </a>
+                </div>
+
+                <div class="carte-certification" style="background: var(--fond-carte); border: var(--bordure-carte); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.3s ease; margin-top: 1.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1.5rem;">
+                        <div style="font-size: 2.5rem; color: #3b82f6; background: rgba(59, 130, 246, 0.1); min-width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                                <h4 style="color: var(--couleur-texte-principal); font-size: 1.2rem; margin: 0;">Certification Cisco CCNA</h4>
+                                <span style="background: #FDF1E5; color: #B45309; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;"><i class="fa-solid fa-spinner fa-spin-pulse"></i> En préparation</span>
+                            </div>
+                            <p style="color: var(--couleur-texte-muet); margin-bottom: 0; font-size: 0.95rem;">Préparation active au passage de l'examen Cisco Certified Network Associate (200-301) pour valider mes compétences réseaux.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STAGE -->
+            <section id="stage" class="vue">
+                <h2 class="titre-vue">Stage de 1<sup>re</sup> année</h2>
+
+                <div class="stage-hero">
+                    <div class="stage-resume">
+                        <span class="type-mission">Technicien systèmes &amp; réseaux, 5 semaines</span>
+                        <h3>2CER Technologies</h3>
+                        <p>Micro-entreprise d'infrastructures réseau et de sécurité dirigée par un ancien DSI. J'ai été son premier stagiaire et j'ai travaillé à ses côtés sur des chantiers réels : fibre optique, tests de débit, câblage, Wi-Fi et audits clients.</p>
+                        <div class="chiffres-stage">
+                            <div><strong>5</strong><span>semaines</span></div>
+                            <div><strong>7</strong><span>missions</span></div>
+                            <div><strong>2 × 80 m</strong><span>de fibre tirée</span></div>
+                            <div><strong>4</strong><span>clients</span></div>
+                        </div>
+                        <a href="docs/Rapport_de_Stage.pdf" target="_blank" class="btn-primaire btn-inline"><i class="fa-solid fa-file-pdf"></i> Rapport de stage complet</a>
+                    </div>
+                    <aside class="fiche-stage">
+                        <dl>
+                            <div><dt><i class="fa-solid fa-building"></i> Entreprise</dt><dd>2CER Technologies</dd></div>
+                            <div><dt><i class="fa-solid fa-location-dot"></i> Lieu</dt><dd>Brie-Comte-Robert (77)</dd></div>
+                            <div><dt><i class="fa-solid fa-calendar"></i> Période</dt><dd>18 mai – 12 juin 2026<br>+ 1<sup>er</sup> – 5 juillet 2026</dd></div>
+                            <div><dt><i class="fa-solid fa-user-tie"></i> Maître de stage</dt><dd>M. Cem CARFIL, dirigeant</dd></div>
+                            <div><dt><i class="fa-solid fa-briefcase"></i> Secteur</dt><dd>Réseaux, fibre, vidéosurveillance, anti-drone</dd></div>
+                        </dl>
+                    </aside>
+                </div>
+
+                <h3 class="sous-titre-section">L'entreprise et mon cadre de travail</h3>
+                <div class="grille-contexte">
+                    <div class="carte-contexte">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <h4>Activités</h4>
+                        <p>Déploiement physique (fibre optique, bornes Wi-Fi), configuration, virtualisation sous Proxmox et sécurité : vidéosurveillance, tours en métal galvanisé et systèmes anti-drone.</p>
+                    </div>
+                    <div class="carte-contexte">
+                        <i class="fa-solid fa-microchip"></i>
+                        <h4>Environnement technique</h4>
+                        <p>Équipements Cisco et Alcatel chez les clients, environnement Ubiquiti en interne, serveur Proxmox avec VM Debian de diagnostic, postes en double démarrage Windows 11 / Debian 13.</p>
+                        <button class="lien-schema zoomable-btn" data-src="img/rapport_page5_img1.png" data-legende="Infrastructure et zones de travail de 2CER"><i class="fa-solid fa-diagram-project"></i> Voir le schéma</button>
+                    </div>
+                    <div class="carte-contexte">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h4>Mes objectifs</h4>
+                        <p><strong>Technique :</strong> relier la théorie SISR au terrain. <strong>Professionnel :</strong> comprendre une petite entreprise, des devis à la logistique des interventions. Pas de planning fixe : les journées suivaient les urgences des clients.</p>
+                    </div>
+                </div>
+
+                <h3 class="sous-titre-section">Missions réalisées</h3>
+                <p class="intro-section">Cliquez sur une mission pour voir le contexte, les actions, le résultat et les photos.</p>
+                <div class="grille-missions">
+                    <button class="carte-mission-stage mission-phare-stage" data-mission="mission-grigny">
+                        <div class="vignette-mission"><img src="img/rapport_page9_img1.jpeg" alt="" loading="lazy"><span class="badge-phare">Mission phare</span></div>
+                        <div class="corps-mission">
+                            <span class="type-mission">Chantier client, Médiapôle de Grigny</span>
+                            <h4>Raccordement fibre inter-bâtiments</h4>
+                            <p>Liaison fibre de 2 × 80 m pour relier un bâtiment qui ne dépendait que d'un pont Wi-Fi.</p>
+                            <div class="tags-mission"><span>Fibre 2×2 FO</span><span>Soudure</span><span>Brassage</span><span>Splice.me</span></div>
+                            <span class="lien-detail">Voir le détail</span>
+                        </div>
+                    </button>
+                    <button class="carte-mission-stage" data-mission="mission-medis">
+                        <div class="vignette-mission"><img src="img/rapport_page16_img2.jpeg" alt="" loading="lazy"></div>
+                        <div class="corps-mission">
+                            <span class="type-mission">Chantier client, Centre de santé Medis</span>
+                            <h4>Tests de débit et validation des performances réseau</h4>
+                            <p>Mesure et validation du débit d'un lien réseau avec iperf3 depuis une VM Proxmox.</p>
+                            <div class="tags-mission"><span>Proxmox</span><span>Debian</span><span>iperf3</span><span>OpenSpeedTest</span></div>
+                            <span class="lien-detail">Voir le détail</span>
+                        </div>
+                    </button>
+                    <button class="carte-mission-stage" data-mission="mission-bidi">
+                        <div class="vignette-mission"><img src="img/rapport_page16_img3.jpeg" alt="" loading="lazy"></div>
+                        <div class="corps-mission">
+                            <span class="type-mission">Optimisation, Réseau optique client</span>
+                            <h4>Déploiement de modules SFP BiDi</h4>
+                            <p>Passage du duplex au BiDi pour libérer la moitié des brins sans tirer de câble.</p>
+                            <div class="tags-mission"><span>SFP BiDi</span><span>WDM</span><span>1310 / 1550 nm</span></div>
+                            <span class="lien-detail">Voir le détail</span>
+                        </div>
+                    </button>
+                    <button class="carte-mission-stage" data-mission="mission-selfstock">
+                        <div class="vignette-mission"><img src="img/rapport_page17_img1.jpeg" alt="" loading="lazy"></div>
+                        <div class="corps-mission">
+                            <span class="type-mission">Avant-vente, Selfstock</span>
+                            <h4>Audit vidéosurveillance</h4>
+                            <p>Étude comparative de caméras pour justifier les choix d'investissement du client.</p>
+                            <div class="tags-mission"><span>Caméras IP</span><span>Bullet / dôme</span><span>Audit</span></div>
+                            <span class="lien-detail">Voir le détail</span>
+                        </div>
+                    </button>
+                    <button class="carte-mission-stage" data-mission="mission-qgis">
+                        <div class="vignette-mission"><img src="img/rapport_page17_img2.jpeg" alt="" loading="lazy"></div>
+                        <div class="corps-mission">
+                            <span class="type-mission">Étude, Commune de Grigny</span>
+                            <h4>Cartographie d'un portail automatisé</h4>
+                            <p>Plans d'implantation et calcul des distances sous QGIS pour une collectivité.</p>
+                            <div class="tags-mission"><span>QGIS</span><span>Plans</span><span>Étude préalable</span></div>
+                            <span class="lien-detail">Voir le détail</span>
+                        </div>
+                    </button>
+                    <button class="carte-mission-stage" data-mission="mission-locaux">
+                        <div class="vignette-mission"><img src="img/rapport_page19_img1.jpeg" alt="" loading="lazy"></div>
+                        <div class="corps-mission">
+                            <span class="type-mission">Projet interne, 2CER Technologies</span>
+                            <h4>Réseau des nouveaux locaux</h4>
+                            <p>Câblage RJ45 complet et étude de couverture Wi-Fi de locaux vierges.</p>
+                            <div class="tags-mission"><span>RJ45 T568A/B</span><span>Wi-Fi 2,4 / 5 GHz</span><span>Ubiquiti</span></div>
+                            <span class="lien-detail">Voir le détail</span>
+                        </div>
+                    </button>
+                    <button class="carte-mission-stage" data-mission="mission-veille">
+                        <div class="vignette-mission"><img src="img/rapport_page18_img1.jpeg" alt="" loading="lazy"></div>
+                        <div class="corps-mission">
+                            <span class="type-mission">Veille, Paris, Brétigny</span>
+                            <h4>Assises du THD, salon Allnet et démonstration anti-drone</h4>
+                            <p>Découverte des fournisseurs du secteur et de l'usage de la fibre en environnement brouillé.</p>
+                            <div class="tags-mission"><span>Veille</span><span>Ubiquiti</span><span>Teltonika</span><span>Anti-drone</span></div>
+                            <span class="lien-detail">Voir le détail</span>
+                        </div>
+                    </button>
+                </div>
+
+                <h3 class="sous-titre-section">Bilan du stage</h3>
+                <div class="grille-bilan">
+                    <div class="carte-contexte">
+                        <h4><i class="fa-solid fa-chart-line"></i> Ce que j'ai apporté</h4>
+                        <ul class="liste-bilan">
+                            <li>Câblage complet et étude Wi-Fi des nouveaux locaux</li>
+                            <li>Participation au chantier fibre du Médiapôle de Grigny</li>
+                            <li>Audits et études pour les clients (Selfstock, Grigny)</li>
+                            <li>Tests de débit pour le centre Medis</li>
+                        </ul>
+                    </div>
+                    <div class="carte-contexte">
+                        <h4><i class="fa-solid fa-lightbulb"></i> Ce que je retiens</h4>
+                        <p>Le chantier de Grigny m'a appris ce qu'aucun cours ne montre : gérer un blocage imprévu et souder des brins optiques au micron près. Travailler avec quelqu'un qui explique le pourquoi, pas seulement le comment, m'a confirmé mon envie de m'orienter vers l'infrastructure et le terrain.</p>
+                        <p class="remerciements">Merci à M. CARFIL pour sa confiance et sa pédagogie.</p>
+                    </div>
+                </div>
+
+                <dialog class="fenetre-mission" id="mission-grigny" aria-labelledby="titre-grigny">
+                    <button class="fermer-fenetre" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="type-mission">Chantier client, Médiapôle de Grigny</span>
+                    <h3 id="titre-grigny">Raccordement fibre inter-bâtiments</h3>
+                    <div class="sar">
+                        <div><h5><i class="fa-solid fa-circle-question"></i> Contexte</h5><p>Le bâtiment A du Médiapôle n'avait aucune liaison filaire : il dépendait uniquement d'un pont Wi-Fi vers le bâtiment B, où se trouve le réseau principal. Le projet prévoyait deux câbles de 80 m en 2×2 FO, à passer dans le fourreau d'une ancienne fibre Orange devenue inutilisable.</p></div>
+                        <div><h5><i class="fa-solid fa-screwdriver-wrench"></i> Ce que j'ai fait</h5><ol><li>Utilisation de l'ancienne fibre Orange comme aiguille pour vérifier que le fourreau n'était pas obstrué.</li><li>Traction des deux câbles depuis le bâtiment A, jusqu'à un <strong>blocage</strong> soudain.</li><li>Diagnostic : l'ancienne liaison passait par un fourreau <strong>rouge</strong> (courants forts) au lieu d'un fourreau <strong>vert</strong> (courants faibles), contrairement aux normes.</li><li>Remontée des câbles sur plus de 5 m jusqu'à la salle serveur du bâtiment B, puis rackage des équipements.</li><li>Soudures selon le plan d'épissurage Splice.me : dénudage, nettoyage, clivage, fusion, smoove, lovage en cassette.</li></ol></div>
+                        <div class="resultat"><h5><i class="fa-solid fa-circle-check"></i> Résultat</h5><p>Le bâtiment A est raccordé en fibre au réseau principal : une liaison filaire stable remplace le pont Wi-Fi.</p></div>
+                    </div>
+                    <div class="comp-mobilisees"><strong>Compétences BTS mobilisées :</strong> <span>Travailler en mode projet</span><span>Mettre à disposition un service informatique</span></div>
+                    <div class="galerie-mission"><figure><img src="img/rapport_page9_img1.jpeg" alt="Tirage du câble" loading="lazy" class="zoomable"><figcaption>Tirage du câble</figcaption></figure><figure><img src="img/rapport_page10_img1.jpeg" alt="Fourreaux au point de blocage" loading="lazy" class="zoomable"><figcaption>Fourreaux au point de blocage</figcaption></figure><figure><img src="img/rapport_page10_img2.jpeg" alt="Fourreau rouge au lieu de vert" loading="lazy" class="zoomable"><figcaption>Fourreau rouge au lieu de vert</figcaption></figure><figure><img src="img/rapport_page16_img1.png" alt="Plan d'épissurage (Splice.me)" loading="lazy" class="zoomable"><figcaption>Plan d'épissurage (Splice.me)</figcaption></figure><figure><img src="img/rapport_page11_img3.jpeg" alt="Clivage" loading="lazy" class="zoomable"><figcaption>Clivage</figcaption></figure><figure><img src="img/rapport_page12_img1.jpeg" alt="Soudure par fusion" loading="lazy" class="zoomable"><figcaption>Soudure par fusion</figcaption></figure><figure><img src="img/rapport_page11_img1.jpeg" alt="Intégration en baie" loading="lazy" class="zoomable"><figcaption>Intégration en baie</figcaption></figure><figure><img src="img/rapport_page11_img2.jpeg" alt="Chantier fibre" loading="lazy" class="zoomable"><figcaption>Chantier fibre</figcaption></figure><figure><img src="img/rapport_page11_img4.jpeg" alt="Chantier fibre" loading="lazy" class="zoomable"><figcaption>Chantier fibre</figcaption></figure><figure><img src="img/rapport_page12_img2.jpeg" alt="Chantier fibre" loading="lazy" class="zoomable"><figcaption>Chantier fibre</figcaption></figure><figure><img src="img/rapport_page12_img3.jpeg" alt="Chantier fibre" loading="lazy" class="zoomable"><figcaption>Chantier fibre</figcaption></figure></div>
+                </dialog>
+                <dialog class="fenetre-mission" id="mission-medis" aria-labelledby="titre-medis">
+                    <button class="fermer-fenetre" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="type-mission">Chantier client, Centre de santé Medis</span>
+                    <h3 id="titre-medis">Tests de débit et validation des performances réseau</h3>
+                    <div class="sar">
+                        <div><h5><i class="fa-solid fa-circle-question"></i> Contexte</h5><p>Le centre de santé avait besoin de garanties sur les performances de sa liaison réseau après intervention.</p></div>
+                        <div><h5><i class="fa-solid fa-screwdriver-wrench"></i> Ce que j'ai fait</h5><ol><li>Déploiement d'une VM Debian sous Proxmox dédiée aux tests.</li><li>Génération de flux intensifs avec iperf3 pour saturer le lien.</li><li>Mesures complémentaires depuis les postes utilisateurs avec OpenSpeedTest.</li></ol></div>
+                        <div class="resultat"><h5><i class="fa-solid fa-circle-check"></i> Résultat</h5><p>Les performances du lien sont mesurées et documentées pour le client.</p></div>
+                    </div>
+                    <div class="comp-mobilisees"><strong>Compétences BTS mobilisées :</strong> <span>Mettre à disposition un service informatique</span><span>Répondre aux incidents et aux demandes d'assistance</span></div>
+                    <div class="galerie-mission"><figure><img src="img/rapport_page16_img2.jpeg" alt="Résultats des tests de débit iperf3" loading="lazy" class="zoomable"><figcaption>Résultats des tests de débit iperf3</figcaption></figure></div>
+                </dialog>
+                <dialog class="fenetre-mission" id="mission-bidi" aria-labelledby="titre-bidi">
+                    <button class="fermer-fenetre" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="type-mission">Optimisation, Réseau optique client</span>
+                    <h3 id="titre-bidi">Déploiement de modules SFP BiDi</h3>
+                    <div class="sar">
+                        <div><h5><i class="fa-solid fa-circle-question"></i> Contexte</h5><p>Le client devait étendre son réseau, mais tirer de nouveaux câbles optiques était coûteux.</p></div>
+                        <div><h5><i class="fa-solid fa-screwdriver-wrench"></i> Ce que j'ai fait</h5><ol><li>Remplacement des modules SFP duplex (2 brins) par des modules BiDi (1 brin).</li><li>Utilisation du multiplexage WDM : émission et réception sur deux longueurs d'onde (1310 nm / 1550 nm).</li></ol></div>
+                        <div class="resultat"><h5><i class="fa-solid fa-circle-check"></i> Résultat</h5><p>50 % des brins optiques libérés pour les besoins futurs, sans nouveau câblage.</p></div>
+                    </div>
+                    <div class="comp-mobilisees"><strong>Compétences BTS mobilisées :</strong> <span>Gérer le patrimoine informatique</span><span>Mettre à disposition un service informatique</span></div>
+                    <div class="galerie-mission"><figure><img src="img/rapport_page16_img3.jpeg" alt="Fonctionnement WDM : BiDi vs duplex" loading="lazy" class="zoomable"><figcaption>Fonctionnement WDM : BiDi vs duplex</figcaption></figure></div>
+                </dialog>
+                <dialog class="fenetre-mission" id="mission-selfstock" aria-labelledby="titre-selfstock">
+                    <button class="fermer-fenetre" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="type-mission">Avant-vente, Selfstock</span>
+                    <h3 id="titre-selfstock">Audit vidéosurveillance</h3>
+                    <div class="sar">
+                        <div><h5><i class="fa-solid fa-circle-question"></i> Contexte</h5><p>Selfstock souhaitait s'équiper en vidéosurveillance et avait besoin d'une recommandation argumentée.</p></div>
+                        <div><h5><i class="fa-solid fa-screwdriver-wrench"></i> Ce que j'ai fait</h5><ol><li>Comparaison des caméras « bullet » (longue portée, effet dissuasif) et « dôme » (discrètes, anti-vandalisme).</li><li>Intégration des durées de garantie constructeur dans la comparaison.</li><li>Rédaction d'un compte rendu d'audit pour le client.</li></ol></div>
+                        <div class="resultat"><h5><i class="fa-solid fa-circle-check"></i> Résultat</h5><p>Le client dispose d'un comparatif technique pour décider de son investissement.</p></div>
+                    </div>
+                    <div class="comp-mobilisees"><strong>Compétences BTS mobilisées :</strong> <span>Gérer le patrimoine informatique</span><span>Travailler en mode projet</span></div>
+                    <div class="galerie-mission"><figure><img src="img/rapport_page17_img1.jpeg" alt="Compte rendu d'audit" loading="lazy" class="zoomable"><figcaption>Compte rendu d'audit</figcaption></figure></div>
+                </dialog>
+                <dialog class="fenetre-mission" id="mission-qgis" aria-labelledby="titre-qgis">
+                    <button class="fermer-fenetre" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="type-mission">Étude, Commune de Grigny</span>
+                    <h3 id="titre-qgis">Cartographie d'un portail automatisé</h3>
+                    <div class="sar">
+                        <div><h5><i class="fa-solid fa-circle-question"></i> Contexte</h5><p>La commune de Grigny prévoyait d'automatiser un portail public. Il fallait d'abord modéliser le site.</p></div>
+                        <div><h5><i class="fa-solid fa-screwdriver-wrench"></i> Ce que j'ai fait</h5><ol><li>Modélisation du site sous QGIS.</li><li>Calcul des distances et réalisation des plans d'implantation.</li><li>Définition de l'infrastructure nécessaire selon les contraintes du terrain.</li></ol></div>
+                        <div class="resultat"><h5><i class="fa-solid fa-circle-check"></i> Résultat</h5><p>Un support cartographique pour dimensionner l'installation.</p></div>
+                    </div>
+                    <div class="comp-mobilisees"><strong>Compétences BTS mobilisées :</strong> <span>Travailler en mode projet</span></div>
+                    <div class="galerie-mission"><figure><img src="img/rapport_page17_img2.jpeg" alt="Modélisation sous QGIS" loading="lazy" class="zoomable"><figcaption>Modélisation sous QGIS</figcaption></figure></div>
+                </dialog>
+                <dialog class="fenetre-mission" id="mission-locaux" aria-labelledby="titre-locaux">
+                    <button class="fermer-fenetre" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="type-mission">Projet interne, 2CER Technologies</span>
+                    <h3 id="titre-locaux">Réseau des nouveaux locaux</h3>
+                    <div class="sar">
+                        <div><h5><i class="fa-solid fa-circle-question"></i> Contexte</h5><p>Les nouveaux locaux de 2CER étaient entièrement vierges de toute infrastructure réseau.</p></div>
+                        <div><h5><i class="fa-solid fa-screwdriver-wrench"></i> Ce que j'ai fait</h5><ol><li>Formation aux normes T568A/B, puis tirage des câbles et pose des prises murales en autonomie.</li><li>Étude de couverture Wi-Fi : arbitrage entre 2,4 GHz (portée, traversée des murs) et 5 GHz (débit à proximité).</li><li>Choix de l'emplacement des points d'accès à partir de l'analyse de l'atténuation.</li></ol></div>
+                        <div class="resultat"><h5><i class="fa-solid fa-circle-check"></i> Résultat</h5><p>Des locaux câblés et couverts en Wi-Fi, prêts à l'usage.</p></div>
+                    </div>
+                    <div class="comp-mobilisees"><strong>Compétences BTS mobilisées :</strong> <span>Gérer le patrimoine informatique</span><span>Mettre à disposition un service informatique</span></div>
+                    <div class="galerie-mission"><figure><img src="img/rapport_page19_img1.jpeg" alt="Tirage des câbles" loading="lazy" class="zoomable"><figcaption>Tirage des câbles</figcaption></figure><figure><img src="img/rapport_page19_img2.jpeg" alt="Prise RJ45" loading="lazy" class="zoomable"><figcaption>Prise RJ45</figcaption></figure><figure><img src="img/rapport_page19_img3.jpeg" alt="Couverture 2,4 GHz" loading="lazy" class="zoomable"><figcaption>Couverture 2,4 GHz</figcaption></figure><figure><img src="img/rapport_page20_img1.jpeg" alt="Couverture 5 GHz" loading="lazy" class="zoomable"><figcaption>Couverture 5 GHz</figcaption></figure><figure><img src="img/rapport_page20_img2.jpeg" alt="Étude Wi-Fi" loading="lazy" class="zoomable"><figcaption>Étude Wi-Fi</figcaption></figure></div>
+                </dialog>
+                <dialog class="fenetre-mission" id="mission-veille" aria-labelledby="titre-veille">
+                    <button class="fermer-fenetre" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+                    <span class="type-mission">Veille, Paris, Brétigny</span>
+                    <h3 id="titre-veille">Assises du THD, salon Allnet et démonstration anti-drone</h3>
+                    <div class="sar">
+                        <div><h5><i class="fa-solid fa-circle-question"></i> Contexte</h5><p>Le stage a aussi été l'occasion de découvrir le secteur au-delà des chantiers.</p></div>
+                        <div><h5><i class="fa-solid fa-screwdriver-wrench"></i> Ce que j'ai fait</h5><ol><li>Salon Allnet avec M. CARFIL : nouveaux équipements des fournisseurs (Ubiquiti, Teltonika…) et fonctionnement des partenariats commerciaux.</li><li>Participation aux Assises du Très Haut Débit à Paris.</li><li>Démonstration réelle de systèmes anti-drone à Brétigny.</li></ol></div>
+                        <div class="resultat"><h5><i class="fa-solid fa-circle-check"></i> Résultat</h5><p>J'ai compris pourquoi la fibre est utilisée dans ces environnements : insensible aux perturbations électromagnétiques, elle continue de transmettre pendant un brouillage radio.</p></div>
+                    </div>
+                    <div class="comp-mobilisees"><strong>Compétences BTS mobilisées :</strong> <span>Organiser son développement professionnel</span></div>
+                    <div class="galerie-mission"><figure><img src="img/rapport_page18_img1.jpeg" alt="Salon Allnet" loading="lazy" class="zoomable"><figcaption>Salon Allnet</figcaption></figure><figure><img src="img/rapport_page18_img2.jpeg" alt="Stand Allnet" loading="lazy" class="zoomable"><figcaption>Stand Allnet</figcaption></figure><figure><img src="img/rapport_page18_img3.jpeg" alt="Salon Allnet" loading="lazy" class="zoomable"><figcaption>Salon Allnet</figcaption></figure><figure><img src="img/rapport_page18_img4.jpeg" alt="Fusil anti-drone" loading="lazy" class="zoomable"><figcaption>Fusil anti-drone</figcaption></figure><figure><img src="img/rapport_page18_img5.jpeg" alt="Démonstration anti-drone" loading="lazy" class="zoomable"><figcaption>Démonstration anti-drone</figcaption></figure></div>
+                </dialog>
+
+                <dialog class="fenetre-zoom" id="fenetre-zoom">
+                    <button class="fermer-fenetre" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+                    <img src="" alt="">
+                    <p class="legende-zoom"></p>
+                </dialog>
+            </section>
+
+            <!-- PROJETS -->
+            <section id="projets" class="vue">
+                <h2 class="titre-vue">Projets réalisés</h2>
+                <p class="intro-section">Du plus récent au plus ancien. Les compétences BTS mobilisées par chaque projet sont reprises dans la <a href="#synthese">synthèse E4</a>.</p>
+                <div class="conteneur-projets">
+
+                    <!-- Immersion BAC PRO CIEL — 9 novembre 2026 -->
+                    <article class="carte-projet projet-majeur">
+                        <figure style="margin: 0; padding: 1.5rem; background: #fff; text-align: center;">
+                            <a href="img/schema-immersion-ciel.jpg" target="_blank" rel="noopener" aria-label="Agrandir le schéma réseau de l’immersion BAC PRO CIEL (nouvel onglet)">
+                                <img src="img/schema-immersion-ciel.jpg" alt="Schéma du TP : deux routeurs Cisco, deux switches et six postes répartis entre les VLAN 1, 2 et 3, avec une liaison vers Internet." width="922" height="566" loading="lazy" style="display: block; width: 100%; max-width: 922px; height: auto; margin: 0 auto;">
+                            </a>
+                            <figcaption style="margin-top: 1rem; color: #475569; font-size: 0.9rem;">Environnement réseau du TP d’immersion BAC PRO CIEL — extrait du support Saint-Aspais, page 2. Cliquez sur le schéma pour l’agrandir.</figcaption>
+                        </figure>
+                        <div class="contenu-projet" style="padding: 2.5rem;">
+                            <span class="type-projet">Atelier réseaux &amp; systèmes · <time datetime="2026-11-09">9 novembre 2026</time></span>
+                            <h3>Immersion BAC PRO CIEL — accompagnement des élèves en atelier réseau</h3>
+                            <div class="desc-projet">
+                                <p><strong>Contexte :</strong> le 9 novembre 2026, j'ai participé à l'immersion BAC PRO CIEL / BTS SIO au lycée Saint-Aspais à Melun. Cet atelier s'appuyait sur un TP d'infrastructure réseau pour mettre en pratique les notions de systèmes, de routage et de sécurité.</p>
+                                <p><strong>Mon rôle :</strong> j'ai encadré un groupe de quatre élèves de BAC PRO CIEL pendant l'atelier. Je coordonnais leur travail et les accompagnais dans les différentes étapes pour les aider à mener le TP à bien.</p>
+                                <p><strong>Exemple d'accompagnement :</strong> lorsqu'ils rencontraient des difficultés pour configurer le switch, j'intervenais pour les guider et réaliser avec eux les manipulations nécessaires.</p>
+                                <p><strong>Préparation et pratique technique :</strong> préparation d'une machine virtuelle Debian, branchement des équipements Cisco, tests de connectivité avec la commande ping et sauvegarde de configuration sur un serveur TFTP.</p>
+                                <p><strong>Objectifs du TP :</strong> construire une infrastructure segmentée en VLAN, configurer le routage inter-VLAN et DHCP, étudier les ACL, la connexion à un routeur FAI et la supervision réseau.</p>
+                                <ul class="liste-m2l">
+                                    <li><strong>Segmentation :</strong> réseaux des VLAN 1, 2 et 3, avec un plan d'adressage IPv4 distinct pour chacun.</li>
+                                    <li><strong>Routage et services :</strong> routage inter-VLAN, RIP, DHCP et NAT abordés dans le support de l'atelier.</li>
+                                    <li><strong>Sécurité et supervision :</strong> filtrage par ACL, contrôle de l'accès distant et découverte du port mirroring.</li>
+                                </ul>
+                                <p><strong>Compétences travaillées :</strong> accompagner des apprenants, expliquer des manipulations techniques, apporter une aide adaptée aux difficultés rencontrées, préparer un environnement réseau et vérifier son fonctionnement.</p>
+                            </div>
+                            <div class="tags" style="margin-top: 1.5rem;">
+                                <span>Cisco</span><span>Debian</span><span>VLAN</span><span>Routage IPv4</span><span>TFTP</span><span>ACL</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet M2L (en cours) -->
+                    <article class="carte-projet projet-majeur">
+                        <div class="conteneur-img-projet banniere-m2l">
+                            <div><i class="fa-solid fa-network-wired" aria-hidden="true"></i><span>M2L — Maison des Ligues</span><small>Atelier de professionnalisation · 2<sup>e</sup> année</small></div>
+                        </div>
+                        <div class="contenu-projet" style="padding: 2.5rem;">
+                            <span class="type-projet">Infrastructure &amp; services · En cours (2026 – 2027)</span>
+                            <h3>Projet M2L : déployer et documenter les services de la Maison des Ligues</h3>
+                            <div class="desc-projet">
+                                <p><strong>Objectif :</strong> mettre à disposition des ligues sportives des services de gestion de parc, de téléphonie et de partage de fichiers sur une infrastructure virtualisée. Ce projet de deuxième année est distinct de mon projet d'infrastructure réseau multisite.</p>
+                                <p><strong>Ma contribution :</strong> installation, configuration, tests et rédaction des procédures Asterisk, GLPI et réplication MariaDB décrites ci-dessous. Pour MariaDB, mon travail porte principalement sur le serveur esclave et quelques corrections sur le maître, déjà préparé en amont.</p>
+                                <ul class="liste-m2l resume-m2l">
+                                    <li><strong>GLPI :</strong> application accessible et contrôles des bases réussis.</li>
+                                    <li><strong>MariaDB :</strong> 442 tables répliquées ; reprise après redémarrage validée.</li>
+                                    <li><strong>Asterisk :</strong> serveur installé ; appels et flux inter-VLAN à tester.</li>
+                                </ul>
+                                <h4>Mes documentations techniques</h4>
+                                <div class="documents-m2l"><a class="bouton-doc-m2l" href="docs/procedures/Documentation_GLPI_M2L.pdf" target="_blank" rel="noopener" aria-label="Consulter la procédure GLPI (PDF, nouvel onglet)"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> GLPI <span>PDF ↗</span></a><a class="bouton-doc-m2l" href="docs/procedures/Documentation_Replication_MariaDB.pdf" target="_blank" rel="noopener" aria-label="Consulter la procédure MariaDB (PDF, nouvel onglet)"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> MariaDB <span>PDF ↗</span></a><a class="bouton-doc-m2l" href="docs/procedures/Documentation_Asterisk_M2L.pdf" target="_blank" rel="noopener" aria-label="Consulter la procédure Asterisk (PDF, nouvel onglet)"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Asterisk <span>PDF ↗</span></a></div>
+                                <details class="details-m2l">
+                                    <summary>Voir les détails techniques et les prochaines étapes</summary>
+                                    <div class="corps-details-m2l">
+                                <h4>Asterisk — serveur installé, appels à valider</h4>
+                                <p>Installation d'Asterisk 22 depuis les sources sur Debian, configuration PJSIP des postes 1001 et 1002, plan de numérotation interne et numéro de test d'écho 600. Le service systemd fonctionne avec un compte dédié et démarre automatiquement.</p>
+                                <p><strong>Validation :</strong> service actif, écoute SIP et plan de numérotation contrôlés. Aucun téléphone n'était encore enregistré lors des tests documentés ; les appels et les flux entre le VLAN serveurs et le VLAN voix restent à valider.</p>
+                                <p><strong>Difficulté résolue :</strong> correction d'un échec du script de compilation et ajout d'un verrou pour empêcher deux installations simultanées.</p>
+                                <h4>MariaDB — réplication de la base GLPI validée</h4>
+                                <p>Installation et configuration de l'esclave, import initial de la base et démarrage de la réplication depuis le journal binaire du maître. Création d'un compte applicatif limité à la lecture sur le réplica.</p>
+                                <p><strong>Résultat documenté :</strong> threads de réception et d'application actifs, aucune erreur et aucun retard au moment du contrôle. Les 442 tables de GLPI sont présentes sur les deux serveurs ; la réplication reprend après redémarrage du service.</p>
+                                <h4>GLPI — application accessible avec base déportée</h4>
+                                <p>Installation de GLPI 11 sur une VM Debian dédiée avec Apache et PHP, connexion au serveur MariaDB maître et déclaration du réplica. La base de données est hébergée sur des VM séparées du serveur web.</p>
+                                <p><strong>Validation :</strong> page d'authentification accessible (HTTP 200), connexion à l'interface, schéma de base vérifié et contrôles de la base principale et du réplica réussis.</p>
+                                <p><strong>Incidents traités :</strong> accès distant MariaDB bloqué par une écoute locale, erreur HTTP 500 liée à la clé applicative et décalage horaire entre les serveurs.</p>
+                                <h4>Travaux complémentaires et prochaines étapes</h4>
+                                <ul class="liste-m2l">
+                                    <li><strong>Nextcloud :</strong> brique dont j'ai la charge sur M2L-NEXTCLOUD : dossiers par ligue, dossier Commun en lecture seule et agent Wazuh. Validation finale à documenter.</li>
+                                    <li><strong>pfSense :</strong> rédaction de la documentation technique.</li>
+                                    <li><strong>GLPI :</strong> suivi des problèmes dans les tickets à compléter ; HTTPS, actions automatiques et sécurisation des comptes à finaliser selon la procédure.</li>
+                                    <li><strong>Réplica :</strong> état final de l'option read_only à confirmer, car les documentations GLPI et MariaDB décrivent des états différents.</li>
+                                </ul>
+                                <p><strong>Compétences travaillées :</strong> déployer des services Linux, configurer une base déportée et sa réplication, diagnostiquer des incidents, effectuer des tests et rédiger des procédures techniques.</p>
+                                    </div>
+                                </details>
+                            </div>
+                            <div class="tags" style="margin-top: 1.5rem;">
+                                <span>Debian</span><span>Proxmox VE</span><span>MariaDB</span><span>GLPI</span><span>Asterisk / PJSIP</span><span>Nextcloud</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 1 : Infrastructure Sécurisée (Projet Majeur) -->
+                    <article class="carte-projet projet-majeur">
+                        <div class="conteneur-img-projet">
+                            <img src="img/cisco-packet-tracer.png" alt="Laboratoire Réseau Cisco">
+                        </div>
+                        <div class="contenu-projet" style="padding: 2.5rem;">
+                            <span class="type-projet">Infrastructure & Virtualisation</span>
+                            <h3>Conception, Virtualisation et Déploiement d'une Infrastructure Réseau Sécurisée</h3>
+                            
+                            <div class="desc-projet">
+                                <p><strong>Contexte et Objectif :</strong><br>
+                                Dans le cadre de projets de réalisation d'infrastructure, j'ai conçu et déployé l'architecture réseau sécurisée d'une organisation multisite intégrant plusieurs ligues sportives. L'objectif était de segmenter le trafic pour garantir la sécurité des données internes, d'optimiser le routage et de mettre à disposition des services applicatifs critiques.</p>
+                                <p>Pour valider cette architecture au-delà de la simple simulation, j'ai mis en place un laboratoire virtuel complet reproduisant fidèlement les conditions réelles d'un réseau d'entreprise.</p>
+                            </div>
+                            
+                            <div class="details-projet" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                                <div>
+                                    <h4 style="color: var(--couleur-accent); margin-bottom: 0.8rem;"><i class="fa-solid fa-server"></i> Environnement Technique</h4>
+                                    <ul style="list-style-type: disc; margin-left: 1.2rem; color: var(--couleur-texte-muet); line-height: 1.6;">
+                                        <li><strong>Virtualisation :</strong> Hyperviseur Proxmox VE</li>
+                                        <li><strong>Réseau Virtuel :</strong> Linux Bridges / vSwitches</li>
+                                        <li><strong>Sécurité & Routage :</strong> Pare-feu applicatif pfSense</li>
+                                        <li><strong>Systèmes & Services :</strong> Debian (Web, FTP, DNS Bind9), DHCP, AD, GLPI</li>
+                                        <li><strong>Simulation :</strong> Cisco (3560 L3, 2960), ISR 4331 (Packet Tracer)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h4 style="color: var(--couleur-accent); margin-bottom: 0.8rem;"><i class="fa-solid fa-wrench"></i> Réalisations Techniques</h4>
+                                    <ul style="list-style-type: disc; margin-left: 1.2rem; color: var(--couleur-texte-muet); line-height: 1.6;">
+                                        <li>Élaboration d'un plan d'adressage IPv4 (VLSM / CIDR) et segmentation VLAN.</li>
+                                        <li>Déploiement sous Proxmox VE (isolations réseaux, provisionnement VM).</li>
+                                        <li>Sécurisation avec pfSense (Filtrage LAN/DMZ, NAT/Port Forwarding, routes).</li>
+                                        <li>Administration de services sous Debian (Web, FTP, DNS, DHCP, GLPI).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="competences-bts" style="background: var(--papier); padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; border-left: 3px solid var(--couleur-accent);">
+                                <h4 style="color: var(--couleur-texte-principal); margin-bottom: 1rem;"><i class="fa-solid fa-graduation-cap" style="color: var(--couleur-accent);"></i> Compétences BTS SIO (SISR) mobilisées</h4>
+                                
+                                <div style="margin-bottom: 1rem;">
+                                    <strong style="color: var(--couleur-accent); font-size: 0.95rem;">Bloc 1 : Support et mise à disposition de services informatiques</strong>
+                                    <ul style="margin-top: 0.5rem; list-style-type: disc; margin-left: 1.2rem; color: var(--couleur-texte-muet); font-size: 0.9rem; line-height: 1.5;">
+                                        <li><strong>Gérer le patrimoine :</strong> Planification des ressources (vCPU, RAM, Stockage) et adressage.</li>
+                                        <li><strong>Présence en ligne :</strong> Déploiement serveur Web fonctionnel en DMZ (redirection de ports).</li>
+                                    </ul>
+                                </div>
+                                
+                                <div style="margin-bottom: 1rem;">
+                                    <strong style="color: var(--couleur-accent); font-size: 0.95rem;">Bloc 2 : Conception et développement d'une solution d'infrastructure</strong>
+                                    <ul style="margin-top: 0.5rem; list-style-type: disc; margin-left: 1.2rem; color: var(--couleur-texte-muet); font-size: 0.9rem; line-height: 1.5;">
+                                        <li><strong>Concevoir :</strong> Maquettage topologie et choix des solutions de virtualisation.</li>
+                                        <li><strong>Déployer :</strong> Configuration vSwitches, installation systèmes, tests de connectivité de bout en bout.</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <strong style="color: var(--couleur-accent); font-size: 0.95rem;">Bloc 3 : Cybersécurité informatique</strong>
+                                    <ul style="margin-top: 0.5rem; list-style-type: disc; margin-left: 1.2rem; color: var(--couleur-texte-muet); font-size: 0.9rem; line-height: 1.5;">
+                                        <li><strong>Protéger les données :</strong> Isolation hermétique des réseaux via ponts réseau distincts.</li>
+                                        <li><strong>Préserver l'identité :</strong> Durcissement pare-feu pfSense (blocage flux non sollicités).</li>
+                                        <li><strong>Sécuriser les équipements :</strong> Architecture DMZ pour contenir les risques d'attaques.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="tags" style="margin-top: 1.5rem;">
+                                <span>Proxmox VE</span>
+                                <span>pfSense</span>
+                                <span>Debian</span>
+                                <span>Cisco</span>
+                                <span>VLAN / DMZ</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 2 : Koo2Fourchette -->
+                    <article class="carte-projet projet-majeur">
+                        <div class="conteneur-img-projet">
+                            <img src="img/maquette-koo_2_fourchette.png" alt="Koo2Fourchette">
+                        </div>
+                        <div class="contenu-projet" style="padding: 2.5rem;">
+                            <span class="type-projet" style="color: var(--couleur-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; margin-bottom: 0.5rem; display: inline-block;">Développement Web</span>
+                            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Koo2Fourchette : Site Web Dynamique</h3>
+                            
+                            <div class="desc-projet" style="margin-bottom: 1.5rem; color: var(--couleur-texte-muet); line-height: 1.6;">
+                                <p><strong>Contexte :</strong> KOO2FOURCHETTE est un projet de développement web intégralement conçu dans le cadre de ma première année de BTS SIO.</p>
+                                <p style="margin-top: 0.8rem;">L'objectif était de développer un site vitrine interactif et esthétique pour le secteur de la restauration, en partant de zéro (maquettage, codage, base de données, et déploiement final).</p>
+                            </div>
+                            
+                            <div class="details-projet" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; background: var(--papier); padding: 1.5rem; border-radius: 8px;">
+                                <div>
+                                    <h4 style="color: var(--couleur-accent); margin-bottom: 0.8rem;"><i class="fa-solid fa-code"></i> Missions Techniques</h4>
+                                    <ul style="list-style-type: none; margin-left: 0; color: var(--couleur-texte-muet); line-height: 1.6;">
+                                        <li><i class="fa-solid fa-check" style="color: var(--couleur-accent); margin-right: 8px;"></i> Interface fluide et Responsive Design</li>
+                                        <li><i class="fa-solid fa-check" style="color: var(--couleur-accent); margin-right: 8px;"></i> Architecture HTML5 & CSS3 sur-mesure</li>
+                                        <li><i class="fa-solid fa-check" style="color: var(--couleur-accent); margin-right: 8px;"></i> Intégration PHP dynamique</li>
+                                        <li><i class="fa-solid fa-check" style="color: var(--couleur-accent); margin-right: 8px;"></i> Gestion de base de données (phpMyAdmin)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--couleur-accent); margin-bottom: 0.8rem;"><i class="fa-solid fa-cloud-arrow-up"></i> Déploiement</h4>
+                                    <p style="color: var(--couleur-texte-muet); font-size: 0.95rem; line-height: 1.5;">Hébergement final et mise en ligne du projet pour le rendre accessible au public, démontrant ma capacité à gérer le cycle de vie complet d'une application web, de la conception au serveur en production.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="tags" style="margin-top: 2rem;">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>PHP 8</span>
+                                <span>MySQL / phpMyAdmin</span>
+                                <span>Hébergement Web</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- VEILLE -->
+            <section id="veille" class="vue">
+                <h2 class="titre-vue">Veille technologique</h2>
+                <article class="carte-veille veille-attente">
+                    <span class="statut-attente"><span class="point-orange"></span> En préparation</span>
+                    <h3>Ma veille technologique sera publiée ici prochainement</h3>
+                    <p>Le sujet de ma veille technologique reste à définir. Cette rubrique accueillera ensuite les sources consultées, des articles datés et mes analyses en lien avec les systèmes, les réseaux ou la cybersécurité.</p>
+                </article>
+                <div class="carte-veille veille-terrain">
+                    <h3>En attendant : ma veille sur le terrain</h3>
+                    <p>Pendant mon stage chez 2CER Technologies, j'ai participé aux Assises du Très Haut Débit à Paris, visité le salon Allnet et assisté à une démonstration de solutions anti-drone. Le détail est dans la page <a href="#stage">Mon stage</a>.</p>
+                </div>
+            </section>
+
+            <!-- SYNTHESE E4 -->
+            <section id="synthese" class="vue">
+                <h2 class="titre-vue">Synthèse E4 — Tableau des réalisations</h2>
+                <p style="margin-bottom: 2rem; color: var(--couleur-texte-muet); font-size: 1.05rem;">
+                    Tableau de synthèse demandé pour l'épreuve <strong>E4 — Support et mise à disposition de services informatiques</strong> : il relie mes réalisations aux six compétences du bloc 1 du <a href="#referentiel">référentiel BTS SIO</a>. Réalisations classées de la plus récente à la plus ancienne.
+                </p>
+                <div class="tableau-synthese-wrap">
+                    <table class="tableau-synthese">
+                        <thead><tr><th scope="col">Réalisation</th><th scope="col">Gérer le patrimoine informatique</th><th scope="col">Répondre aux incidents et aux demandes d'assistance</th><th scope="col">Développer la présence en ligne</th><th scope="col">Travailler en mode projet</th><th scope="col">Mettre à disposition un service informatique</th><th scope="col">Organiser son développement professionnel</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Immersion BAC PRO CIEL — encadrement de quatre élèves et aide à la configuration du switch<span class="type-reali">Atelier du 9 novembre 2026</span></th><td></td><td class="coche">✓</td><td></td><td class="coche">✓</td><td></td><td></td></tr>
+                            <tr><th scope="row">Projet M2L — pfSense, réplication MariaDB, GLPI, Asterisk, Nextcloud<span class="type-reali">AP 2<sup>e</sup> année (en cours)</span></th><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
+                            <tr><th scope="row">Configuration d'un switch Cisco SF500 (VLAN, accès distant SSH)<span class="type-reali">TP 2<sup>e</sup> année</span></th><td class="coche">✓</td><td></td><td></td><td></td><td class="coche">✓</td><td></td></tr>
+                            <tr><th scope="row">Infrastructure réseau sécurisée multisite (Proxmox, pfSense, VLAN, DMZ)<span class="type-reali">Projet formation</span></th><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
+                            <tr><th scope="row">Koo2Fourchette — site web dynamique PHP/MySQL<span class="type-reali">Projet formation</span></th><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
+                            <tr><th scope="row">Gestion de parc GLPI — Melun Design (inventaire, tickets)<span class="type-reali">TP 2<sup>e</sup> année</span></th><td class="coche">✓</td><td class="coche">✓</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><th scope="row">Réplication MariaDB maître/esclave<span class="type-reali">TP 2<sup>e</sup> année</span></th><td></td><td></td><td></td><td></td><td class="coche">✓</td><td></td></tr>
+                            <tr><th scope="row">Raccordement fibre inter-bâtiments — Médiapôle de Grigny<span class="type-reali">Stage</span></th><td></td><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
+                            <tr><th scope="row">Tests de débit iperf3 — Centre de santé Medis<span class="type-reali">Stage</span></th><td></td><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td></td></tr>
+                            <tr><th scope="row">Audit vidéosurveillance — Selfstock<span class="type-reali">Stage</span></th><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td></td><td></td></tr>
+                            <tr><th scope="row">Câblage RJ45 et étude Wi-Fi — locaux 2CER<span class="type-reali">Stage</span></th><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td><td class="coche">✓</td><td></td></tr>
+                            <tr><th scope="row">Assises du THD, salon Allnet, MOOC cybersécurité, préparation CCNA<span class="type-reali">Veille / certif.</span></th><td></td><td></td><td></td><td></td><td></td><td class="coche">✓</td></tr>
+                            <tr><th scope="row">Ce portfolio<span class="type-reali">Personnel</span></th><td></td><td></td><td class="coche">✓</td><td></td><td></td><td class="coche">✓</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PARCOURS -->
+            <section id="parcours" class="vue">
+                <h2 class="titre-vue">Parcours & Formation</h2>
+
+                <p class="intro-section">Du plus récent au plus ancien. Le détail du diplôme est dans la page <a href="#referentiel">Référentiel BTS</a>.</p>
+
+                <div class="conteneur-chronologie">
+                    <div class="item-chronologie">
+                        <div class="date-chronologie" style="color: var(--couleur-accent); font-weight: bold;">Janv. – févr. 2027</div>
+                        <div class="contenu-chronologie">
+                            <h3>Stage de 2<sup>e</sup> année (5 semaines)</h3>
+                            <div class="lieu">Entreprise en cours de recherche</div>
+                            <p>Stage du 4 janvier au 6 février 2027 en systèmes et réseaux. <a href="#cv">Voir mon CV et ma lettre de motivation</a>.</p>
+                        </div>
+                    </div>
+                    <div class="item-chronologie">
+                        <div class="date-chronologie">Sept. 2026 – juin 2027</div>
+                        <div class="contenu-chronologie">
+                            <h3>2<sup>e</sup> année de BTS SIO option SISR</h3>
+                            <div class="lieu"><a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener">Campus Saint-Aspais</a>, Melun</div>
+                            <p>Administration des systèmes et des réseaux, cybersécurité, <a href="#projets">projet M2L</a> et préparation des épreuves E4, E5 et E6.</p>
+                        </div>
+                    </div>
+                    <div class="item-chronologie">
+                        <div class="date-chronologie">Mai – juillet 2026</div>
+                        <div class="contenu-chronologie">
+                            <h3>Stage technicien systèmes et réseaux</h3>
+                            <div class="lieu"><a href="#stage">2CER Technologies</a>, Brie-Comte-Robert</div>
+                            <p>Tirage et soudure de fibre optique, tests de débit (iperf3), câblage RJ45, étude de couverture Wi-Fi et audit de vidéosurveillance.</p>
+                        </div>
+                    </div>
+                    <div class="item-chronologie">
+                        <div class="date-chronologie">Sept. 2025 – juin 2026</div>
+                        <div class="contenu-chronologie">
+                            <h3>1<sup>re</sup> année de BTS SIO option SISR — <span style="color: var(--fibre-vert);">validée</span></h3>
+                            <div class="lieu"><a href="https://www.institutionsaintaspais.fr/enseignement-superieur/bts-sio/" target="_blank" rel="noopener">Campus Saint-Aspais</a>, Melun</div>
+                            <p>Fondamentaux des réseaux (Cisco, VLAN, routage), virtualisation, services Linux et Windows, développement web (<a href="#projets">Koo2Fourchette</a>).</p>
+                        </div>
+                    </div>
+                    <div class="item-chronologie">
+                        <div class="date-chronologie">2023 – 2025</div>
+                        <div class="contenu-chronologie">
+                            <h3>Baccalauréat général</h3>
+                            <div class="lieu">Lycée Simone Signoret, Vaux-le-Pénil</div>
+                            <p>Spécialités Mathématiques et Sciences économiques et sociales (SES).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REFERENTIEL -->
+            <section id="referentiel" class="vue">
+                <h2 class="titre-vue">Le référentiel du BTS SIO</h2>
+                <div class="carte-ref-dl">
+                    <div>
+                        <h3>Référentiel officiel — rénovation, session 2022</h3>
+                        <p>Document de 115 pages qui définit les activités, les compétences et les épreuves du diplôme.</p>
+                    </div>
+                    <div class="actions-veille">
+                        <a href="docs/REFERENTIEL_BTS_SIO-_RENOVATION_SESSION_2022-SIGNETS.pdf" target="_blank" class="btn-secondaire btn-inline"><i class="fa-solid fa-eye"></i> Consulter</a>
+                        <a href="docs/REFERENTIEL_BTS_SIO-_RENOVATION_SESSION_2022-SIGNETS.pdf" download="Referentiel_BTS_SIO_session_2022.pdf" class="btn-primaire btn-inline"><i class="fa-solid fa-download"></i> Télécharger (PDF)</a>
+                    </div>
+                </div>
+
+                <h3 class="sous-titre-section">Résumé</h3>
+                <div class="grille-contexte">
+                    <div class="carte-contexte">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h4>Le diplôme</h4>
+                        <p>Le BTS Services informatiques aux organisations est un diplôme d'État de niveau Bac+2 (niveau 5), préparé en deux ans. Il propose deux options : <strong>SISR</strong> (Solutions d'infrastructure, systèmes et réseaux), la mienne, et <strong>SLAM</strong> (Solutions logicielles et applications métiers).</p>
+                    </div>
+                    <div class="carte-contexte">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <h4>Trois blocs de compétences professionnelles</h4>
+                        <p><strong>Bloc 1</strong> — Support et mise à disposition de services informatiques (commun aux deux options).<br><strong>Bloc 2</strong> — Administration des systèmes et des réseaux (option SISR).<br><strong>Bloc 3</strong> — Cybersécurité des services informatiques.</p>
+                    </div>
+                    <div class="carte-contexte">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <h4>Les stages</h4>
+                        <p>10 semaines au total : 4 à 5 semaines consécutives en fin de 1<sup>re</sup> année (mon <a href="#stage">stage chez 2CER</a>) et 5 à 6 semaines en 2<sup>e</sup> année (du 4 janvier au 6 février 2027 pour moi).</p>
+                    </div>
+                </div>
+
+                <h3 class="sous-titre-section">Les épreuves professionnelles</h3>
+                <div class="tableau-synthese-wrap">
+                    <table class="tableau-synthese tableau-epreuves">
+                        <thead><tr><th scope="col">Épreuve</th><th scope="col">Forme</th><th scope="col">Coef.</th><th scope="col">Ce qui est évalué</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">E4 — Support et mise à disposition de services informatiques</th><td>Oral, 40 min</td><td>4</td><td>Les 6 compétences du bloc 1, à partir du portfolio et du <a href="#synthese">tableau de synthèse</a> : gérer le patrimoine informatique, répondre aux incidents et demandes d'assistance, développer la présence en ligne, travailler en mode projet, mettre à disposition un service, organiser son développement professionnel.</td></tr>
+                            <tr><th scope="row">E5 — Administration des systèmes et des réseaux (SISR)</th><td>Pratique et orale, 40 min</td><td>4</td><td>Concevoir une solution d'infrastructure réseau ; l'installer, la tester et la déployer ; l'exploiter, la dépanner et la superviser. Appui sur deux réalisations professionnelles.</td></tr>
+                            <tr><th scope="row">E6 — Cybersécurité des services informatiques (SISR)</th><td>Écrit, 4 h</td><td>4</td><td>Protéger les données personnelles, préserver l'identité numérique de l'organisation, sécuriser les équipements et les usages, garantir la disponibilité, l'intégrité et la confidentialité des services, assurer la cybersécurité d'une infrastructure.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="preuves" style="margin-top: 1rem;">Les épreuves générales complètent le diplôme : culture générale et expression, anglais, mathématiques pour l'informatique, culture économique, juridique et managériale (CEJM).</p>
+            </section>
+
+            <!-- CV & LETTRE -->
+            <section id="cv" class="vue">
+                <h2 class="titre-vue">CV &amp; lettre de motivation</h2>
+                <p class="intro-section">Je recherche un <strong>stage de 5 semaines en systèmes et réseaux, du 4 janvier au 6 février 2027</strong>. Les deux documents sont à jour (octobre 2026) et téléchargeables en PDF.</p>
+                <div class="grille-documents">
+                    <article class="carte-document">
+                        <div class="entete-document"><i class="fa-solid fa-id-card"></i><div><h3>CV</h3><span>PDF d'une page, mis à jour en octobre 2026</span></div></div>
+                        <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" target="_blank" class="apercu-doc" title="Ouvrir le CV en PDF"><img src="img/apercu_cv.png" alt="Aperçu du CV de Julien Martinière" loading="lazy"></a>
+                        <div class="actions-veille">
+                            <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" download="CV_Julien_Martiniere_BTS_SIO_SISR.pdf" class="btn-primaire btn-inline"><i class="fa-solid fa-download"></i> Télécharger le CV</a>
+                            <a href="docs/CV_Julien_Martiniere_BTS_SIO_SISR.pdf" target="_blank" class="btn-secondaire btn-inline"><i class="fa-solid fa-up-right-from-square"></i> Ouvrir</a>
+                        </div>
+                    </article>
+                    <article class="carte-document">
+                        <div class="entete-document"><i class="fa-solid fa-envelope-open-text"></i><div><h3>Lettre de motivation</h3><span>Pour un stage du 4 janvier au 6 février 2027</span></div></div>
+                        <a href="docs/Lettre_motivation_stage_2027_Julien_Martiniere.pdf" target="_blank" class="apercu-doc" title="Ouvrir la lettre en PDF"><img src="img/apercu_lettre.png" alt="Aperçu de la lettre de motivation pour un stage du 4 janvier au 6 février 2027" loading="lazy"></a>
+                        <div class="actions-veille">
+                            <a href="docs/Lettre_motivation_stage_2027_Julien_Martiniere.pdf" download="Lettre_motivation_stage_2027_Julien_Martiniere.pdf" class="btn-primaire btn-inline"><i class="fa-solid fa-download"></i> Télécharger la lettre</a>
+                            <a href="docs/Lettre_motivation_stage_2027_Julien_Martiniere.pdf" target="_blank" class="btn-secondaire btn-inline"><i class="fa-solid fa-up-right-from-square"></i> Ouvrir</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- PROCEDURES -->
+            <section id="procedures" class="vue">
+                <h2 class="titre-vue">Procédures techniques</h2>
+                <p style="margin-bottom: 3rem; color: var(--couleur-texte-muet); font-size: 1.1rem;">
+                    Consultez ou téléchargez les procédures techniques que j'ai rédigées pendant le BTS SIO SISR. Les documentations du projet M2L sont présentées en premier.
+                </p>
+
+                <div class="filtres-procedures">
+                    <button class="btn-filtre actif" data-filter="tout">Tout</button>
+                    <button class="btn-filtre" data-filter="reseau">Réseau</button>
+                    <button class="btn-filtre" data-filter="systeme">Système</button>
+                    <button class="btn-filtre" data-filter="securite">Sécurité</button>
+                    <button class="btn-filtre" data-filter="virtualisation">Virtualisation</button>
+                </div>
+
+                <div class="grille-procedures">
+
+                    <article class="carte-procedure" data-categorie="systeme">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-ticket icone-procedure" aria-hidden="true"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Système · M2L</span>
+                                <h3>GLPI — M2L</h3>
+                                <p>Installation avec base déportée, tests et résolution des incidents</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Documentation_GLPI_M2L.pdf" target="_blank" rel="noopener" class="btn-vue-proc" aria-label="Visionner la documentation GLPI — M2L (PDF, nouvel onglet)"><i class="fa-solid fa-eye" aria-hidden="true"></i> Visionner</a>
+                            <a href="docs/procedures/Documentation_GLPI_M2L.pdf" download="Documentation_GLPI_M2L.pdf" class="btn-dl-proc" aria-label="Télécharger la documentation GLPI — M2L"><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger</a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="systeme">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-database icone-procedure" aria-hidden="true"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Système · M2L</span>
+                                <h3>Réplication MariaDB — M2L</h3>
+                                <p>Configuration du réplica, contrôle des 442 tables et reprise après redémarrage</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Documentation_Replication_MariaDB.pdf" target="_blank" rel="noopener" class="btn-vue-proc" aria-label="Visionner la documentation Réplication MariaDB — M2L (PDF, nouvel onglet)"><i class="fa-solid fa-eye" aria-hidden="true"></i> Visionner</a>
+                            <a href="docs/procedures/Documentation_Replication_MariaDB.pdf" download="Documentation_Replication_MariaDB.pdf" class="btn-dl-proc" aria-label="Télécharger la documentation Réplication MariaDB — M2L"><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger</a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="systeme reseau">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-phone icone-procedure" aria-hidden="true"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Système &amp; Réseau · M2L</span>
+                                <h3>Asterisk VoIP — M2L</h3>
+                                <p>Installation, configuration PJSIP et plan de numérotation</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Documentation_Asterisk_M2L.pdf" target="_blank" rel="noopener" class="btn-vue-proc" aria-label="Visionner la documentation Asterisk VoIP — M2L (PDF, nouvel onglet)"><i class="fa-solid fa-eye" aria-hidden="true"></i> Visionner</a>
+                            <a href="docs/procedures/Documentation_Asterisk_M2L.pdf" download="Documentation_Asterisk_M2L.pdf" class="btn-dl-proc" aria-label="Télécharger la documentation Asterisk VoIP — M2L"><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger</a>
+                        </div>
+                    </article>
+
+
+                    <article class="carte-procedure" data-categorie="reseau">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-ethernet icone-procedure"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Réseau · 2<sup>e</sup> année</span>
+                                <h3>Switch Cisco SF500</h3>
+                                <p>Accès distant sécurisé, passerelle et VLAN</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Configuration_Switch_Cisco_SF500.pdf" target="_blank" class="btn-vue-proc">
+                                <i class="fa-solid fa-eye"></i> Visionner
+                            </a>
+                            <a href="docs/procedures/Configuration_Switch_Cisco_SF500.pdf" download="Configuration_Switch_Cisco_SF500.pdf" class="btn-dl-proc">
+                                <i class="fa-solid fa-download"></i> Télécharger
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="systeme reseau">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-server icone-procedure"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Système & Réseau</span>
+                                <h3>Serveur TFTP</h3>
+                                <p>Déploiement & Gestion des Configurations</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Déploiement%20d'un%20Serveur%20TFTP%20et%20Gestion%20des%20Configurations%20Réseau.pdf" target="_blank" class="btn-vue-proc">
+                                <i class="fa-solid fa-eye"></i> Visionner
+                            </a>
+                            <a href="docs/procedures/Déploiement%20d'un%20Serveur%20TFTP%20et%20Gestion%20des%20Configurations%20Réseau.pdf" download="Déploiement d'un Serveur TFTP et Gestion des Configurations Réseau.pdf" target="_blank" class="btn-dl-proc">
+                                <i class="fa-solid fa-download"></i> Télécharger
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="reseau">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-route icone-procedure"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Réseau</span>
+                                <h3>Routage & DNS Cisco</h3>
+                                <p>Routage et Résolution DNS sous Packet Tracer</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Routage%20et%20Résolution%20DNS%20sous%20Cisco%20Packet%20Tracer.pdf" target="_blank" class="btn-vue-proc">
+                                <i class="fa-solid fa-eye"></i> Visionner
+                            </a>
+                            <a href="docs/procedures/Routage%20et%20Résolution%20DNS%20sous%20Cisco%20Packet%20Tracer.pdf" download="Routage et Résolution DNS sous Cisco Packet Tracer.pdf" target="_blank" class="btn-dl-proc">
+                                <i class="fa-solid fa-download"></i> Télécharger
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="securite">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-fire-burner icone-procedure"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Sécurité</span>
+                                <h3>pfSense</h3>
+                                <p>Documentation et configuration pare-feu</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Documentation%20Pfsense.pdf" target="_blank" class="btn-vue-proc">
+                                <i class="fa-solid fa-eye"></i> Visionner
+                            </a>
+                            <a href="docs/procedures/Documentation%20Pfsense.pdf" download="Documentation Pfsense.pdf" target="_blank" class="btn-dl-proc">
+                                <i class="fa-solid fa-download"></i> Télécharger
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="virtualisation">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-layer-group icone-procedure"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Virtualisation</span>
+                                <h3>Proxmox VE</h3>
+                                <p>Déploiement d'un environnement virtuel</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/PROXMOX.pdf" target="_blank" class="btn-vue-proc">
+                                <i class="fa-solid fa-eye"></i> Visionner
+                            </a>
+                            <a href="docs/procedures/PROXMOX.pdf" download="PROXMOX.pdf" target="_blank" class="btn-dl-proc">
+                                <i class="fa-solid fa-download"></i> Télécharger
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="securite">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-key icone-procedure"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Sécurité</span>
+                                <h3>Tunnel SSH</h3>
+                                <p>Mise en place et sécurisation des accès</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Tunnel%20SSH.pdf" target="_blank" class="btn-vue-proc">
+                                <i class="fa-solid fa-eye"></i> Visionner
+                            </a>
+                            <a href="docs/procedures/Tunnel%20SSH.pdf" download="Tunnel SSH.pdf" target="_blank" class="btn-dl-proc">
+                                <i class="fa-solid fa-download"></i> Télécharger
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="securite reseau">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-shield-halved icone-procedure"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Sécu & Réseau</span>
+                                <h3>Redirection NAT</h3>
+                                <p>Redirection de ports & Ouverture de flux</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Reseaux_NAT.pdf" target="_blank" class="btn-vue-proc">
+                                <i class="fa-solid fa-eye"></i> Visionner
+                            </a>
+                            <a href="docs/procedures/Reseaux_NAT.pdf" download="Reseaux_NAT.pdf" target="_blank" class="btn-dl-proc">
+                                <i class="fa-solid fa-download"></i> Télécharger
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="systeme">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-folder-tree icone-procedure"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Système</span>
+                                <h3>Dossiers Partagés</h3>
+                                <p>Gestion des partages et droits NTFS</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Dossier_partager.pdf" target="_blank" class="btn-vue-proc">
+                                <i class="fa-solid fa-eye"></i> Visionner
+                            </a>
+                            <a href="docs/procedures/Dossier_partager.pdf" download="Dossier_partager.pdf" target="_blank" class="btn-dl-proc">
+                                <i class="fa-solid fa-download"></i> Télécharger
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="carte-procedure" data-categorie="reseau">
+                        <div class="rangee-contenu-proc">
+                            <i class="fa-solid fa-network-wired icone-procedure"></i>
+                            <div class="info-proc">
+                                <span class="tag-bts">Réseau</span>
+                                <h3>Configuration IP</h3>
+                                <p>Exolab Cisco - Routage Statique</p>
+                            </div>
+                        </div>
+                        <div class="actions-procedure">
+                            <a href="docs/procedures/Exolab_Cisco_Routage.pdf" target="_blank" class="btn-vue-proc">
+                                <i class="fa-solid fa-eye"></i> Visionner
+                            </a>
+                            <a href="docs/procedures/Exolab_Cisco_Routage.pdf" download="Exolab_Cisco_Routage.pdf" target="_blank" class="btn-dl-proc">
+                                <i class="fa-solid fa-download"></i> Télécharger
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" class="vue">
+                <h2 class="titre-vue">Me contacter</h2>
+
+                <div class="mise-en-page-contact-grid">
+                    <div class="formulaire-contact-bloc">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--couleur-texte-principal);">M'envoyer un message</h3>
+                        <p id="aide-contact" class="aide-contact">Ce formulaire prépare un email dans votre application de messagerie. Vous pourrez le vérifier puis l’envoyer depuis celle-ci.</p>
+                        <form class="form-contact" id="form-contact" aria-describedby="aide-contact">
+                            <div class="groupe-form">
+                                <label for="nom">Nom / Entreprise</label>
+                                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                            </div>
+                            <div class="groupe-form">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                            </div>
+                            <div class="groupe-form">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-primaire" style="width: 100%;">
+                                <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i> Ouvrir ma messagerie
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="infos-contact-bloc">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--couleur-texte-principal);">Coordonnées</h3>
+                        <div class="cartes-contact-verticales">
+                            <a href="mailto:lipcat.julien@gmail.com" class="boite-contact-mini">
+                                <i class="fa-solid fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <span>lipcat.julien@gmail.com</span>
+                                </div>
+                            </a>
+                            <a href="https://linkedin.com/in/julien-martiniere" target="_blank" class="boite-contact-mini">
+                                <i class="fa-brands fa-linkedin"></i>
+                                <div>
+                                    <h4>LinkedIn</h4>
+                                    <span>Julien Martinière</span>
+                                </div>
+                            </a>
+                            <a href="#cv" class="boite-contact-mini lien-interne">
+                                <i class="fa-solid fa-file-lines"></i>
+                                <div>
+                                    <h4>CV &amp; lettre</h4>
+                                    <span>Télécharger mes documents</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+
+
+</body>
+
+</html>
