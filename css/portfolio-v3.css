@@ -1,0 +1,180 @@
+/*
+ PORTFOLIO V3 — Editorial / Network engineer
+ Independent design prototype. No page content, scripts or navigation removed.
+ Design concept: technical editorial layout / warm paper / navy / copper signal.
+ */
+:root{
+ --encre:#142338;--papier:#F4F2EE;--surface:#fff;
+ --ligne:#DCE0E2;--texte-2:#35475A;
+ --fibre-bleu:#31577C;--fibre-bleu-fonce:#1C3856;
+ --couleur-fond:#F4F2EE;--couleur-barre-laterale:#142338;
+ --couleur-texte-principal:#142338;--couleur-texte-muet:#526274;
+ --couleur-accent:#31577C;--couleur-accent-alt:#31577C;
+ --couleur-bordure:#DCE0E2;--fond-carte:#fff;--bordure-carte:1px solid #DCE0E2;
+ --largeur-barre-laterale:254px;--largeur-max-conteneur:1280px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--papier);}
+.vue-principale{background:var(--papier);padding:0 clamp(20px,3vw,54px) 64px;}
+.vue-principale p{line-height:1.72}
+.vue-principale :is(h1,h2,h3){text-wrap:balance}
+:where(a,button,input,textarea,select,summary):focus-visible{outline:3px solid #B97836!important;outline-offset:3px}
+/* Sidebar: navigation index, not a dashboard */
+.barre-laterale{background:#142338!important;border-right:0;padding:28px 18px 20px;overflow-y:auto;scrollbar-width:thin;}
+.barre-laterale .logo{color:#fff;font-size:2.7rem;line-height:1;font-weight:700;letter-spacing:-.09em;margin:0 0 10px;}
+.barre-laterale .role{color:#AEC0CF!important;font-size:.72rem;letter-spacing:.1em;line-height:1.4;}
+.barre-laterale .mini-ruban{opacity:.9;margin-top:16px;}
+.barre-laterale .liens-nav{min-height:0;overflow-y:auto;gap:3px;margin:24px 0 10px;padding:0 2px 8px;justify-content:flex-start;scrollbar-width:thin}
+.barre-laterale .item-nav{color:#C3D0DC!important;font-size:.86rem;line-height:1.28;padding:10px 12px;gap:10px;border-radius:3px;min-height:39px;transform:none!important;transition:background-color .2s ease,color .2s ease;}
+.barre-laterale .item-nav .icon{color:#A1B5C7!important;opacity:1;width:17px;font-size:.93rem;}
+.barre-laterale .item-nav:hover{background:#233A52!important;color:#fff!important;}
+.barre-laterale .item-nav.active{background:#294259!important;color:#fff!important;box-shadow:inset 3px 0 0 #D6965A!important;}
+.barre-laterale .item-nav.active .icon{color:#E7B27E!important;}
+.barre-laterale .item-nav.active::before{display:none;}
+.barre-laterale .pied-barre-laterale{border-top:1px solid #3F5265!important;padding-top:18px;}
+.barre-laterale .btn-telecharger{background:#E4AC76;color:#142338;border:1px solid #E4AC76;border-radius:3px;font-size:.83rem;font-weight:700;padding:11px 9px}
+.barre-laterale .btn-telecharger:hover{background:#F5C69A;color:#142338;border-color:#F5C69A}
+.barre-laterale .liens-externes a{color:#B9CAD9;font-size:.76rem}
+.barre-laterale .liens-externes a:hover{color:#fff}
+.bouton-menu-mobile{background:#142338!important;color:#fff!important;border:1px solid #142338!important;border-radius:4px}
+/* Page entry: editorial cover with strong typographic contrast */
+#accueil{max-width:1280px;}
+#accueil .hero-accueil{
+ display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.78fr);
+ gap:clamp(28px,4vw,66px);align-items:center;
+ position:relative;min-height:590px;padding:clamp(50px,6vw,90px) clamp(24px,4.2vw,72px);
+ margin:0 calc(-1 * clamp(20px,3vw,54px)) 0;
+ background:#FCFBF8;border-bottom:1px solid #D5D9DD;
+ overflow:hidden;
+}
+#accueil .hero-accueil::after{
+ content:"";position:absolute;bottom:0;left:clamp(24px,4.2vw,72px);height:5px;width:92px;background:#BD7740;
+}
+#accueil .hero-texte{min-width:0;position:relative;z-index:1}
+#accueil .hero-texte::before{
+ content:"PORTFOLIO  /  SYSTÈMES & RÉSEAUX";
+ display:block;color:#8D603E;letter-spacing:.17em;font-size:.66rem;
+ font-weight:700;margin-bottom:26px;
+}
+#accueil .lien-ecole{display:flex;color:#5E6874!important;font-size:.78rem;letter-spacing:.01em;margin:0 0 20px;max-width:100%}
+#accueil .lien-ecole img{height:36px;max-width:60px;object-fit:contain;border:0!important;background:#fff;padding:3px}
+#accueil .nom-hero{font-family:var(--police);font-weight:700;line-height:.97;letter-spacing:-.072em;font-size:clamp(3.4rem,6vw,6.4rem);margin:0 0 22px;color:#142338;max-width:10ch;}
+#accueil .nom-hero span{color:#142338}
+#accueil .ruban-fibres{max-width:440px;margin:16px 0 20px;}
+#accueil .ruban-fibres svg{height:30px;opacity:1;}
+#accueil .ruban-fibres .brin{stroke-width:2.1}
+#accueil .ruban-fibres figcaption{color:#677789;font-size:.7rem;letter-spacing:.01em;}
+#accueil .accroche{color:#35475A!important;font-size:clamp(1rem,1.4vw,1.16rem);line-height:1.72;max-width:56ch;margin-bottom:22px}
+#accueil .accroche strong{color:#142338}
+#accueil .preuves-hero{display:flex;flex-wrap:wrap;gap:8px 18px;color:#41566B;font-size:.76rem;margin:0 0 22px;}
+#accueil .preuves-hero li{gap:7px}
+#accueil .preuves-hero i{color:#B97836}
+#accueil .pastille-dispo{background:transparent!important;color:#315E4F!important;border:1px solid #9FBDAF!important;border-radius:3px;padding:8px 12px;font-size:.84rem;line-height:1.4;}
+#accueil .pastille-dispo strong{color:#315E4F}
+#accueil .point-vert{background:#4B876B;box-shadow:none}
+#accueil .actions-hero{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+#accueil .actions-hero a{min-height:45px;border-radius:3px;font-size:.83rem;padding:11px 14px;line-height:1.3;transform:none!important}
+#accueil .actions-hero .btn-primaire{background:#142338!important;border:1px solid #142338!important;color:#fff!important}
+#accueil .actions-hero .btn-primaire:hover{background:#31577C!important}
+#accueil .actions-hero .btn-secondaire{background:transparent!important;color:#142338!important;border:1px solid #AAB5BF!important}
+#accueil .actions-hero .btn-secondaire:hover{background:#E9EDEB!important}
+#accueil .hero-photo{position:relative;max-width:370px!important;width:100%;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important;box-shadow:none!important;justify-self:center!important}
+#accueil .hero-photo::before{content:"";position:absolute;inset:16px -14px -14px 16px;border:1px solid #D0B197;pointer-events:none}
+#accueil .cadre-portrait{aspect-ratio:4/5;position:relative;border-radius:2px!important;background:#D7D9D8;}
+#accueil .photo-hero{border-radius:2px!important;box-shadow:none!important;transform:scale(1.10)!important;object-position:50% 47%!important;}
+#accueil .carte-flottante{position:relative;background:#142338!important;color:#fff!important;box-shadow:none!important;border:0!important;border-radius:0!important;margin:0!important;padding:13px 18px!important;justify-content:flex-start!important;gap:12px!important;z-index:1;}
+#accueil .carte-flottante strong{color:#fff!important;font-size:.93rem}
+#accueil .carte-flottante span{color:#C6D1DD!important}
+#accueil .carte-flottante i{color:#E0A873!important}
+/* Stats are an editorial strip, not 4 unrelated tiles. */
+#accueil .chiffres-accueil{margin:0 0 64px;gap:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid #D1D7DC;padding:30px 0 28px;}
+#accueil .chiffres-accueil a{background:transparent!important;border:0!important;border-right:1px solid #CDD4DB!important;border-radius:0!important;padding:8px 20px;box-shadow:none!important;transform:none!important;gap:9px;}
+#accueil .chiffres-accueil a:first-child{padding-left:0}
+#accueil .chiffres-accueil a:last-child{border-right:0!important}
+#accueil .chiffres-accueil strong{color:#142338!important;font-family:var(--police);font-size:clamp(2rem,3.2vw,3rem);font-weight:700;letter-spacing:-.07em;}
+#accueil .chiffres-accueil span{font-size:.79rem;line-height:1.45;color:#526274;}
+/* Section rhythm */
+#accueil .titre-accueil{font-family:var(--police);font-weight:700;letter-spacing:-.04em;line-height:1.2;font-size:clamp(1.7rem,2.5vw,2.3rem);margin-bottom:22px;padding-top:0;color:#142338;}
+#accueil .bloc-accueil.bio-accueil{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0 0 32px!important;margin:0 0 55px;max-width:920px;}
+#accueil .bio-accueil p{max-width:88ch;font-size:1rem;line-height:1.85;color:#35475A}
+#accueil .badges-a-propos{margin-top:20px}
+#accueil .item-badge{background:transparent!important;border:1px solid #C5CED6!important;border-radius:3px;color:#41566B}
+#accueil .grille-savoirfaire{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#CBD3D9;border:1px solid #CBD3D9;margin-bottom:65px;}
+#accueil .carte-savoirfaire{background:#FCFBF8!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:26px 22px;min-height:232px;gap:12px;transform:none!important;transition:background .2s ease;}
+#accueil .carte-savoirfaire:hover{background:#EEF0F1!important;box-shadow:none!important;}
+#accueil .carte-savoirfaire > i{background:transparent!important;color:#B97836!important;width:auto;height:auto;border-radius:0!important;display:block;font-size:1.35rem;margin:0 0 8px;}
+#accueil .carte-savoirfaire h3{color:#142338;font-size:1.1rem;font-weight:700;letter-spacing:-.02em}
+#accueil .carte-savoirfaire p{color:#526274;font-size:.84rem;line-height:1.7}
+#accueil .carte-savoirfaire .lien-detail{color:#31577C;font-size:.75rem;line-height:1.55;border-top:1px solid #DCE0E2;padding-top:13px;}
+#accueil .entete-ligne{margin-top:10px}
+#accueil .lien-tout{color:#31577C;text-decoration:underline;text-underline-offset:4px;}
+/* Portfolio evidence: first case study featured, supporting two side-by-side */
+#accueil .grille-phares{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:54px;}
+#accueil .carte-phare{border:1px solid #D6DCE1!important;background:#fff!important;box-shadow:none!important;border-radius:3px!important;transform:none!important;overflow:hidden;}
+#accueil .carte-phare:hover{border-color:#7F98AD!important;box-shadow:none!important}
+#accueil .carte-phare:first-child{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr;min-height:300px;}
+#accueil .carte-phare:first-child .visuel-phare{height:100%;min-height:300px;aspect-ratio:auto;}
+#accueil .carte-phare .visuel-phare{aspect-ratio:16/9;background:#E4E9ED;}
+#accueil .carte-phare .visuel-phare img{object-fit:cover;transform:none!important}
+#accueil .carte-phare .visuel-phare.banniere-m2l{background:#142338!important;position:relative;}
+#accueil .carte-phare .visuel-phare.banniere-m2l::after{content:"M2L / INFRASTRUCTURE";position:absolute;left:20px;bottom:18px;font-size:.7rem;letter-spacing:.18em;color:#A4BDCE;font-weight:700;}
+#accueil .carte-phare .banniere-m2l > div,#accueil .carte-phare .banniere-m2l span{color:#fff!important;}
+#accueil .carte-phare .banniere-m2l i{color:#E0A873!important}
+#accueil .carte-phare .corps-phare{padding:26px!important;gap:12px;justify-content:center}
+#accueil .carte-phare .type-mission{color:#9A6137;font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;}
+#accueil .carte-phare .corps-phare h3{font-size:clamp(1.24rem,2vw,1.8rem);font-family:var(--police);line-height:1.23;letter-spacing:-.03em}
+#accueil .carte-phare .corps-phare p{font-size:.92rem;line-height:1.75;color:#526274}
+/* Rest of pages: consistent design tokens, preserve interactive behavior */
+.vue:not(#accueil) .titre-vue{color:#142338;letter-spacing:-.045em}
+.vue:not(#accueil) :is(.carte-projet,.carte-procedure,.carte-document,.carte-domaine,.carte-mission-stage){border-radius:5px!important;}
+.vue:not(#accueil) .btn-primaire{background:#142338}
+@media(max-width:1150px){
+ #accueil .hero-accueil{grid-template-columns:minmax(0,1fr) minmax(210px,.65fr);gap:26px}
+ #accueil .nom-hero{font-size:clamp(3.1rem,5vw,4.8rem)}
+ #accueil .grille-savoirfaire{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:1000px){
+ .vue-principale{padding:0 24px 46px;}
+ #accueil .hero-accueil{margin:0 -24px;grid-template-columns:1fr;gap:30px;padding:76px 30px 36px;min-height:auto;}
+ #accueil .hero-texte{order:1!important;}
+ #accueil .hero-photo{order:2!important;justify-self:start!important;width:min(100%,310px);max-width:310px!important;}
+ #accueil .hero-texte::before{margin-bottom:20px}
+ #accueil .nom-hero{max-width:none;font-size:clamp(3.6rem,9vw,5.8rem)}
+ #accueil .chiffres-accueil{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #accueil .chiffres-accueil a:nth-child(2){border-right:0!important}
+ #accueil .chiffres-accueil a:nth-child(-n+2){border-bottom:1px solid #CDD4DB!important}
+ #accueil .chiffres-accueil a{padding:18px!important}
+ #accueil .carte-phare:first-child{grid-template-columns:1fr 1fr}
+ .barre-laterale{padding:22px 18px}
+}
+@media(max-width:650px){
+ .vue-principale{padding:0 16px 40px}
+ #accueil .hero-accueil{margin:0 -16px;padding:69px 22px 32px;gap:24px}
+ #accueil .hero-texte::before{letter-spacing:.1em;font-size:.62rem;margin-bottom:18px;}
+ #accueil .lien-ecole{font-size:.74rem;gap:9px;line-height:1.4}
+ #accueil .nom-hero{font-size:clamp(3rem,12vw,4.8rem);line-height:1.02;overflow-wrap:normal;max-width:12ch;letter-spacing:-.075em;}
+ #accueil .ruban-fibres{margin:12px 0}
+ #accueil .accroche{font-size:.99rem}
+ #accueil .preuves-hero{flex-direction:column;gap:9px}
+ #accueil .actions-hero{display:grid;grid-template-columns:1fr;gap:8px}
+ #accueil .actions-hero a{width:100%;justify-content:center}
+ #accueil .hero-photo{max-width:275px!important;width:min(100%,275px)!important;justify-self:center!important}
+ #accueil .chiffres-accueil{margin:0 0 44px;padding:14px 0}
+ #accueil .chiffres-accueil a{padding:13px 12px!important;}
+ #accueil .chiffres-accueil strong{font-size:2rem}
+ #accueil .chiffres-accueil span{font-size:.76rem}
+ #accueil .titre-accueil{font-size:1.7rem}
+ #accueil .bloc-accueil.bio-accueil{margin-bottom:40px}
+ #accueil .grille-savoirfaire{grid-template-columns:1fr;gap:1px;margin-bottom:44px}
+ #accueil .carte-savoirfaire{min-height:0;padding:22px}
+ #accueil .grille-phares{grid-template-columns:1fr;gap:14px}
+ #accueil .carte-phare:first-child{grid-column:auto;display:flex;min-height:0}
+ #accueil .carte-phare:first-child .visuel-phare{height:auto;min-height:210px;aspect-ratio:16/9}
+ #accueil .carte-phare .corps-phare{padding:22px!important}
+ #accueil .carte-phare .corps-phare h3{font-size:1.35rem}
+ #accueil .carte-phare .visuel-phare.banniere-m2l::after{font-size:.61rem}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
