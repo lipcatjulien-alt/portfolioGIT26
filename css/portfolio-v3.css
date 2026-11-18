@@ -79,10 +79,10 @@ body{background:var(--papier);}
 #accueil .actions-hero .btn-secondaire{background:transparent!important;color:#142338!important;border:1px solid #AAB5BF!important}
 #accueil .actions-hero .btn-secondaire:hover{background:#E9EDEB!important}
 #accueil .hero-photo{position:relative;max-width:370px!important;width:100%;padding:0!important;border:0!important;background:transparent!important;border-radius:0!important;box-shadow:none!important;justify-self:center!important}
-#accueil .hero-photo::before{content:"";position:absolute;inset:16px -14px -14px 16px;border:1px solid #D0B197;pointer-events:none}
+#accueil .hero-photo::before{content:none!important;display:none!important}
 #accueil .cadre-portrait{aspect-ratio:4/5;position:relative;border-radius:2px!important;background:#D7D9D8;}
 #accueil .photo-hero{border-radius:2px!important;box-shadow:none!important;transform:scale(1.10)!important;object-position:50% 47%!important;}
-#accueil .carte-flottante{position:relative;background:#142338!important;color:#fff!important;box-shadow:none!important;border:0!important;border-radius:0!important;margin:0!important;padding:13px 18px!important;justify-content:flex-start!important;gap:12px!important;z-index:1;}
+#accueil .carte-flottante{position:relative;display:flex;align-items:center;justify-content:center!important;width:100%;box-sizing:border-box;background:#142338!important;color:#fff!important;box-shadow:none!important;border:0!important;border-radius:0!important;margin:0!important;padding:13px 18px!important;gap:12px!important;z-index:1;}
 #accueil .carte-flottante strong{color:#fff!important;font-size:.93rem}
 #accueil .carte-flottante span{color:#C6D1DD!important}
 #accueil .carte-flottante i{color:#E0A873!important}
