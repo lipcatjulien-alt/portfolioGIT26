@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fonction pour afficher une vue spécifique
     function afficherVue(idCible) {
+        // Les fragments d'URL inconnus ne doivent ni casser le JS ni vider la page.
+        if (![...vues].some(v => '#' + v.id === idCible)) idCible = '#accueil';
         // Cacher toutes les vues
         vues.forEach(vue => vue.classList.remove('vue-active'));
         
