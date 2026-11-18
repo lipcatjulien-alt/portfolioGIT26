@@ -24,7 +24,7 @@ jobs:
           python - <<'PY'
           import hashlib, base64, urllib.request
           url = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          expected = "iecdLmaskl7CVkqkXNQ/ZH/XL1vWZOJybj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          expected = "iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           payload = urllib.request.urlopen(url,timeout=30).read()
           actual = base64.b64encode(hashlib.sha512(payload).digest()).decode()
           print("Font Awesome SRI:", "PASS" if actual==expected else "FAIL", "actual_sha512="+actual)
